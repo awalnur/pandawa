@@ -180,13 +180,14 @@
                                 <div class="d-flex align-items-end row">
                                     <div class="col-lg-9 col-sm-7">
                                         <div class="card-body">
-                                            <h5 class="card-title text-primary">Congratulations John! 🎉</h5>
+                                            <h5 class="card-title text-primary">Selamat Datang di <b>Pandawa</b>,<?= $nama?>!</h5>
                                             <p class="mb-4">
-                                                You have done <span class="fw-bold">72%</span> more sales today. Check your new badge in
-                                                your profile.
-                                            </p>
+                                                Penilaian Dosen Oleh Mahasiwa (PANDAWA), instrumen untuk menilai kinerja dosen dalam proses pembelajaran di akhir semester.
+                                                <br>
+                                                Wajibkah Mahasiswa Mengisi PANDAWA?
+                                                <span class="fw-bold">Mahasiswa wajib mengisi PANDAWA.</span>
 
-                                            <a href="javascript:;" class="btn btn-sm btn-outline-primary">View Badges</a>
+                                            </p>
                                         </div>
                                     </div>
                                     <div class="col-lg-3 col-sm-5 text-center text-sm-left">

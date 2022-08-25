@@ -136,15 +136,16 @@
                     <!-- /Logo -->
                     <h4 class="mb-2">Selamat Datang Di PANDAWA 👋</h4>
                     <p class="mb-4">Penilaian Dosen Oleh Mahasiwa (PANDAWA), instrumen untuk menilai kinerja dosen dalam proses pembelajaran di akhir semester.</p>
+                    <?= $error ; ?>
 
-                    <form id="formAuthentication" class="mb-3" action="index.html" method="POST">
+                    <form id="formAuthentication" class="mb-3" action="<?= base_url('auth/auth')?>" method="POST">
                         <div class="mb-3">
                             <label for="email" class="form-label">Username</label>
                             <input
                                 type="text"
                                 class="form-control"
-                                id="email"
-                                name="email-username"
+                                id="username"
+                                name="username"
                                 placeholder="Tuliskan Username"
                                 autofocus
                             />

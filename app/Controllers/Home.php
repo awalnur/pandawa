@@ -6,9 +6,10 @@ class Home extends BaseController
 {
     public function index()
     {
-        return view('front/home');
+        $data['nama']=session('nama');
+        return view('front/home',$data);
     }
     function penilaian(){
-        echo "s";
+        return view('front/penilaian');
     }
 }
