@@ -22,7 +22,7 @@ class Auth extends BaseController
     function auth(){
         $username=$this->request->getPost('username');
         $password=$this->request->getPost('password');
-echo $password;
+//echo $password;
 //        echo password_hash('123', PASSWORD_DEFAULT)."<br>";
         if (!empty($username) & !empty($password)){
             $a=$this->db->table('mhs');

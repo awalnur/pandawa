@@ -218,248 +218,100 @@
                                     <!-- SmartWizard html -->
                                     <div id="smartwizard" class="flex-column">
                                         <ul class="nav border-1">
+                                            <?php
+                                            $n=0;
+                                            foreach ($jenispertanyaan as $item) {
+                                                $n++;
+                                                ?>
+                                                <li class="nav-item">
+                                                    <a class="nav-link" href="#step-<?= $item->idjenis_pertanyaan?>">
+                                                        <div class="num"><?= $n ?></div>
+                                                        <?= $item->jenis?>
+                                                    </a>
+                                                </li>
+                                                <?php
+                                            }
+                                            ?>
                                             <li class="nav-item">
-                                                <a class="nav-link" href="#step-1">
-                                                    <div class="num">1</div>
-                                                    Kepribadian
-                                                </a>
-                                            </li>
-                                            <li class="nav-item">
-                                                <a class="nav-link" href="#step-2">
-                                                    <span class="num">2</span>
-                                                    Step Title
-                                                </a>
-                                            </li>
-                                            <li class="nav-item">
-                                                <a class="nav-link" href="#step-3">
-                                                    <span class="num">3</span>
-                                                    Step Title
-                                                </a>
-                                            </li>
-                                            <li class="nav-item">
-                                                <a class="nav-link " href="#step-4">
-                                                    <span class="num">4</span>
-                                                    Step Title
+                                                <a class="nav-link" href="#step-last">
+                                                    <div class="num"><?= $n+1 ?> </div>
+                                                    Kritik dan Saran
                                                 </a>
                                             </li>
                                         </ul>
                                         <hr class="m-0">
 
                                         <div class="tab-content border-1" id="content">
-                                            <div id="step-1" class="tab-pane" role="tabpanel" aria-labelledby="step-1">
+                                            <?php
+                                            foreach ($jenispertanyaan as $pitem) {
+                                                ?>
+                                                <div id="step-<?= $pitem->idjenis_pertanyaan ?>" class="tab-pane pb-5" role="tabpanel" aria-labelledby="step-1">
+                                                    
+                                                    <?php
+                                                    $nop=0;
+                                                    foreach ($pertanyaan[$pitem->idjenis_pertanyaan] as $psitem) {
+                                                        $nop++;
+                                                        ?>
 
-                                                <div class="card border-1 mb-2">
-                                                    <div class="card-body">
-                                                        <p class="pertanyaan mb-0">
-                                                            1. Adil dalam memperlakukan mahasiswa
-                                                        </p>
-                                                        <div class="jawaban ps-3">
-                                                            <div class="form-check form-check-inline mt-3">
-                                                                <input
-                                                                        class="form-check-input"
-                                                                        type="radio"
-                                                                        name="inlineRadioOptions"
-                                                                        id="inlineRadio1"
-                                                                        value="4"
-                                                                />
-                                                                <label class="form-check-label" for="inlineRadio1">Sangat Baik</label>
-                                                            </div>
-                                                            <div class="form-check form-check-inline mt-3">
-                                                                <input
-                                                                        class="form-check-input"
-                                                                        type="radio"
-                                                                        name="inlineRadioOptions"
-                                                                        id="inlineRadio1"
-                                                                        value="3"
-                                                                />
-                                                                <label class="form-check-label" for="inlineRadio1"> Baik</label>
-                                                            </div>
-                                                            <div class="form-check form-check-inline mt-3">
-                                                                <input
-                                                                        class="form-check-input"
-                                                                        type="radio"
-                                                                        name="inlineRadioOptions"
-                                                                        id="inlineRadio1"
-                                                                        value="2"
-                                                                />
-                                                                <label class="form-check-label" for="inlineRadio1">Cukup</label>
-                                                            </div>
-                                                            <div class="form-check form-check-inline mt-3">
-                                                                <input
-                                                                        class="form-check-input"
-                                                                        type="radio"
-                                                                        name="inlineRadioOptions"
-                                                                        id="inlineRadio1"
-                                                                        value="1"
-                                                                />
-                                                                <label class="form-check-label" for="inlineRadio1">Kurang</label>
-                                                            </div>
+                                                        <div class="card border-1 mb-2">
+                                                            <div class="card-body">
+                                                                <p class="pertanyaan mb-0">
+                                                                    <?= $nop ?>. <?= $psitem->pertanyaan ?>
+                                                                </p>
+                                                                <div class="jawaban ps-3">
+                                                                    <div class="form-check form-check-inline mt-3">
+                                                                        <input
+                                                                                class="form-check-input"
+                                                                                type="radio"
+                                                                                name="radioanswer<?= $psitem->pertanyaan ?>"
+                                                                                id="inlineRadio1"
+                                                                                value="4"
+                                                                        />
+                                                                        <label class="form-check-label" for="inlineRadio1">Sangat Baik</label>
+                                                                    </div>
+                                                                    <div class="form-check form-check-inline mt-3">
+                                                                        <input
+                                                                                class="form-check-input"
+                                                                                type="radio"
+                                                                                name="inlineRadioOptions"
+                                                                                id="inlineRadio1"
+                                                                                value="3"
+                                                                        />
+                                                                        <label class="form-check-label" for="inlineRadio1"> Baik</label>
+                                                                    </div>
+                                                                    <div class="form-check form-check-inline mt-3">
+                                                                        <input
+                                                                                class="form-check-input"
+                                                                                type="radio"
+                                                                                name="inlineRadioOptions"
+                                                                                id="inlineRadio1"
+                                                                                value="2"
+                                                                        />
+                                                                        <label class="form-check-label" for="inlineRadio1">Cukup</label>
+                                                                    </div>
+                                                                    <div class="form-check form-check-inline mt-3">
+                                                                        <input
+                                                                                class="form-check-input"
+                                                                                type="radio"
+                                                                                name="inlineRadioOptions"
+                                                                                id="inlineRadio1"
+                                                                                value="1"
+                                                                        />
+                                                                        <label class="form-check-label" for="inlineRadio1">Kurang</label>
+                                                                    </div>
 
+                                                                </div>
+                                                            </div>
                                                         </div>
-                                                    </div>
+                                                    <?php
+                                                        }
+                                                    ?>
+                                                    <hr>
                                                 </div>
-                                                <div class="card border-1 mb-2">
-                                                    <div class="card-body">
-                                                        <p class="pertanyaan mb-0">
-                                                            1. Adil dalam memperlakukan mahasiswa
-                                                        </p>
-                                                        <div class="jawaban ps-3">
-                                                            <div class="form-check form-check-inline mt-3">
-                                                                <input
-                                                                        class="form-check-input"
-                                                                        type="radio"
-                                                                        name="inlineRadioOptions"
-                                                                        id="inlineRadio1"
-                                                                        value="4"
-                                                                />
-                                                                <label class="form-check-label" for="inlineRadio1">Sangat Baik</label>
-                                                            </div>
-                                                            <div class="form-check form-check-inline mt-3">
-                                                                <input
-                                                                        class="form-check-input"
-                                                                        type="radio"
-                                                                        name="inlineRadioOptions"
-                                                                        id="inlineRadio1"
-                                                                        value="3"
-                                                                />
-                                                                <label class="form-check-label" for="inlineRadio1"> Baik</label>
-                                                            </div>
-                                                            <div class="form-check form-check-inline mt-3">
-                                                                <input
-                                                                        class="form-check-input"
-                                                                        type="radio"
-                                                                        name="inlineRadioOptions"
-                                                                        id="inlineRadio1"
-                                                                        value="2"
-                                                                />
-                                                                <label class="form-check-label" for="inlineRadio1">Cukup</label>
-                                                            </div>
-                                                            <div class="form-check form-check-inline mt-3">
-                                                                <input
-                                                                        class="form-check-input"
-                                                                        type="radio"
-                                                                        name="inlineRadioOptions"
-                                                                        id="inlineRadio1"
-                                                                        value="1"
-                                                                />
-                                                                <label class="form-check-label" for="inlineRadio1">Kurang</label>
-                                                            </div>
-
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="card border-1 mb-2">
-                                                    <div class="card-body">
-                                                        <p class="pertanyaan mb-0">
-                                                            1. Adil dalam memperlakukan mahasiswa
-                                                        </p>
-                                                        <div class="jawaban ps-3">
-                                                            <div class="form-check form-check-inline mt-3">
-                                                                <input
-                                                                        class="form-check-input"
-                                                                        type="radio"
-                                                                        name="inlineRadioOptions"
-                                                                        id="inlineRadio1"
-                                                                        value="4"
-                                                                />
-                                                                <label class="form-check-label" for="inlineRadio1">Sangat Baik</label>
-                                                            </div>
-                                                            <div class="form-check form-check-inline mt-3">
-                                                                <input
-                                                                        class="form-check-input"
-                                                                        type="radio"
-                                                                        name="inlineRadioOptions"
-                                                                        id="inlineRadio1"
-                                                                        value="3"
-                                                                />
-                                                                <label class="form-check-label" for="inlineRadio1"> Baik</label>
-                                                            </div>
-                                                            <div class="form-check form-check-inline mt-3">
-                                                                <input
-                                                                        class="form-check-input"
-                                                                        type="radio"
-                                                                        name="inlineRadioOptions"
-                                                                        id="inlineRadio1"
-                                                                        value="2"
-                                                                />
-                                                                <label class="form-check-label" for="inlineRadio1">Cukup</label>
-                                                            </div>
-                                                            <div class="form-check form-check-inline mt-3">
-                                                                <input
-                                                                        class="form-check-input"
-                                                                        type="radio"
-                                                                        name="inlineRadioOptions"
-                                                                        id="inlineRadio1"
-                                                                        value="1"
-                                                                />
-                                                                <label class="form-check-label" for="inlineRadio1">Kurang</label>
-                                                            </div>
-
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="card border-1 mb-2">
-                                                    <div class="card-body">
-                                                        <p class="pertanyaan mb-0">
-                                                            1. Adil dalam memperlakukan mahasiswa
-                                                        </p>
-                                                        <div class="jawaban ps-3">
-                                                            <div class="form-check form-check-inline mt-3">
-                                                                <input
-                                                                        class="form-check-input"
-                                                                        type="radio"
-                                                                        name="inlineRadioOptions"
-                                                                        id="inlineRadio1"
-                                                                        value="4"
-                                                                />
-                                                                <label class="form-check-label" for="inlineRadio1">Sangat Baik</label>
-                                                            </div>
-                                                            <div class="form-check form-check-inline mt-3">
-                                                                <input
-                                                                        class="form-check-input"
-                                                                        type="radio"
-                                                                        name="inlineRadioOptions"
-                                                                        id="inlineRadio1"
-                                                                        value="3"
-                                                                />
-                                                                <label class="form-check-label" for="inlineRadio1"> Baik</label>
-                                                            </div>
-                                                            <div class="form-check form-check-inline mt-3">
-                                                                <input
-                                                                        class="form-check-input"
-                                                                        type="radio"
-                                                                        name="inlineRadioOptions"
-                                                                        id="inlineRadio1"
-                                                                        value="2"
-                                                                />
-                                                                <label class="form-check-label" for="inlineRadio1">Cukup</label>
-                                                            </div>
-                                                            <div class="form-check form-check-inline mt-3">
-                                                                <input
-                                                                        class="form-check-input"
-                                                                        type="radio"
-                                                                        name="inlineRadioOptions"
-                                                                        id="inlineRadio1"
-                                                                        value="1"
-                                                                />
-                                                                <label class="form-check-label" for="inlineRadio1">Kurang</label>
-                                                            </div>
-
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <hr>
+                                            <?php } ?>
+                                            <div id="step-last" class="tab-pane  pb-5" role="tabpanel" aria-labelledby="step-2">
+                                                sasdasdasd
                                             </div>
-                                            <div id="step-2" class="tab-pane" role="tabpanel" aria-labelledby="step-2">
-                                                Step content2
-                                            </div>
-                                            <div id="step-3" class="tab-pane" role="tabpanel" aria-labelledby="step-3">
-                                                Step content3
-                                            </div>
-                                            <div id="step-4" class="tab-pane" role="tabpanel" aria-labelledby="step-4">
-                                                Step content4
-                                            </div>
-                                        </div>
 
                                     </div>
                                 </div>
