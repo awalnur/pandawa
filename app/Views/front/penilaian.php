@@ -110,7 +110,7 @@
                         <li class="nav-item navbar-dropdown dropdown-user dropdown">
                             <a class="nav-link dropdown-toggle hide-arrow" href="javascript:void(0);" data-bs-toggle="dropdown">
                                 <div class="avatar avatar-online">
-                                    <img src="<?= base_url(); ?>/assets/img/avatars/1.png" alt class="w-px-40 h-auto rounded-circle" />
+                                    <img src="<?= base_url('/assets/img/avatars/1.png'); ?>" alt class="w-px-40 h-auto rounded-circle" />
                                 </div>
                             </a>
                             <ul class="dropdown-menu dropdown-menu-end">
@@ -199,7 +199,7 @@
                                 <div class="card-body">
                                     <div class="d-flex align-items-start align-items-sm-center gap-4">
                                         <img
-                                                src="../assets/img/avatars/1.png"
+                                                src="<?= base_url()?>/assets/img/avatars/1.png"
                                                 alt="user-avatar"
                                                 class="d-block rounded"
                                                 height="100"
@@ -215,6 +215,7 @@
 
                                 <hr class="my-0" />
                                 <div class="card-body p-0">
+                                    <form action="#" method="post" id="fpert">
                                     <!-- SmartWizard html -->
                                     <div id="smartwizard" class="flex-column">
                                         <ul class="nav border-1">
@@ -263,41 +264,41 @@
                                                                         <input
                                                                                 class="form-check-input"
                                                                                 type="radio"
-                                                                                name="radioanswer<?= $psitem->pertanyaan ?>"
-                                                                                id="inlineRadio1"
+                                                                                name="radioanswer<?= $psitem->idpertanyaan ?>"
+                                                                                id="inlineRadio4<?= $psitem->idpertanyaan ?>"
                                                                                 value="4"
                                                                         />
-                                                                        <label class="form-check-label" for="inlineRadio1">Sangat Baik</label>
+                                                                        <label class="form-check-label" for="inlineRadio4<?= $psitem->idpertanyaan ?>">Sangat Baik</label>
                                                                     </div>
                                                                     <div class="form-check form-check-inline mt-3">
                                                                         <input
                                                                                 class="form-check-input"
                                                                                 type="radio"
-                                                                                name="inlineRadioOptions"
-                                                                                id="inlineRadio1"
+                                                                                name="radioanswer<?= $psitem->idpertanyaan ?>"
+                                                                                id="inlineRadio3<?= $psitem->idpertanyaan ?>"
                                                                                 value="3"
                                                                         />
-                                                                        <label class="form-check-label" for="inlineRadio1"> Baik</label>
+                                                                        <label class="form-check-label" for="inlineRadio3<?= $psitem->idpertanyaan ?>"> Baik</label>
                                                                     </div>
                                                                     <div class="form-check form-check-inline mt-3">
                                                                         <input
                                                                                 class="form-check-input"
                                                                                 type="radio"
-                                                                                name="inlineRadioOptions"
-                                                                                id="inlineRadio1"
+                                                                                name="radioanswer<?= $psitem->idpertanyaan ?>"
+                                                                                id="inlineRadio2<?= $psitem->idpertanyaan ?>"
                                                                                 value="2"
                                                                         />
-                                                                        <label class="form-check-label" for="inlineRadio1">Cukup</label>
+                                                                        <label class="form-check-label" for="inlineRadio2<?= $psitem->idpertanyaan ?>">Cukup</label>
                                                                     </div>
                                                                     <div class="form-check form-check-inline mt-3">
                                                                         <input
                                                                                 class="form-check-input"
                                                                                 type="radio"
-                                                                                name="inlineRadioOptions"
-                                                                                id="inlineRadio1"
+                                                                                name="radioanswer<?= $psitem->idpertanyaan ?>"
+                                                                                id="inlineRadio1<?= $psitem->idpertanyaan ?>"
                                                                                 value="1"
                                                                         />
-                                                                        <label class="form-check-label" for="inlineRadio1">Kurang</label>
+                                                                        <label class="form-check-label" for="inlineRadio1<?= $psitem->idpertanyaan ?>">Kurang</label>
                                                                     </div>
 
                                                                 </div>
@@ -310,12 +311,16 @@
                                                 </div>
                                             <?php } ?>
                                             <div id="step-last" class="tab-pane  pb-5" role="tabpanel" aria-labelledby="step-2">
-                                                sasdasdasd
+                                                <p>
+                                                    Kritik dan saran kepada dosen
+                                                </p>
+                                                <textarea name="kritiksaran" class="form-control" id="" placeholder="Kritik dan Saran ...." required></textarea>
                                             </div>
 
                                     </div>
                                 </div>
                                 <!-- /Account -->
+                                    </form>
                             </div>
                         </div>
                     </div>
@@ -382,8 +387,42 @@
             selected: 0, // Initial selected step, 0 = first step
             theme: 'arrows', // theme for the wizard, related css need to include for other than default theme
             justified: false,
-            navigationUI:'hide',
+            enableFinishButton: true, // makes finish button enabled always,
+            toolbar: {
+                position: 'bottom', // none|top|bottom|both
+                showNextButton: true, // show/hide a Next button
+                showPreviousButton: true, // show/hide a Previous button
+                extraHtml: '<button id="finish-btn" type="submit" class="btn btn btn-success" hidden>Simpan</button>' // Extra html to show on toolbar
+            },
+        },
+        )
+        let stepInfo = $('#smartwizard').smartWizard("getStepInfo");
+        console.log(stepInfo.totalSteps);
+
+        $("#smartwizard").on("leaveStep", function(e, anchorObject, currentStepIndex, nextStepIndex, stepDirection, totalSteps) {
+            if (nextStepIndex==stepInfo.totalSteps-1){
+                $("#finish-btn").attr('hidden', false)
+            }else if (currentStepIndex==stepInfo.totalSteps){
+                $("#finish-btn").attr('hidden', false)
+            }else{
+                $("#finish-btn").attr('hidden', true)
+            }
+            // return confirm("Do you want to leave the step " + stepDirection + "?");
         });
+        $(document).on('submit', '#fpert', function (e) {
+            e.preventDefault();
+            $.ajax({
+                url: '<?= base_url("/home/saveNilai/".$npm)?>',
+                type: 'POST',
+                data: $(this).serialize(),
+                dataType:'json',
+                success:function (s){
+
+                },error:function (e) {
+                    alert("pastikan semua data telah terisi, atau data tidak akan tersimpan");
+                }
+            })
+        })
     });
 </script>
 <script src="<?= base_url(); ?>/assets/vendor/js/menu.js"></script>

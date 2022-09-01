@@ -211,6 +211,11 @@
                     <!-- Horizontal -->
                     <h5 class="pb-1 mb-4">Daftar Dosen</h5>
                     <div class="row mb-5">
+                        <?php
+
+                        foreach ($dosen as $ddosen) {
+//                            if ()
+                            ?>
                         <div class="col-xl-3 col-lg-4 col-md-6 col-sm-12">
                             <div class="card mb-3">
                                 <div class="row g-0">
@@ -219,46 +224,28 @@
                                     </div>
                                     <div class="col-8">
                                         <div class="card-body pt-3 pb-2">
-                                            <h5 class="card-title mb-0 mt-0 ">Nama Dosen, M.Si</h5>
-                                            <p class="card-text"><small class="text-muted">Mata Kuliah</small></p>
-                                            <button class="btn btn-primary btn-sm">Beri Nilai</button>
+                                            <h5 class="card-title mb-0 mt-0 "><?= $ddosen->nama_dosen?></h5>
+                                            <p class="card-text"><small class="text-muted"><?= $ddosen->matkul?></small></p>
+                                            <?php
+                                            if ($ddosen->dinilai==1){
+                                                ?>
+                                                <div class="alert alert-success ps-2 p-1 mb-0">
+                                                    <i class="bx bx-check-circle"></i> Sudah dinilai
+                                                </div>
+                                            <?php
+                                            }else{
+                                                ?>
+                                                <a href="<?= base_url('/home/penilaian/'.$ddosen->npm)?>"> <button class="btn btn-primary btn-sm">Beri Nilai</button></a>
+                                                <?php
+                                            }
+                                            ?>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        <div class="col-xl-3 col-lg-4 col-md-6 col-sm-12">
-                            <div class="card mb-3">
-                                <div class="row g-0">
-                                    <div class="col-4">
-                                        <img class="card-img card-img-left" src="../assets/img/elements/12.jpg" alt="Card image" />
-                                    </div>
-                                    <div class="col-8">
-                                        <div class="card-body pt-3 pb-0">
-                                            <h5 class="card-title mb-0 mt-0">Nama Dosen, M.Si</h5>
-                                            <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-                                            <p class="card-text">Mata Kuliah</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-xl-3 col-lg-4 col-md-6 col-sm-12">
-                            <div class="card mb-3">
-                                <div class="row g-0">
-                                    <div class="col-4">
-                                        <img class="card-img card-img-left" src="../assets/img/elements/12.jpg" alt="Card image" />
-                                    </div>
-                                    <div class="col-8">
-                                        <div class="card-body pt-3 pb-0">
-                                            <h5 class="card-title mb-0 mt-0">Nama Dosen, M.Si</h5>
-                                            <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-                                            <p class="card-text">Mata Kuliah</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                        <?php
+                        }?>
                     </div>
                 </div>
                 <!-- / Content -->
