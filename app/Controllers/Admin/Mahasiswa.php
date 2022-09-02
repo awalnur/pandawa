@@ -11,34 +11,32 @@ class Mahasiswa extends AdminController
         echo view('admin/template/footer');
     }
     function tambahmhs(){
-<<<<<<< HEAD
         $data['prodi']=$this->db->table('prodi')->get()->getResultObject();
-=======
-        $data['prodi']=$this->db->table('prodi');
->>>>>>> main
         echo view('admin/template/header');
         echo view('admin/tambahmhs', $data);
         echo view('admin/template/footer');
     }
-<<<<<<< HEAD
     function savemahasiswa(){
+
         $nim=$this->request->getPost('nim');
+                echo password_hash('123', PASSWORD_DEFAULT)."<br>";
+
+//        echo password_hash($nim, PASSWORD_DEFAULT);
         $nama=$this->request->getPost('nama');
         $angkatan=$this->request->getPost('angkatan');
         $prodi=$this->request->getPost('prodi');
 //        $foto=$this->request->getPost('foto_dosen');
         $foto='default.png';
+        $spass=password_hash(''.$nim.'', PASSWORD_DEFAULT);
         $data=[
             'nim'=>$nim,
             'nama_mhs'=>$nama,
             'angkatan'=>$angkatan,
-            'prodi'=>$foto,
-            'password'=>password_hash($nim, PASSWORD_DEFAULT),
+            'idprodi'=>$prodi,
+            'password'=>$spass,
         ];
         $this->db->table('mhs')->insert($data);
         return redirect()->back()->with('success', 1);
 
     }
-=======
->>>>>>> main
 }

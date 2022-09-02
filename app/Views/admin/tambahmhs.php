@@ -25,24 +25,23 @@
                     </div>
                     <!-- /.box-header -->
                     <!-- form start -->
-<<<<<<< HEAD
                     <form role="form" action="<?= base_url('admin/mahasiswa/savemahasiswa')?>" method="post">
                         <div class="box-body">
-                        <?php if (!empty(session('succeess'))){
+                        <?php if (!empty(session('success'))){
                          ?>
                                 <div class="alert alert-success">Data Berhasil Ditambahkan</div>
                          <?php } ?>
                             <div class="form-group">
                                 <label for="nid">nim</label>
-                                <input type="text" class="form-control" id="nim" name="nid" placeholder="NID Dosen">
+                                <input type="text" class="form-control" id="nim" name="nim" placeholder="NIM">
                             </div>
                             <div class="form-group">
                                 <label for="nid">Nama Mahasiswa</label>
-                                <input type="text" class="form-control" id="nid" name="nama" placeholder="Nama Lengkap Mahasiswa">
+                                <input type="text" class="form-control" id="nama" name="nama" placeholder="Nama Lengkap Mahasiswa">
                             </div>
                             <div class="form-group">
                                 <label for="nid">Angkatan</label>
-                                <input type="text" class="form-control" id="gelar" name="angkatan" placeholder="Gelar Dosen">
+                                <input type="text" class="form-control" id="angkatan" name="angkatan" placeholder="Angkatan">
                             </div>
                             <div class="form-group">
                                 <label for="nid">Prodi</label>
@@ -56,26 +55,6 @@
                                 </select>
                             </div>
 
-=======
-                    <form role="form" action="<?= base_url('admin/dosen/savedosen')?>" method="post">
-                        <div class="box-body">
-                            <div class="form-group">
-                                <label for="nid">NID</label>
-                                <input type="text" class="form-control" id="nid" name="nid" placeholder="NID Dosen">
-                            </div>
-                            <div class="form-group">
-                                <label for="nid">Nama Dosen</label>
-                                <input type="text" class="form-control" id="nid" name="nama" placeholder="Nama Lengkap Dosen">
-                            </div>
-                            <div class="form-group">
-                                <label for="nid">Gelar</label>
-                                <input type="text" class="form-control" id="gelar" name="gelar" placeholder="Gelar Dosen">
-                            </div>
-                            <div class="form-group">
-                                <label for="nid">Foto Dosen</label>
-                                <input type="text" class="form-control" id="nid" placeholder="NID Dosen">
-                            </div>
->>>>>>> main
                         </div>
                         <!-- /.box-body -->
 
@@ -97,11 +76,7 @@
                     </div>
                     <div class="box-body">
                         <p>
-<<<<<<< HEAD
                             Sampel Data Mahasiswa
-=======
-                            Sampel Data Dosen
->>>>>>> main
                         </p>
                     </div>
                     <!-- /.box-header -->
