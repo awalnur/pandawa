@@ -29,5 +29,6 @@ class Dosen extends AdminController
             'foto_dosen'=>$foto,
         ];
         $this->db->table('dosen')->insert($data);
+        return redirect()->back()->with('success', 1);
     }
 }
