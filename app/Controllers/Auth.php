@@ -48,4 +48,8 @@ class Auth extends BaseController
         }
 
     }
+    function logout(){
+        session()->destroy();
+        return redirect()->to(base_url());
+    }
 }
