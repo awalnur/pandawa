@@ -25,6 +25,7 @@
                     </div>
                     <!-- /.box-header -->
                     <!-- form start -->
+<<<<<<< HEAD
                     <form role="form" action="<?= base_url('admin/mahasiswa/savemahasiswa')?>" method="post">
                         <div class="box-body">
                         <?php if (!empty(session('succeess'))){
@@ -55,6 +56,26 @@
                                 </select>
                             </div>
 
+=======
+                    <form role="form" action="<?= base_url('admin/dosen/savedosen')?>" method="post">
+                        <div class="box-body">
+                            <div class="form-group">
+                                <label for="nid">NID</label>
+                                <input type="text" class="form-control" id="nid" name="nid" placeholder="NID Dosen">
+                            </div>
+                            <div class="form-group">
+                                <label for="nid">Nama Dosen</label>
+                                <input type="text" class="form-control" id="nid" name="nama" placeholder="Nama Lengkap Dosen">
+                            </div>
+                            <div class="form-group">
+                                <label for="nid">Gelar</label>
+                                <input type="text" class="form-control" id="gelar" name="gelar" placeholder="Gelar Dosen">
+                            </div>
+                            <div class="form-group">
+                                <label for="nid">Foto Dosen</label>
+                                <input type="text" class="form-control" id="nid" placeholder="NID Dosen">
+                            </div>
+>>>>>>> main
                         </div>
                         <!-- /.box-body -->
 
@@ -76,7 +97,11 @@
                     </div>
                     <div class="box-body">
                         <p>
+<<<<<<< HEAD
                             Sampel Data Mahasiswa
+=======
+                            Sampel Data Dosen
+>>>>>>> main
                         </p>
                     </div>
                     <!-- /.box-header -->

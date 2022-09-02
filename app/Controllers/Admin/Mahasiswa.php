@@ -11,11 +11,16 @@ class Mahasiswa extends AdminController
         echo view('admin/template/footer');
     }
     function tambahmhs(){
+<<<<<<< HEAD
         $data['prodi']=$this->db->table('prodi')->get()->getResultObject();
+=======
+        $data['prodi']=$this->db->table('prodi');
+>>>>>>> main
         echo view('admin/template/header');
         echo view('admin/tambahmhs', $data);
         echo view('admin/template/footer');
     }
+<<<<<<< HEAD
     function savemahasiswa(){
         $nim=$this->request->getPost('nim');
         $nama=$this->request->getPost('nama');
@@ -34,4 +39,6 @@ class Mahasiswa extends AdminController
         return redirect()->back()->with('success', 1);
 
     }
+=======
+>>>>>>> main
 }
