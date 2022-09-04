@@ -363,6 +363,19 @@
                 <li class="treeview">
                     <a href="">
                         <i class="fa fa-pie-chart"></i>
+                        <span>Prodi</span>
+                        <span class="pull-right-container">
+                          <i class="fa fa-angle-left pull-right"></i>
+                        </span>
+                    </a>
+                    <ul class="treeview-menu">
+                        <li><a href="<?= base_url('admin/dosen/tambah')?>"><i class="fa fa-circle-o"></i> Tambah Dosen</a></li>
+                        <li><a href="<?= base_url('admin/dosen')?>"><i class="fa fa-circle-o"></i> Data Dosen</a></li>
+                    </ul>
+                </li>
+                <li class="treeview">
+                    <a href="">
+                        <i class="fa fa-pie-chart"></i>
                         <span>Mahasiswa</span>
                         <span class="pull-right-container">
                               <i class="fa fa-angle-left pull-right"></i>
@@ -384,6 +397,19 @@
                     <ul class="treeview-menu">
                         <li><a href="<?= base_url('admin/matkul/tambah')?>"><i class="fa fa-circle-o"></i> Tambah Mahasiswa</a></li>
                         <li><a href="<?= base_url('admin/matkul')?>"><i class="fa fa-circle-o"></i> Data Mahasiswa</a></li>
+                    </ul>
+                </li>
+                <li class="treeview">
+                    <a href="">
+                        <i class="fa fa-pie-chart"></i>
+                        <span>Pertanyaan</span>
+                        <span class="pull-right-container">
+                              <i class="fa fa-angle-left pull-right"></i>
+                            </span>
+                    </a>
+                    <ul class="treeview-menu">
+                        <li><a href="<?= base_url('admin/pertanyaan/jenis')?>"><i class="fa fa-circle-o"></i> Jenis Pertanyaan</a></li>
+                        <li><a href="<?= base_url('admin/pertanyaan')?>"><i class="fa fa-circle-o"></i> Pertanyaan</a></li>
                     </ul>
                 </li>
                 <li class="header">PENILAIAN</li>
