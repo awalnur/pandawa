@@ -30,7 +30,12 @@
                             <?php if (!empty(session('success'))){
                                 ?>
                                 <div class="alert alert-success">Data Berhasil Ditambahkan</div>
-                            <?php } ?>
+                            <?php }else if (!empty(session('error'))){
+                                ?>
+                                <div class="alert alert-danger">Data Gagal Ditambahkan / Duplikat data</div>
+
+                                <?php
+                            } ?>
                             <div class="form-group">
                                 <label for="kodematkul">Kode Mata Kuliah</label>
                                 <input type="text" class="form-control" id="kodematkul" name="kodematkul" placeholder="Kode Mata kuliah">

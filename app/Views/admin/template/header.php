@@ -382,7 +382,7 @@
                             </span>
                     </a>
                     <ul class="treeview-menu">
-                        <li><a href="<?= base_url('admin/mahasiswa/tambah')?>"><i class="fa fa-circle-o"></i> Tambah Mahasiswa</a></li>
+                        <li><a href="<?= base_url('admin/mahasiswa/tambahmhs')?>"><i class="fa fa-circle-o"></i> Tambah Mahasiswa</a></li>
                         <li><a href="<?= base_url('admin/mahasiswa')?>"><i class="fa fa-circle-o"></i> Data Mahasiswa</a></li>
                     </ul>
                 </li>
@@ -395,8 +395,8 @@
                             </span>
                     </a>
                     <ul class="treeview-menu">
-                        <li><a href="<?= base_url('admin/matkul/tambah')?>"><i class="fa fa-circle-o"></i> Tambah Mahasiswa</a></li>
-                        <li><a href="<?= base_url('admin/matkul')?>"><i class="fa fa-circle-o"></i> Data Mahasiswa</a></li>
+                        <li><a href="<?= base_url('admin/matkul/tambah')?>"><i class="fa fa-circle-o"></i> Tambah Mata Kuliah</a></li>
+                        <li><a href="<?= base_url('admin/matkul')?>"><i class="fa fa-circle-o"></i> Data Mata Kuliah</a></li>
                     </ul>
                 </li>
                 <li class="treeview">

@@ -256,6 +256,81 @@
             'info'        : true,
             'autoWidth'   : false
         })
+        $("#jenispertanyaan").submit(function (s){
+            s.preventDefault();
+            $.ajax({
+                url: '<?= base_url('admin/pertanyaan/savejenis')?>',
+                data: $(this).serialize(),
+                dataType: 'json',
+                type: 'post',
+                success:function (s){
+                    console.log(s)
+
+                    if(s.success==1){
+                        alert('Jenis Baru Ditambahkan')
+                        window.location.reload()
+                    }
+                }
+            })
+        });
+        $(document).on("click", "#deletejenis", function (s) {
+            // alert("S");
+            if(confirm("Hapus Jenis Akan Menghapus semua pertanyaan pada jenis ini?")){
+                $.ajax({
+                    url: '<?= base_url('admin/pertanyaan/delete/jenis')?>',
+                    data:'id='+$(this).attr("data-val"),
+                    dataType: 'Json',
+                    type: 'post',
+                    success:function (e){
+                        if (e.success==1){
+                            alert('Jenis Berhasil Dihapus');
+                            window.location.reload();
+                        }else{
+                            alert('Jenis Gagal Dihapus');
+
+                        }
+                    }
+                })
+            }
+        });
+        $(document).on("click", "#deletepertanyaan", function (s) {
+            // alert("S");
+            if(confirm("Hapus Jenis Akan Menghapus semua pertanyaan pada jenis ini?")){
+                $.ajax({
+                    url: '<?= base_url('admin/pertanyaan/delete/pert')?>',
+                    data:'id='+$(this).attr("data-val"),
+                    dataType: 'Json',
+                    type: 'post',
+                    success:function (e){
+                        if (e.success==1){
+                            alert('Jenis Berhasil Dihapus');
+                            window.location.reload();
+                        }else{
+                            alert('Jenis Gagal Dihapus');
+
+                        }
+                    }
+                })
+            }
+        });
+        $("#pertanyaan").submit({
+            s.preventDefault();
+            $.ajax({
+                url: '<?= base_url('admin/pertanyaan/savepertanyaan')?>',
+                data: $(this).serialize(),
+                dataType: 'json',
+                type: 'post',
+                success:function (s){
+                    console.log(s)
+
+                    if(s.success==1){
+                        alert('Jenis Baru Ditambahkan')
+                        window.location.reload()
+                    }
+                }
+            });
+        })
+
     });
 </script>
 </body>

@@ -5,8 +5,10 @@ namespace App\Controllers\Admin;
 class Matkul extends AdminController
 {
     function index(){
-        echo "matkul";
-    }
+        $data['matkul']=$this->db->table('makul')->get()->getResultObject();
+        echo view('admin/template/header');
+        echo view('admin/matakuliah',$data);
+        echo view('admin/template/footer');    }
     function tambah(){
         echo view('admin/template/header');
         echo view('admin/tambahmatkul');
@@ -23,8 +25,14 @@ class Matkul extends AdminController
             'sks'=>$sks,
             'semester'=>$semester,
         ];
-        $this->db->table('makul')->insert($data);
-        return redirect()->back()->with('success', 1);
+        $f=$this->db->table('makul')->insert($data);
+        if ($f){
+            return redirect()->back()->with('success', 1);
+
+        }else{
+            return redirect()->back()->with('error', 1);
+
+        }
 
     }
 

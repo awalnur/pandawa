@@ -21,38 +21,52 @@
 
                 <div class="box">
                     <div class="box-header">
-                        <h3 class="box-title">Data Jenis Pertanyaan</h3>
+                        <h3 class="box-title">Tambah Pertanyaan</h3>
                     </div>
                     <!-- /.box-header -->
                     <div class="box-body">
-                            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal-add">
-                                Tambah Jenis
-                            </button>
+                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal-adds">
+                            Tambah Pertanyaan
+                        </button>
 
-                        <div class="modal fade" id="modal-add">
+                        <div class="modal fade" id="modal-adds">
                             <div class="modal-dialog modal-sm">
                                 <div class="modal-content">
                                     <div class="modal-header">
                                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                             <span aria-hidden="true">&times;</span></button>
-                                        <h4 class="modal-title">Jenis Pertanyaan Baru</h4>
+                                        <h4 class="modal-title">Pertanyaan Baru</h4>
                                     </div>
-                                    <form action="#" id="jenispertanyaan">
+                                    <form action="#" id="pertanyaan">
 
-                                    <div class="modal-body">
+                                        <div class="modal-body">
 
-                                        <div class="form-group">
-                                            <label for="jenis">
-                                                Jenis Pertanyaan
-                                            </label>
-                                            <input type="text" name="jenis" class="form-control" required>
+                                            <div class="form-group">
+                                                <label for="jenis">
+                                                    Jenis Pertanyaan
+                                                </label>
+                                                <select name="jenis" id="" class="form-control">
+                                                    <?php
+                                                        foreach ($jenis as $jen){
+                                                        ?>
+                                                            <option value="<?=$jen->idjenis_pertanyaan?>"><?= $jen->jenis?></option>
+                                                            <?php
+                                                        }
+                                                    ?>
+                                                </select>
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="Pertanyaan">
+                                                    Pertanyaan
+                                                </label>
+                                                <textarea type="text" name="pertanyaan" class="form-control" placeholder="pertanyaan" required></textarea>
+                                            </div>
+
                                         </div>
-
-                                    </div>
-                                    <div class="modal-footer">
-                                        <button type="button" class="btn btn-danger pull-left" data-dismiss="modal">Batal</button>
-                                        <button type="submit" class="btn btn-primary">Simpan</button>
-                                    </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-danger pull-left" data-dismiss="modal">Batal</button>
+                                            <button type="submit" class="btn btn-primary">Simpan</button>
+                                        </div>
                                     </form>
                                 </div>
                                 <!-- /.modal-content -->
@@ -65,25 +79,23 @@
                             <tr>
                                 <th>No</th>
                                 <th>Jenis Pertanyaan</th>
-                                <th>Detail</th>
+                                <th>Pertanyaan</th>
                                 <th>Aksi</th>
                             </tr>
                             </thead>
                             <tbody>
                             <?php
                             $n=0;
-                            foreach ($jenis as $jitem) {
+                            foreach ($pertanyaan as $jitem) {
                                 $n++;
                                 ?>
                                 <tr>
                                     <td><?=$n;?></td>
                                     <td><?=$jitem->jenis;?>
-                                    </td>
-                                    <td>
-                                        <a href="<?= base_url('admin/pertanyaan/pertanyaan/' . $jitem->idjenis_pertanyaan) ?>" class="btn btn-info">List Pertanyaan</a></td>
-                                    <td width="150">
+                                    <td><?=$jitem->pertanyaan;?>
+                                    </td><td width="150">
                                         <button class="btn bg-orange btn-sm"><i class="fa fa-edit"></i></button>
-                                        <button class="btn btn-danger btn-sm" id="deletejenis" data-val="<?= $jitem->idjenis_pertanyaan?>"><i class="fa fa-trash"></i></button>
+                                        <button class="btn btn-danger btn-sm" id="deletepertanyaan" data-val="<?= $jitem->idpertanyaan?>"><i class="fa fa-trash"></i></button>
                                     </td>
                                 </tr>
                             <?php } ?>
@@ -92,7 +104,7 @@
                             <tr>
                                 <th>No</th>
                                 <th>Jenis Pertanyaan</th>
-                                <th>Detail</th>
+                                <th>Pertanyaan</th>
                                 <th>Aksi</th>
                             </tr>
                             </tfoot>
