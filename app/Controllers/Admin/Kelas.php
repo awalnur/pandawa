@@ -11,7 +11,37 @@ class Kelas extends AdminController
         echo view('admin/template/footer');
     }
     function tambahkls(){
+        echo view('admin/template/header');
+        echo view('admin/tambahkelas');
+        echo view('admin/template/footer');
+    }
+    function getDosen(){
+        if(!isset($_GET['searchTerm'])){
+            $json = [];
+        }else{
+            $search = $_GET['searchTerm'];
+            $dos=$this->db->table('dosen')->like('nama_dosen',$search)->get();
+            $json = [];
+            foreach($dos->getResultObject() as $d){
+                $json[] = ['id'=>$d->nid, 'text'=>$d->nama_dosen];
+            }
+        }
 
+        echo json_encode($json);
+    }
+    function getmhs(){
+        if(!isset($_GET['searchTerm'])){
+            $json = [];
+        }else{
+            $search = $_GET['searchTerm'];
+            $dos=$this->db->table('mhs')->like('nama_mhs',$search)->get();
+            $json = [];
+            foreach($dos->getResultObject() as $d){
+                $json[] = ['id'=>$d->nim, 'text'=>$d->nama_mhs, 'nim'=>$d->nim];
+            }
+        }
+
+        echo json_encode($json);
     }
 
 }

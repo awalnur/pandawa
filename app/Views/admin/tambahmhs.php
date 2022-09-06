@@ -8,7 +8,7 @@
         </h1>
         <ol class="breadcrumb">
             <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
-            <li><a href="#">Dosen</a></li>
+            <li><a href="#">Mahasiswa</a></li>
             <li class="active">Form Tambah Mahasiswa</li>
         </ol>
     </section>

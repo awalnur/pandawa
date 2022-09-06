@@ -214,7 +214,7 @@
 </script>
 <!-- Bootstrap 3.3.7 -->
 <script src="<?= base_url('assets/adminLTE')?>/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
-<!-- Morris.js charts -->
+<script src="<?= base_url('assets/adminLTE')?>/bower_components/select2/dist/js/select2.full.min.js"></script>
 
 <script src="<?= base_url('assets/adminLTE')?>/bower_components/datatables.net/js/jquery.dataTables.min.js"></script>
 <script src="<?= base_url('assets/adminLTE')?>/bower_components/datatables.net-bs/js/dataTables.bootstrap.min.js"></script>
@@ -247,7 +247,49 @@
 
 <script>
     $(function () {
-        $('#example1').DataTable()
+        $('.selectdosen').select2({
+            placeholder: 'Pilih Dosen',
+            ajax: {
+                url: '<?= base_url('admin/kelas/getdosen')?>',
+                dataType: 'json',
+                delay: 250,
+                data: function (data) {
+                    return {
+                        searchTerm: data.term // search term
+                    };
+                },
+                processResults: function (response) {
+                    return {
+                        results:response
+                    };
+                },
+                cache: true
+            }
+        });
+        $('.selectmhs').select2({
+            placeholder: 'Tambah Mahasiswa Ke Kelas',
+            ajax: {
+                url: '<?= base_url('admin/kelas/getmhs')?>',
+                dataType: 'json',
+                delay: 250,
+                data: function (data) {
+                    return {
+                        searchTerm: data.term // search term
+                    };
+                },
+                processResults: function (response) {
+                    console.log(response)
+                    return {
+                        results:response
+                    };
+                },
+                cache: true
+            }
+        });
+        $('#tmhs').click(function () {
+            alert($('.selectmhs').val());
+        })
+        $('#example1').DataTable();
         $('#example2').DataTable({
             'paging'      : true,
             'lengthChange': false,
@@ -255,7 +297,7 @@
             'ordering'    : true,
             'info'        : true,
             'autoWidth'   : false
-        })
+        });
         $("#jenispertanyaan").submit(function (s){
             s.preventDefault();
             $.ajax({
@@ -313,7 +355,7 @@
                 })
             }
         });
-        $("#pertanyaan").submit({
+        $("#pertanyaan").submit(function (s){
             s.preventDefault();
             $.ajax({
                 url: '<?= base_url('admin/pertanyaan/savepertanyaan')?>',

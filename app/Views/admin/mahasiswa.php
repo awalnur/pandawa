@@ -9,8 +9,8 @@
         </h1>
         <ol class="breadcrumb">
             <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
-            <li><a href="#">Dosen</a></li>
-            <li class="active">Data Dosen</li>
+            <li><a href="#">Mahasiswa</a></li>
+            <li class="active">Data Mahasiswa</li>
         </ol>
     </section>
 
@@ -36,7 +36,7 @@
                             <tr>
                                 <th>No</th>
                                 <th>NIM</th>
-                                <th>Nama Dosen</th>
+                                <th>Nama Mahasiswa</th>
                                 <th>prodi</th>
                                 <th>Angkatan</th>
                                 <th>Aksi</th>
@@ -63,7 +63,7 @@
                             <tr>
                                 <th>No</th>
                                 <th>NIM</th>
-                                <th>Nama Dosen</th>
+                                <th>Nama Mahasiswa</th>
                                 <th>prodi</th>
                                 <th>Angkatan</th>
                                 <th>Aksi</th>
