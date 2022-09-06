@@ -17,7 +17,6 @@ class Pertanyaan extends AdminController
             echo view('admin/template/header');
             echo view('admin/tambahjenispertanyaan');
             echo view('admin/template/footer');
-
         }
     }
     function jenis(){
@@ -32,7 +31,6 @@ class Pertanyaan extends AdminController
     }
     function savejenis(){
         $jenis=$this->request->getPost('jenis');
-//        echo $jenis;
         $data=['jenis'=>$jenis];
         $ins=$this->db->table('jenis_pertanyaan')->insert($data);
         $d['success']=1;
@@ -62,20 +60,18 @@ class Pertanyaan extends AdminController
     function pertanyaan($id=null){
         if (!empty($id)){
             $data['pertanyaan']=$this->db->table('pertanyaan')->join('jenis_pertanyaan', 'pertanyaan.idjenis_pertanyaan=jenis_pertanyaan.idjenis_pertanyaan')->where('pertanyaan.idjenis_pertanyaan', $id)->get()->getResultObject();
-
         }else{
             $data['pertanyaan']=$this->db->table('pertanyaan')->join('jenis_pertanyaan', 'pertanyaan.idjenis_pertanyaan=jenis_pertanyaan.idjenis_pertanyaan')->get()->getResultObject();
-
         }
         $data['jenis']=$this->db->table('jenis_pertanyaan')->get()->getResultObject();
         echo view('admin/template/header');
         echo view('admin/pertanyaan', $data);
         echo view('admin/template/footer');
     }
+
     function savepertanyaan(){
         $jenis=$this->request->getPost('jenis');
         $pertanyaan=$this->request->getPost('pertanyaan');
-//        echo $jenis;
         $data=['idjenis_pertanyaan'=>$jenis,
             'pertanyaan'=>$pertanyaan];
         $ins=$this->db->table('pertanyaan')->insert($data);

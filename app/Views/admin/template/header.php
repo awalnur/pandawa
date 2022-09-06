@@ -412,9 +412,15 @@
                         <li><a href="<?= base_url('admin/pertanyaan')?>"><i class="fa fa-circle-o"></i> Pertanyaan</a></li>
                     </ul>
                 </li>
+                <li class="header">KELAS</li>
+                <li class="">
+                    <a href="<?= base_url('admin/kelas')?>">
+                        <i class="fa fa-dashboard"></i> <span>KELAS</span>
+                    </a>
+                </li>
                 <li class="header">PENILAIAN</li>
                 <li class="">
-                    <a href="#">
+                    <a href="<?= base_url('admin/penilaian')?>">
                         <i class="fa fa-dashboard"></i> <span>Penilaian Dosen</span>
                     </a>
                 </li>
