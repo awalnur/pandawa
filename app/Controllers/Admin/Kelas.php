@@ -79,5 +79,7 @@ class Kelas extends AdminController
                 echo json_encode($output);
             }
 
-
+    function savekelas(){
+        var_dump($this->request->getPost());
+    }
 }

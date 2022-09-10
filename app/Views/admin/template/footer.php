@@ -443,7 +443,7 @@
                     "targets": 0,
                     "data": [0],
                     "render": function (data, type, row, meta) {
-                        return '<input type="checkbox" name="msh" value="'+data+'"/>';
+                        return '<input type="checkbox" name="msh[]" value="'+data+'"/>';
                     }
                 },
                 {

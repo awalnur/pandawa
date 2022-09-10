@@ -32,19 +32,21 @@
                                 <div class="alert alert-success">Data Berhasil Ditambahkan</div>
                             <?php } ?>
                             <div class="form-group">
-                                <label for="nid">Mata Kuliah</label>
-                                <input type="text" class="form-control" id="nim" name="nim" placeholder="NIM">
+                                <label for="mk">Mata Kuliah</label>
+                                <select class="form-control select2 smk" name="mkk" style="width: 100%;">
+
+                                </select>
                             </div>
                             <div class="form-group">
                                 <label for="nid">Nama Dosen</label>
-                                <select class="form-control select2 selectdosen" style="width: 100%;">
+                                <select class="form-control select2 selectdosen" name="dosen" style="width: 100%;">
 
                                 </select>
 
                             </div>
                             <div class="form-group">
                                 <label for="kelas">Kelas </label>
-                                <input type="text" class="form-control" id="kelas" name="kelas" placeholder="Angkatan">
+                                <input type="text" class="form-control" id="kelas" name="kelas" placeholder="Kelas">
                             </div>
                             <div class="form-group">
                                 <label for="nid">Tahun Akademik</label>
