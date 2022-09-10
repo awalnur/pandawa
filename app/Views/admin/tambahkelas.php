@@ -56,24 +56,38 @@
                             </div>
                             <hr>
                             <div class="form-group">
-                                <label for="smhs">Mahasiswa</label>
-                                <div class="input-group">
-                                    <select class="form-control select2 selectmhs ">
-
-                                    </select>
-                                        <butto type="button" class="btn btn-info input-group-addon" id="tmhs">Tambah Mahasiswa</butto>
-
-                                </div>
+                                 <div class="row">
+                                        <div class="col-md-6 sm-12">
+                                            <div class="form-group">
+                                                <label>Prodi</label>
+                                                <select name="pilprodi" id="pilprodi" class="form-control">
+                                                    <option value="1">Akuntansi</option>
+                                                    <option value="2">Manajemen</option>
+                                                    <option value="3">Perbankan Syariah</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                     <div class="col-md-6 sm-12">
+                                            <div class="form-group">
+                                                <label>Angkatan</label>
+                                                <select name="pilangkatan" id="pilangkatan" class="form-control">
+                                                    <option value="2018">2018</option>
+                                                    <option value="2019">2019</option>
+                                                    <option value="2020">2020</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
                             </div>
                             <div class="form-group">
-                                <table class="table table-bordered" id="tablekelasmhs">
+                                <table class="table table-bordered table-striped" id="tablekelasmhs">
                                     <thead>
                                     <tr>
                                         <td>No</td>
                                         <td>Nim</td>
                                         <td>Nama Mahasiswa</td>
                                         <td>Anggkatan</td>
-                                        <td>aksi</td>
+                                        <td>Prodi</td>
                                     </tr>
                                     </thead>
                                 </table>

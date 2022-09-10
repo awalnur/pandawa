@@ -433,7 +433,54 @@
                 })
             }
         });
+        var tmhs=$("#tablekelasmhs").dataTable({
+            searchable: false,
+            "ajax":{
+                "url": "<?= base_url('admin/kelas/getsmsh') ?>",
+                "type": "POST"
+            },
+            columnDefs: [{
+                    "targets": 0,
+                    "data": [0],
+                    "render": function (data, type, row, meta) {
+                        return '<input type="checkbox" name="msh" value="'+data+'"/>';
+                    }
+                },
+                {
+                    "targets": 1,
+                    "data": [0]
+                },
+                {
+                    "targets": 2,
+                    "data": [1]
+                },
+                {
+                    "targets": 3,
+                    "data": [2]
+                },
+                {
+                    "targets": 4,
+                    "data": [3]
+                }
 
+            ],
+            select: {
+                style:    'os',
+                selector: 'td:first-child'
+            },
+        })
+        $("#pilprodi").change(function () {
+            let url='<?= base_url("admin/kelas/getsmsh/")?>/'+$(this).val()+'/'+$("#pilangkatan").val()+'';
+            console.log(url)
+            tmhs.api().ajax.url(url).load();
+            // alert($(this).val())
+        });
+        $("#pilangkatan").change(function () {
+            let url='<?= base_url("admin/kelas/getsmsh/")?>/'+$("#pilprodi").val()+'/'+$(this).val()+'';
+            console.log(url)
+            tmhs.api().ajax.url(url).load();
+            // alert($(this).val())
+        })
     });
 </script>
 </body>

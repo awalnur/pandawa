@@ -94,4 +94,5 @@ class Mahasiswa extends AdminController
             }
             echo json_encode($ret);
     }
+
 }

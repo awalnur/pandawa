@@ -2,6 +2,9 @@
 
 namespace App\Controllers\Admin;
 
+use App\Models\MhsPrd;
+use Config\Services;
+
 class Kelas extends AdminController
 {
     function index(){
@@ -43,5 +46,38 @@ class Kelas extends AdminController
 
         echo json_encode($json);
     }
+    function getsmsh($prodi=null,$angkatan=null){
+                $ds=$this->db->table('mhsprodi');
+                if ($angkatan==null and $prodi==null) {
+                    $lists=$ds->get()->getResult();
+                }else{
+                    $lists=$ds->where('idprodi',$prodi)->where('angkatan',$angkatan)->get()->getResult();
+
+                }
+                if (sizeof($lists)==0){
+                    $data=[];
+                }else{
+
+                }
+
+                $no=0;
+                foreach ($lists as $list) {
+                    $no++;
+                    $row = [];
+                    $row[] = $list->nim;
+                    $row[] = $list->nama_mhs;
+                    $row[] = $list->angkatan;
+                    $row[] = $list->nama_prodi;
+                    $data[] = $row;
+                }
+
+                $output = [
+                    'recordsTotal' => sizeof($lists),
+                    'data' => $data
+                ];
+
+                echo json_encode($output);
+            }
+
 
 }
