@@ -335,7 +335,7 @@
                 })
             }
         });
-        $(document).on("click", "#deletepertanyaan", function (s) {
+       $(document).on("click", "#deletepertanyaan", function (s) {
             // alert("S");
             if(confirm("Hapus Jenis Akan Menghapus semua pertanyaan pada jenis ini?")){
                 $.ajax({
@@ -371,7 +371,68 @@
                     }
                 }
             });
-        })
+        });
+
+        $(document).on("click", "#deletemhs", function (s) {
+            // alert("S");
+            if(confirm("Hapus Mahasiswa ?")){
+                $.ajax({
+                    url: '<?= base_url('admin/mahasiswa/delete')?>',
+                    data:'id='+$(this).attr("data-val"),
+                    dataType: 'Json',
+                    type: 'post',
+                    success:function (e){
+                        if (e.success==1){
+                            alert('Jenis Berhasil Dihapus');
+                            window.location.reload();
+                        }else{
+                            alert('Jenis Gagal Dihapus');
+
+                        }
+                    }
+                })
+            }
+        });
+        $(document).on("click", "#deletemk", function (s) {
+            // alert("S");
+            if(confirm("Hapus Mata Kuliah ?")){
+                $.ajax({
+                    url: '<?= base_url('admin/matkul/delete')?>',
+                    data:'id='+$(this).attr("data-val"),
+                    dataType: 'Json',
+                    type: 'post',
+                    success:function (e){
+                        if (e.success==1){
+                            alert('Jenis Berhasil Dihapus');
+                            window.location.reload();
+                        }else{
+                            alert('Jenis Gagal Dihapus');
+
+                        }
+                    }
+                })
+            }
+        });
+        $(document).on("click", "#deletedosen", function (s) {
+            // alert("S");
+            if(confirm("Hapus Dosen ?")){
+                $.ajax({
+                    url: '<?= base_url('admin/dosen/delete')?>',
+                    data:'id='+$(this).attr("data-val"),
+                    dataType: 'Json',
+                    type: 'post',
+                    success:function (e){
+                        if (e.success==1){
+                            alert('Jenis Berhasil Dihapus');
+                            window.location.reload();
+                        }else{
+                            alert('Jenis Gagal Dihapus');
+
+                        }
+                    }
+                })
+            }
+        });
 
     });
 </script>

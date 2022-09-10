@@ -27,9 +27,60 @@
                     <div class="box-body">
                             <dvi class="btn-group">
                                 <button class="btn btn-primary" onclick="location.href='<?= base_url('admin/dosen/tambah')?>'"><i class="fa fa-plus-circle"></i> Tambah Dosen</button>
-                                <button class="btn btn-success"><i class="fa fa-print"></i> Cetak Data Dosen</button>
-<!--                                <butto class="btn btn-primary"><i class="fa fa-plus-circle"></i> Tambah Dosen</butto>-->
+                                <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#modal-importmhs">
+                                    <i class="fa fa-cloud-upload"></i> Import Data Dosen
+                                </button>
+                                <a href="<?= base_url('/template/template_dosen.xlsx')?>" download class="btn link-info"><i class="fa fa-download"> </i>Download Template import</a>
+                                <div class="modal fade" id="modal-importmhs">
+                                    <div class="modal-dialog modal-sm">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                    <span aria-hidden="true">&times;</span></button>
+                                                <h4 class="modal-title">Pilih File yang akan di import</h4>
+                                            </div>
+                                            <form action="<?= base_url('admin/dosen/importing')?>" id="importdosen" method="POST" enctype="multipart/form-data">
+
+                                                <div class="modal-body">
+                                                    <div class="form-group">
+                                                        <label for="jenis">
+                                                            Pilih File
+                                                        </label>
+                                                        <input type="file" placeholder="import" name="importDosen">
+                                                    </div>
+                                                </div>
+                                                <div class="modal-footer">
+                                                    <button type="button" class="btn btn-danger pull-left" data-dismiss="modal">Batal</button>
+                                                    <button type="submit" class="btn btn-primary">Import</button>
+                                                </div>
+                                            </form>
+                                        </div>
+                                        <!-- /.modal-content -->
+                                    </div>
+                                    <!-- /.modal-dialog -->
+                                </div>
+                                <!--                                <butto class="btn btn-primary"><i class="fa fa-plus-circle"></i> Tambah Dosen</butto>-->
                             </dvi>
+
+                        <br><br>
+                        <?php if (!empty(session('success'))){
+                            ?>
+                            <div class="alert alert-success alert-dismissible">
+                                <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+                                <?= session('success')?>
+                            </div>
+                            <?php
+                        }else if (!empty(session('gagalss'))){
+                            ?>
+                            <div class="alert alert-danger alert-dismissible">
+                                <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+                                <?= session('gagalss')?>
+                            </div>
+
+                            <?php
+                        } ?>
+
+                        </dvi>
                         <hr>
                         <table id="example1" class="table table-bordered table-striped">
                             <thead>
@@ -53,7 +104,7 @@
                                 </td>
                                 <td><?=$ditem->nama_dosen;?></td>
                                 <td><?= $ditem->gelar;?></td>
-                                <td width="150"><button class="btn bg-navy btn-sm"><i class="fa fa-eye"></i></button> <button class="btn bg-orange btn-sm"><i class="fa fa-edit"></i></button> <button class="btn btn-danger btn-sm"><i class="fa fa-trash"></i></button></td>
+                                <td width="150"><button class="btn bg-navy btn-sm"><i class="fa fa-eye"></i></button> <button class="btn bg-orange btn-sm"><i class="fa fa-edit"></i></button> <button class="btn btn-danger btn-sm"  id="deletedosen" data-val="<?= $ditem->nid?>"><i class="fa fa-trash"></i></button></td>
                             </tr>
                             <?php } ?>
                             </tbody>

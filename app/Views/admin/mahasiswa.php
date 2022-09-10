@@ -27,9 +27,60 @@
                     <div class="box-body">
                         <dvi class="btn-group">
                             <button class="btn btn-primary" onclick="location.href='<?= base_url('admin/mahasiswa/tambahmhs')?>'"><i class="fa fa-plus-circle"></i> Tambah Mahasiswa</button>
-                            <button class="btn btn-success"><i class="fa fa-print"></i> Cetak Data Mahasiswa</button>
+<!--                            <button class="btn btn-success"><i class="fa fa-print"></i> Cetak Data Mahasiswa</button>-->
+                            <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#modal-importmhs">
+                                <i class="fa fa-cloud-upload"></i> Import Data Mahasiswa
+                            </button>
+                            <a href="" class="btn link-info"><i class="fa fa-download"> </i>Download Template import</a>
+                            <div class="modal fade" id="modal-importmhs">
+                                <div class="modal-dialog modal-sm">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                <span aria-hidden="true">&times;</span></button>
+                                            <h4 class="modal-title">Pilih File yang akan di import</h4>
+                                        </div>
+                                        <form action="<?= base_url('admin/mahasiswa/importing')?>" id="importmhs" method="POST" enctype="multipart/form-data">
+
+                                            <div class="modal-body">
+                                                <div class="form-group">
+                                                    <label for="jenis">
+                                                        Pilih File
+                                                    </label>
+                                                    <input type="file" placeholder="import" name="importMhs">
+                                                </div>
+                                            </div>
+                                            <div class="modal-footer">
+                                                <button type="button" class="btn btn-danger pull-left" data-dismiss="modal">Batal</button>
+                                                <button type="submit" class="btn btn-primary">Import</button>
+                                            </div>
+                                        </form>
+                                    </div>
+                                    <!-- /.modal-content -->
+                                </div>
+                                <!-- /.modal-dialog -->
+                            </div>
                             <!--                                <butto class="btn btn-primary"><i class="fa fa-plus-circle"></i> Tambah Dosen</butto>-->
                         </dvi>
+
+                        <br><br>
+                        <?php if (!empty(session('success'))){
+                         ?>
+                            <div class="alert alert-success alert-dismissible">
+                                <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+                            <?= session('success')?>
+                            </div>
+                            <?php
+                        }else if (!empty(session('gagalss'))){
+                        ?>
+                            <div class="alert alert-warning alert-dismissible">
+                                <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+                                <?= session('gagal')?>
+                            </div>
+
+                            <?php
+                        } ?>
+
                         <hr>
                         <table id="example1" class="table table-bordered table-striped">
                             <thead>
@@ -55,7 +106,7 @@
                                     <td><?=$ditem->nama_mhs;?></td>
                                     <td><?= $ditem->nama_prodi;?></td>
                                     <td><?= $ditem->angkatan;?></td>
-                                    <td width="150"><button class="btn bg-navy btn-sm"><i class="fa fa-eye"></i></button> <button class="btn bg-orange btn-sm"><i class="fa fa-edit"></i></button> <button class="btn btn-danger btn-sm"><i class="fa fa-trash"></i></button></td>
+                                    <td width="150"><button class="btn bg-navy btn-sm"><i class="fa fa-eye"></i></button> <button class="btn bg-orange btn-sm"><i class="fa fa-edit"></i></button> <button class="btn btn-danger btn-sm" id="deletemhs" data-val="<?= $ditem->nim?>"><i class="fa fa-trash"></i></button></td>
                                 </tr>
                             <?php } ?>
                             </tbody>

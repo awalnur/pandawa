@@ -64,7 +64,9 @@ class Autoload extends AutoloadConfig
      *
      * @var array<string, string>
      */
-    public $classmap = [];
+    public $classmap = [
+        'PhpSpreadsheet' => APPPATH .'ThirdParty/PhpSpreadsheet/PhpSpreadsheet.php'
+    ];
 
     /**
      * -------------------------------------------------------------------
@@ -83,5 +85,6 @@ class Autoload extends AutoloadConfig
      *
      * @var array<int, string>
      */
+
     public $files = [];
 }
