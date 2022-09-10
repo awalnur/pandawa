@@ -66,7 +66,7 @@
                                 </div>
                             </div>
                             <div class="form-group">
-                                <table class="table table-bordered">
+                                <table class="table table-bordered" id="tablekelasmhs">
                                     <thead>
                                     <tr>
                                         <td>No</td>
