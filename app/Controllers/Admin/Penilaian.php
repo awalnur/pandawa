@@ -2,6 +2,8 @@
 
 namespace App\Controllers\Admin;
 
+use Mpdf\Mpdf;
+
 class Penilaian extends AdminController
 {
     function index(){
@@ -33,6 +35,29 @@ class Penilaian extends AdminController
             echo view('admin/detailpenilaian',$data);
             echo view('admin/template/footer');
         }
+
+    }
+    function report(){
+        $filename = "AppName_Day_gen_".date("Y-m-d_H-i").".pdf";
+
+// Send headers
+        header("Content-Type: application/pdf");
+        header("Pragma: public");
+        header("Expires: 0");
+        header("Cache-Control: must-revalidate, post-check=0, pre-check=0");
+        header("Content-Type: application/force-download");
+        header("Content-Type: application/octet-stream");
+        header("Content-Type: application/download");
+        header('Content-Disposition: attachment; filename="'.$filename.'"');
+        header("Content-Transfer-Encoding: binary ");
+
+//        header("Content-type:application/pdf");
+        $mpdf = new Mpdf();
+//        $mpdf->Image('/assets/img/logounsiq.jpg', 0, 0, 210, 297, 'jpg', '', true, false);
+
+        $mpdf->WriteHTML('<h1>Hello world!</h1>');
+        $mpdf->Output();
+        exit;
 
     }
 }
