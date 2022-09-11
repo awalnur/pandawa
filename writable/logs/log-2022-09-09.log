@@ -1,0 +1,615 @@
+CRITICAL - 2022-09-09 13:02:11 --> Array and string offset access syntax with curly braces is no longer supported
+in APPPATH/ThirdParty/PHPExcel/PHPExcel/Shared/String.php on line 526.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+CRITICAL - 2022-09-09 13:04:44 --> Array and string offset access syntax with curly braces is no longer supported
+in APPPATH/ThirdParty/PHPExcel/PHPExcel/Shared/String.php on line 538.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+CRITICAL - 2022-09-09 13:05:18 --> Array and string offset access syntax with curly braces is no longer supported
+in APPPATH/ThirdParty/PHPExcel/PHPExcel/Calculation.php on line 2551.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+CRITICAL - 2022-09-09 13:05:50 --> Array and string offset access syntax with curly braces is no longer supported
+in APPPATH/ThirdParty/PHPExcel/PHPExcel/Calculation.php on line 2672.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+CRITICAL - 2022-09-09 13:06:05 --> Array and string offset access syntax with curly braces is no longer supported
+in APPPATH/ThirdParty/PHPExcel/PHPExcel/Calculation.php on line 2780.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+CRITICAL - 2022-09-09 13:06:25 --> Array and string offset access syntax with curly braces is no longer supported
+in APPPATH/ThirdParty/PHPExcel/PHPExcel/Calculation.php on line 3166.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+CRITICAL - 2022-09-09 13:06:46 --> Array and string offset access syntax with curly braces is no longer supported
+in APPPATH/ThirdParty/PHPExcel/PHPExcel/Calculation.php on line 3168.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+CRITICAL - 2022-09-09 13:07:09 --> Array and string offset access syntax with curly braces is no longer supported
+in APPPATH/ThirdParty/PHPExcel/PHPExcel/Calculation.php on line 3169.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+CRITICAL - 2022-09-09 13:07:24 --> Array and string offset access syntax with curly braces is no longer supported
+in APPPATH/ThirdParty/PHPExcel/PHPExcel/Calculation.php on line 3891.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+CRITICAL - 2022-09-09 13:07:44 --> Array and string offset access syntax with curly braces is no longer supported
+in APPPATH/ThirdParty/PHPExcel/PHPExcel/Calculation.php on line 3936.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+CRITICAL - 2022-09-09 13:07:59 --> Array and string offset access syntax with curly braces is no longer supported
+in APPPATH/ThirdParty/PHPExcel/PHPExcel/Calculation.php on line 3998.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+CRITICAL - 2022-09-09 13:08:17 --> Array and string offset access syntax with curly braces is no longer supported
+in APPPATH/ThirdParty/PHPExcel/PHPExcel/Worksheet/AutoFilter.php on line 720.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+CRITICAL - 2022-09-09 13:18:16 --> Class "App\Controllers\Admin\PHPExcel" not found
+in APPPATH/Controllers/Admin/Mahasiswa.php on line 27.
+ 1 SYSTEMPATH/CodeIgniter.php(896): App\Controllers\Admin\Mahasiswa->importing()
+ 2 SYSTEMPATH/CodeIgniter.php(466): CodeIgniter\CodeIgniter->runController()
+ 3 SYSTEMPATH/CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest()
+ 4 FCPATH/index.php(55): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH/Commands/Server/rewrite.php(43): require_once('FCPATH/index.php')
+CRITICAL - 2022-09-09 13:20:35 --> Class "App\Controllers\Admin\PHPExcel" not found
+in APPPATH/Controllers/Admin/Mahasiswa.php on line 27.
+ 1 SYSTEMPATH/CodeIgniter.php(896): App\Controllers\Admin\Mahasiswa->importing()
+ 2 SYSTEMPATH/CodeIgniter.php(466): CodeIgniter\CodeIgniter->runController()
+ 3 SYSTEMPATH/CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest()
+ 4 FCPATH/index.php(55): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH/Commands/Server/rewrite.php(43): require_once('FCPATH/index.php')
+CRITICAL - 2022-09-09 13:20:49 --> Class "PhpOffice\PhpSpreadsheet\Reader\Xlsx" not found
+in APPPATH/Controllers/Admin/Mahasiswa.php on line 30.
+ 1 SYSTEMPATH/CodeIgniter.php(896): App\Controllers\Admin\Mahasiswa->importing()
+ 2 SYSTEMPATH/CodeIgniter.php(466): CodeIgniter\CodeIgniter->runController()
+ 3 SYSTEMPATH/CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest()
+ 4 FCPATH/index.php(55): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH/Commands/Server/rewrite.php(43): require_once('FCPATH/index.php')
+CRITICAL - 2022-09-09 13:21:34 --> Class "PhpOffice\PhpSpreadsheet\Writer\Xls" not found
+in APPPATH/Controllers/Admin/Mahasiswa.php on line 30.
+ 1 SYSTEMPATH/CodeIgniter.php(896): App\Controllers\Admin\Mahasiswa->importing()
+ 2 SYSTEMPATH/CodeIgniter.php(466): CodeIgniter\CodeIgniter->runController()
+ 3 SYSTEMPATH/CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest()
+ 4 FCPATH/index.php(55): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH/Commands/Server/rewrite.php(43): require_once('FCPATH/index.php')
+CRITICAL - 2022-09-09 13:21:54 --> Class "PhpOffice\PhpSpreadsheet\Writer\Xls" not found
+in APPPATH/Controllers/Admin/Mahasiswa.php on line 30.
+ 1 SYSTEMPATH/CodeIgniter.php(896): App\Controllers\Admin\Mahasiswa->importing()
+ 2 SYSTEMPATH/CodeIgniter.php(466): CodeIgniter\CodeIgniter->runController()
+ 3 SYSTEMPATH/CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest()
+ 4 FCPATH/index.php(55): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH/Commands/Server/rewrite.php(43): require_once('FCPATH/index.php')
+CRITICAL - 2022-09-09 13:22:18 --> Class "PhpOffice\PhpSpreadsheet\Writer\Xls" not found
+in APPPATH/Controllers/Admin/Mahasiswa.php on line 31.
+ 1 SYSTEMPATH/CodeIgniter.php(896): App\Controllers\Admin\Mahasiswa->importing()
+ 2 SYSTEMPATH/CodeIgniter.php(466): CodeIgniter\CodeIgniter->runController()
+ 3 SYSTEMPATH/CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest()
+ 4 FCPATH/index.php(55): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH/Commands/Server/rewrite.php(43): require_once('FCPATH/index.php')
+CRITICAL - 2022-09-09 13:22:28 --> Class "PhpOffice\PhpSpreadsheet\Writer\Xls" not found
+in APPPATH/Controllers/Admin/Mahasiswa.php on line 31.
+ 1 SYSTEMPATH/CodeIgniter.php(896): App\Controllers\Admin\Mahasiswa->importing()
+ 2 SYSTEMPATH/CodeIgniter.php(466): CodeIgniter\CodeIgniter->runController()
+ 3 SYSTEMPATH/CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest()
+ 4 FCPATH/index.php(55): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH/Commands/Server/rewrite.php(43): require_once('FCPATH/index.php')
+CRITICAL - 2022-09-09 13:22:45 --> Class "PhpOffice\PhpSpreadsheet\Writer\Xls" not found
+in APPPATH/Controllers/Admin/Mahasiswa.php on line 31.
+ 1 SYSTEMPATH/CodeIgniter.php(896): App\Controllers\Admin\Mahasiswa->importing()
+ 2 SYSTEMPATH/CodeIgniter.php(466): CodeIgniter\CodeIgniter->runController()
+ 3 SYSTEMPATH/CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest()
+ 4 FCPATH/index.php(55): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH/Commands/Server/rewrite.php(43): require_once('FCPATH/index.php')
+CRITICAL - 2022-09-09 13:23:13 --> Class "PhpOffice\PhpSpreadsheet\Reader\Xlsx" not found
+in APPPATH/Controllers/Admin/Mahasiswa.php on line 31.
+ 1 SYSTEMPATH/CodeIgniter.php(896): App\Controllers\Admin\Mahasiswa->importing()
+ 2 SYSTEMPATH/CodeIgniter.php(466): CodeIgniter\CodeIgniter->runController()
+ 3 SYSTEMPATH/CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest()
+ 4 FCPATH/index.php(55): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH/Commands/Server/rewrite.php(43): require_once('FCPATH/index.php')
+CRITICAL - 2022-09-09 13:23:50 --> Class "PhpOffice\PhpSpreadsheet\Reader\Xlsx" not found
+in APPPATH/Controllers/Admin/Mahasiswa.php on line 31.
+ 1 SYSTEMPATH/CodeIgniter.php(896): App\Controllers\Admin\Mahasiswa->importing()
+ 2 SYSTEMPATH/CodeIgniter.php(466): CodeIgniter\CodeIgniter->runController()
+ 3 SYSTEMPATH/CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest()
+ 4 FCPATH/index.php(55): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH/Commands/Server/rewrite.php(43): require_once('FCPATH/index.php')
+CRITICAL - 2022-09-09 13:24:45 --> Class "PhpOffice\PhpSpreadsheet\Reader\Xls" not found
+in APPPATH/Controllers/Admin/Mahasiswa.php on line 32.
+ 1 SYSTEMPATH/CodeIgniter.php(896): App\Controllers\Admin\Mahasiswa->importing()
+ 2 SYSTEMPATH/CodeIgniter.php(466): CodeIgniter\CodeIgniter->runController()
+ 3 SYSTEMPATH/CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest()
+ 4 FCPATH/index.php(55): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH/Commands/Server/rewrite.php(43): require_once('FCPATH/index.php')
+CRITICAL - 2022-09-09 13:26:27 --> Class "PhpOffice\PhpSpreadsheet\Spreadsheet" not found
+in APPPATH/Controllers/Admin/Mahasiswa.php on line 31.
+ 1 SYSTEMPATH/CodeIgniter.php(896): App\Controllers\Admin\Mahasiswa->importing()
+ 2 SYSTEMPATH/CodeIgniter.php(466): CodeIgniter\CodeIgniter->runController()
+ 3 SYSTEMPATH/CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest()
+ 4 FCPATH/index.php(55): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH/Commands/Server/rewrite.php(43): require_once('FCPATH/index.php')
+CRITICAL - 2022-09-09 13:26:48 --> Class "PhpOffice\PhpSpreadsheet\Spreadsheet" not found
+in APPPATH/Controllers/Admin/Mahasiswa.php on line 31.
+ 1 SYSTEMPATH/CodeIgniter.php(896): App\Controllers\Admin\Mahasiswa->importing()
+ 2 SYSTEMPATH/CodeIgniter.php(466): CodeIgniter\CodeIgniter->runController()
+ 3 SYSTEMPATH/CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest()
+ 4 FCPATH/index.php(55): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH/Commands/Server/rewrite.php(43): require_once('FCPATH/index.php')
+CRITICAL - 2022-09-09 13:26:49 --> Class "PhpOffice\PhpSpreadsheet\Spreadsheet" not found
+in APPPATH/Controllers/Admin/Mahasiswa.php on line 31.
+ 1 SYSTEMPATH/CodeIgniter.php(896): App\Controllers\Admin\Mahasiswa->importing()
+ 2 SYSTEMPATH/CodeIgniter.php(466): CodeIgniter\CodeIgniter->runController()
+ 3 SYSTEMPATH/CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest()
+ 4 FCPATH/index.php(55): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH/Commands/Server/rewrite.php(43): require_once('FCPATH/index.php')
+CRITICAL - 2022-09-09 13:31:11 --> Call to undefined method PhpOffice\PhpSpreadsheet\Spreadsheet::load()
+in APPPATH/Controllers/Admin/Mahasiswa.php on line 32.
+ 1 SYSTEMPATH/CodeIgniter.php(896): App\Controllers\Admin\Mahasiswa->importing()
+ 2 SYSTEMPATH/CodeIgniter.php(466): CodeIgniter\CodeIgniter->runController()
+ 3 SYSTEMPATH/CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest()
+ 4 FCPATH/index.php(55): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH/Commands/Server/rewrite.php(43): require_once('FCPATH/index.php')
+CRITICAL - 2022-09-09 13:32:06 --> Too few arguments to function PhpOffice\PhpSpreadsheet\Writer\Xlsx::__construct(), 0 passed in /var/www/html/pandawa/app/Controllers/Admin/Mahasiswa.php on line 31 and exactly 1 expected
+in VENDORPATH/phpoffice/phpspreadsheet/src/PhpSpreadsheet/Writer/Xlsx.php on line 189.
+ 1 APPPATH/Controllers/Admin/Mahasiswa.php(31): PhpOffice\PhpSpreadsheet\Writer\Xlsx->__construct()
+ 2 SYSTEMPATH/CodeIgniter.php(896): App\Controllers\Admin\Mahasiswa->importing()
+ 3 SYSTEMPATH/CodeIgniter.php(466): CodeIgniter\CodeIgniter->runController()
+ 4 SYSTEMPATH/CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest()
+ 5 FCPATH/index.php(55): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH/Commands/Server/rewrite.php(43): require_once('FCPATH/index.php')
+CRITICAL - 2022-09-09 13:33:33 --> The filename /tmp/phpgTTM8x is not recognised as an OLE file
+in VENDORPATH/phpoffice/phpspreadsheet/src/PhpSpreadsheet/Shared/OLERead.php on line 107.
+ 1 VENDORPATH/phpoffice/phpspreadsheet/src/PhpSpreadsheet/Reader/Xls.php(1383): PhpOffice\PhpSpreadsheet\Shared\OLERead->read()
+ 2 VENDORPATH/phpoffice/phpspreadsheet/src/PhpSpreadsheet/Reader/Xls.php(633): PhpOffice\PhpSpreadsheet\Reader\Xls->loadOLE()
+ 3 VENDORPATH/phpoffice/phpspreadsheet/src/PhpSpreadsheet/Reader/BaseReader.php(166): PhpOffice\PhpSpreadsheet\Reader\Xls->loadSpreadsheetFromFile()
+ 4 APPPATH/Controllers/Admin/Mahasiswa.php(33): PhpOffice\PhpSpreadsheet\Reader\BaseReader->load()
+ 5 SYSTEMPATH/CodeIgniter.php(896): App\Controllers\Admin\Mahasiswa->importing()
+ 6 SYSTEMPATH/CodeIgniter.php(466): CodeIgniter\CodeIgniter->runController()
+ 7 SYSTEMPATH/CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest()
+ 8 FCPATH/index.php(55): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH/Commands/Server/rewrite.php(43): require_once('FCPATH/index.php')
+CRITICAL - 2022-09-09 13:33:45 --> The filename /tmp/phpMUIylR is not recognised as an OLE file
+in VENDORPATH/phpoffice/phpspreadsheet/src/PhpSpreadsheet/Shared/OLERead.php on line 107.
+ 1 VENDORPATH/phpoffice/phpspreadsheet/src/PhpSpreadsheet/Reader/Xls.php(1383): PhpOffice\PhpSpreadsheet\Shared\OLERead->read()
+ 2 VENDORPATH/phpoffice/phpspreadsheet/src/PhpSpreadsheet/Reader/Xls.php(633): PhpOffice\PhpSpreadsheet\Reader\Xls->loadOLE()
+ 3 VENDORPATH/phpoffice/phpspreadsheet/src/PhpSpreadsheet/Reader/BaseReader.php(166): PhpOffice\PhpSpreadsheet\Reader\Xls->loadSpreadsheetFromFile()
+ 4 APPPATH/Controllers/Admin/Mahasiswa.php(33): PhpOffice\PhpSpreadsheet\Reader\BaseReader->load()
+ 5 SYSTEMPATH/CodeIgniter.php(896): App\Controllers\Admin\Mahasiswa->importing()
+ 6 SYSTEMPATH/CodeIgniter.php(466): CodeIgniter\CodeIgniter->runController()
+ 7 SYSTEMPATH/CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest()
+ 8 FCPATH/index.php(55): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH/Commands/Server/rewrite.php(43): require_once('FCPATH/index.php')
+CRITICAL - 2022-09-09 13:35:01 --> Undefined array key "B"
+in APPPATH/Controllers/Admin/Mahasiswa.php on line 42.
+ 1 APPPATH/Controllers/Admin/Mahasiswa.php(42): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/CodeIgniter.php(896): App\Controllers\Admin\Mahasiswa->importing()
+ 3 SYSTEMPATH/CodeIgniter.php(466): CodeIgniter\CodeIgniter->runController()
+ 4 SYSTEMPATH/CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest()
+ 5 FCPATH/index.php(55): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH/Commands/Server/rewrite.php(43): require_once('FCPATH/index.php')
+ERROR - 2022-09-09 13:35:29 --> Duplicate entry 'NIM ' for key 'mhs.PRIMARY'
+CRITICAL - 2022-09-09 13:35:29 --> Duplicate entry 'NIM ' for key 'mhs.PRIMARY'
+in SYSTEMPATH/Database/MySQLi/Connection.php on line 292.
+ 1 SYSTEMPATH/Database/MySQLi/Connection.php(292): mysqli->query()
+ 2 SYSTEMPATH/Database/BaseConnection.php(695): CodeIgniter\Database\MySQLi\Connection->execute()
+ 3 SYSTEMPATH/Database/BaseConnection.php(609): CodeIgniter\Database\BaseConnection->simpleQuery()
+ 4 SYSTEMPATH/Database/BaseBuilder.php(1904): CodeIgniter\Database\BaseConnection->query()
+ 5 SYSTEMPATH/Model.php(278): CodeIgniter\Database\BaseBuilder->insert()
+ 6 SYSTEMPATH/BaseModel.php(738): CodeIgniter\Model->doInsert()
+ 7 SYSTEMPATH/Model.php(666): CodeIgniter\BaseModel->insert()
+ 8 APPPATH/Controllers/Admin/Mahasiswa.php(51): CodeIgniter\Model->insert()
+ 9 SYSTEMPATH/CodeIgniter.php(896): App\Controllers\Admin\Mahasiswa->importing()
+10 SYSTEMPATH/CodeIgniter.php(466): CodeIgniter\CodeIgniter->runController()
+11 SYSTEMPATH/CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest()
+12 FCPATH/index.php(55): CodeIgniter\CodeIgniter->run()
+13 SYSTEMPATH/Commands/Server/rewrite.php(43): require_once('FCPATH/index.php')
+CRITICAL - 2022-09-09 13:40:23 --> Undefined variable $resp
+in APPPATH/Controllers/Admin/Mahasiswa.php on line 60.
+ 1 APPPATH/Controllers/Admin/Mahasiswa.php(60): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/CodeIgniter.php(896): App\Controllers\Admin\Mahasiswa->importing()
+ 3 SYSTEMPATH/CodeIgniter.php(466): CodeIgniter\CodeIgniter->runController()
+ 4 SYSTEMPATH/CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest()
+ 5 FCPATH/index.php(55): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH/Commands/Server/rewrite.php(43): require_once('FCPATH/index.php')
+ERROR - 2022-09-09 13:40:37 --> Duplicate entry '201915001' for key 'mhs.PRIMARY'
+CRITICAL - 2022-09-09 13:40:37 --> Duplicate entry '201915001' for key 'mhs.PRIMARY'
+in SYSTEMPATH/Database/MySQLi/Connection.php on line 292.
+ 1 SYSTEMPATH/Database/MySQLi/Connection.php(292): mysqli->query()
+ 2 SYSTEMPATH/Database/BaseConnection.php(695): CodeIgniter\Database\MySQLi\Connection->execute()
+ 3 SYSTEMPATH/Database/BaseConnection.php(609): CodeIgniter\Database\BaseConnection->simpleQuery()
+ 4 SYSTEMPATH/Database/BaseBuilder.php(1904): CodeIgniter\Database\BaseConnection->query()
+ 5 SYSTEMPATH/Model.php(278): CodeIgniter\Database\BaseBuilder->insert()
+ 6 SYSTEMPATH/BaseModel.php(738): CodeIgniter\Model->doInsert()
+ 7 SYSTEMPATH/Model.php(666): CodeIgniter\BaseModel->insert()
+ 8 APPPATH/Controllers/Admin/Mahasiswa.php(53): CodeIgniter\Model->insert()
+ 9 SYSTEMPATH/CodeIgniter.php(896): App\Controllers\Admin\Mahasiswa->importing()
+10 SYSTEMPATH/CodeIgniter.php(466): CodeIgniter\CodeIgniter->runController()
+11 SYSTEMPATH/CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest()
+12 FCPATH/index.php(55): CodeIgniter\CodeIgniter->run()
+13 SYSTEMPATH/Commands/Server/rewrite.php(43): require_once('FCPATH/index.php')
+ERROR - 2022-09-09 13:40:56 --> Duplicate entry '201915001' for key 'mhs.PRIMARY'
+ERROR - 2022-09-09 13:40:56 --> Duplicate entry '201915002' for key 'mhs.PRIMARY'
+ERROR - 2022-09-09 13:40:56 --> Duplicate entry '201915003' for key 'mhs.PRIMARY'
+ERROR - 2022-09-09 13:40:56 --> Duplicate entry '201915004' for key 'mhs.PRIMARY'
+ERROR - 2022-09-09 13:40:56 --> Duplicate entry '201915005' for key 'mhs.PRIMARY'
+ERROR - 2022-09-09 13:40:56 --> Duplicate entry '201915006' for key 'mhs.PRIMARY'
+ERROR - 2022-09-09 13:40:56 --> Duplicate entry '201915007' for key 'mhs.PRIMARY'
+ERROR - 2022-09-09 13:40:56 --> Duplicate entry '201915008' for key 'mhs.PRIMARY'
+ERROR - 2022-09-09 13:40:56 --> Duplicate entry '201915009' for key 'mhs.PRIMARY'
+ERROR - 2022-09-09 13:40:57 --> Duplicate entry '201915010' for key 'mhs.PRIMARY'
+ERROR - 2022-09-09 13:40:57 --> Duplicate entry '201915011' for key 'mhs.PRIMARY'
+ERROR - 2022-09-09 13:40:57 --> Duplicate entry '201915012' for key 'mhs.PRIMARY'
+ERROR - 2022-09-09 13:40:57 --> Duplicate entry '201915013' for key 'mhs.PRIMARY'
+ERROR - 2022-09-09 13:40:57 --> Duplicate entry '201915014' for key 'mhs.PRIMARY'
+ERROR - 2022-09-09 13:44:52 --> Cannot add or update a child row: a foreign key constraint fails (`pandawa`.`mhs`, CONSTRAINT `mhs_ibfk_1` FOREIGN KEY (`idprodi`) REFERENCES `prodi` (`idprodi`))
+CRITICAL - 2022-09-09 13:44:52 --> Cannot add or update a child row: a foreign key constraint fails (`pandawa`.`mhs`, CONSTRAINT `mhs_ibfk_1` FOREIGN KEY (`idprodi`) REFERENCES `prodi` (`idprodi`))
+in SYSTEMPATH/Database/MySQLi/Connection.php on line 292.
+ 1 SYSTEMPATH/Database/MySQLi/Connection.php(292): mysqli->query()
+ 2 SYSTEMPATH/Database/BaseConnection.php(695): CodeIgniter\Database\MySQLi\Connection->execute()
+ 3 SYSTEMPATH/Database/BaseConnection.php(609): CodeIgniter\Database\BaseConnection->simpleQuery()
+ 4 SYSTEMPATH/Database/BaseBuilder.php(1904): CodeIgniter\Database\BaseConnection->query()
+ 5 SYSTEMPATH/Model.php(278): CodeIgniter\Database\BaseBuilder->insert()
+ 6 SYSTEMPATH/BaseModel.php(738): CodeIgniter\Model->doInsert()
+ 7 SYSTEMPATH/Model.php(666): CodeIgniter\BaseModel->insert()
+ 8 APPPATH/Controllers/Admin/Mahasiswa.php(54): CodeIgniter\Model->insert()
+ 9 SYSTEMPATH/CodeIgniter.php(896): App\Controllers\Admin\Mahasiswa->importing()
+10 SYSTEMPATH/CodeIgniter.php(466): CodeIgniter\CodeIgniter->runController()
+11 SYSTEMPATH/CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest()
+12 FCPATH/index.php(55): CodeIgniter\CodeIgniter->run()
+13 SYSTEMPATH/Commands/Server/rewrite.php(43): require_once('FCPATH/index.php')
+ERROR - 2022-09-09 13:47:22 --> Cannot add or update a child row: a foreign key constraint fails (`pandawa`.`mhs`, CONSTRAINT `mhs_ibfk_1` FOREIGN KEY (`idprodi`) REFERENCES `prodi` (`idprodi`))
+CRITICAL - 2022-09-09 13:47:22 --> Cannot add or update a child row: a foreign key constraint fails (`pandawa`.`mhs`, CONSTRAINT `mhs_ibfk_1` FOREIGN KEY (`idprodi`) REFERENCES `prodi` (`idprodi`))
+in SYSTEMPATH/Database/MySQLi/Connection.php on line 292.
+ 1 SYSTEMPATH/Database/MySQLi/Connection.php(292): mysqli->query()
+ 2 SYSTEMPATH/Database/BaseConnection.php(695): CodeIgniter\Database\MySQLi\Connection->execute()
+ 3 SYSTEMPATH/Database/BaseConnection.php(609): CodeIgniter\Database\BaseConnection->simpleQuery()
+ 4 SYSTEMPATH/Database/BaseBuilder.php(1904): CodeIgniter\Database\BaseConnection->query()
+ 5 SYSTEMPATH/Model.php(278): CodeIgniter\Database\BaseBuilder->insert()
+ 6 SYSTEMPATH/BaseModel.php(738): CodeIgniter\Model->doInsert()
+ 7 SYSTEMPATH/Model.php(666): CodeIgniter\BaseModel->insert()
+ 8 APPPATH/Controllers/Admin/Mahasiswa.php(54): CodeIgniter\Model->insert()
+ 9 SYSTEMPATH/CodeIgniter.php(896): App\Controllers\Admin\Mahasiswa->importing()
+10 SYSTEMPATH/CodeIgniter.php(466): CodeIgniter\CodeIgniter->runController()
+11 SYSTEMPATH/CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest()
+12 FCPATH/index.php(55): CodeIgniter\CodeIgniter->run()
+13 SYSTEMPATH/Commands/Server/rewrite.php(43): require_once('FCPATH/index.php')
+ERROR - 2022-09-09 13:48:21 --> Cannot add or update a child row: a foreign key constraint fails (`pandawa`.`mhs`, CONSTRAINT `mhs_ibfk_1` FOREIGN KEY (`idprodi`) REFERENCES `prodi` (`idprodi`))
+CRITICAL - 2022-09-09 13:48:21 --> Cannot add or update a child row: a foreign key constraint fails (`pandawa`.`mhs`, CONSTRAINT `mhs_ibfk_1` FOREIGN KEY (`idprodi`) REFERENCES `prodi` (`idprodi`))
+in SYSTEMPATH/Database/MySQLi/Connection.php on line 292.
+ 1 SYSTEMPATH/Database/MySQLi/Connection.php(292): mysqli->query()
+ 2 SYSTEMPATH/Database/BaseConnection.php(695): CodeIgniter\Database\MySQLi\Connection->execute()
+ 3 SYSTEMPATH/Database/BaseConnection.php(609): CodeIgniter\Database\BaseConnection->simpleQuery()
+ 4 SYSTEMPATH/Database/BaseBuilder.php(1904): CodeIgniter\Database\BaseConnection->query()
+ 5 SYSTEMPATH/Model.php(278): CodeIgniter\Database\BaseBuilder->insert()
+ 6 SYSTEMPATH/BaseModel.php(738): CodeIgniter\Model->doInsert()
+ 7 SYSTEMPATH/Model.php(666): CodeIgniter\BaseModel->insert()
+ 8 APPPATH/Controllers/Admin/Mahasiswa.php(54): CodeIgniter\Model->insert()
+ 9 SYSTEMPATH/CodeIgniter.php(896): App\Controllers\Admin\Mahasiswa->importing()
+10 SYSTEMPATH/CodeIgniter.php(466): CodeIgniter\CodeIgniter->runController()
+11 SYSTEMPATH/CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest()
+12 FCPATH/index.php(55): CodeIgniter\CodeIgniter->run()
+13 SYSTEMPATH/Commands/Server/rewrite.php(43): require_once('FCPATH/index.php')
+CRITICAL - 2022-09-09 13:49:13 --> Undefined constant "App\Controllers\Admin\data"
+in APPPATH/Controllers/Admin/Mahasiswa.php on line 42.
+ 1 SYSTEMPATH/CodeIgniter.php(896): App\Controllers\Admin\Mahasiswa->importing()
+ 2 SYSTEMPATH/CodeIgniter.php(466): CodeIgniter\CodeIgniter->runController()
+ 3 SYSTEMPATH/CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest()
+ 4 FCPATH/index.php(55): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH/Commands/Server/rewrite.php(43): require_once('FCPATH/index.php')
+ERROR - 2022-09-09 13:49:27 --> Cannot add or update a child row: a foreign key constraint fails (`pandawa`.`mhs`, CONSTRAINT `mhs_ibfk_1` FOREIGN KEY (`idprodi`) REFERENCES `prodi` (`idprodi`))
+CRITICAL - 2022-09-09 13:49:27 --> Cannot add or update a child row: a foreign key constraint fails (`pandawa`.`mhs`, CONSTRAINT `mhs_ibfk_1` FOREIGN KEY (`idprodi`) REFERENCES `prodi` (`idprodi`))
+in SYSTEMPATH/Database/MySQLi/Connection.php on line 292.
+ 1 SYSTEMPATH/Database/MySQLi/Connection.php(292): mysqli->query()
+ 2 SYSTEMPATH/Database/BaseConnection.php(695): CodeIgniter\Database\MySQLi\Connection->execute()
+ 3 SYSTEMPATH/Database/BaseConnection.php(609): CodeIgniter\Database\BaseConnection->simpleQuery()
+ 4 SYSTEMPATH/Database/BaseBuilder.php(1904): CodeIgniter\Database\BaseConnection->query()
+ 5 SYSTEMPATH/Model.php(278): CodeIgniter\Database\BaseBuilder->insert()
+ 6 SYSTEMPATH/BaseModel.php(738): CodeIgniter\Model->doInsert()
+ 7 SYSTEMPATH/Model.php(666): CodeIgniter\BaseModel->insert()
+ 8 APPPATH/Controllers/Admin/Mahasiswa.php(54): CodeIgniter\Model->insert()
+ 9 SYSTEMPATH/CodeIgniter.php(896): App\Controllers\Admin\Mahasiswa->importing()
+10 SYSTEMPATH/CodeIgniter.php(466): CodeIgniter\CodeIgniter->runController()
+11 SYSTEMPATH/CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest()
+12 FCPATH/index.php(55): CodeIgniter\CodeIgniter->run()
+13 SYSTEMPATH/Commands/Server/rewrite.php(43): require_once('FCPATH/index.php')
+CRITICAL - 2022-09-09 13:50:52 --> Undefined variable $prodi
+in APPPATH/Controllers/Admin/Mahasiswa.php on line 42.
+ 1 APPPATH/Controllers/Admin/Mahasiswa.php(42): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/CodeIgniter.php(896): App\Controllers\Admin\Mahasiswa->importing()
+ 3 SYSTEMPATH/CodeIgniter.php(466): CodeIgniter\CodeIgniter->runController()
+ 4 SYSTEMPATH/CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest()
+ 5 FCPATH/index.php(55): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH/Commands/Server/rewrite.php(43): require_once('FCPATH/index.php')
+ERROR - 2022-09-09 13:51:02 --> Cannot add or update a child row: a foreign key constraint fails (`pandawa`.`mhs`, CONSTRAINT `mhs_ibfk_1` FOREIGN KEY (`idprodi`) REFERENCES `prodi` (`idprodi`))
+CRITICAL - 2022-09-09 13:51:02 --> Cannot add or update a child row: a foreign key constraint fails (`pandawa`.`mhs`, CONSTRAINT `mhs_ibfk_1` FOREIGN KEY (`idprodi`) REFERENCES `prodi` (`idprodi`))
+in SYSTEMPATH/Database/MySQLi/Connection.php on line 292.
+ 1 SYSTEMPATH/Database/MySQLi/Connection.php(292): mysqli->query()
+ 2 SYSTEMPATH/Database/BaseConnection.php(695): CodeIgniter\Database\MySQLi\Connection->execute()
+ 3 SYSTEMPATH/Database/BaseConnection.php(609): CodeIgniter\Database\BaseConnection->simpleQuery()
+ 4 SYSTEMPATH/Database/BaseBuilder.php(1904): CodeIgniter\Database\BaseConnection->query()
+ 5 SYSTEMPATH/Model.php(278): CodeIgniter\Database\BaseBuilder->insert()
+ 6 SYSTEMPATH/BaseModel.php(738): CodeIgniter\Model->doInsert()
+ 7 SYSTEMPATH/Model.php(666): CodeIgniter\BaseModel->insert()
+ 8 APPPATH/Controllers/Admin/Mahasiswa.php(53): CodeIgniter\Model->insert()
+ 9 SYSTEMPATH/CodeIgniter.php(896): App\Controllers\Admin\Mahasiswa->importing()
+10 SYSTEMPATH/CodeIgniter.php(466): CodeIgniter\CodeIgniter->runController()
+11 SYSTEMPATH/CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest()
+12 FCPATH/index.php(55): CodeIgniter\CodeIgniter->run()
+13 SYSTEMPATH/Commands/Server/rewrite.php(43): require_once('FCPATH/index.php')
+ERROR - 2022-09-09 13:56:52 --> Duplicate entry '201915001' for key 'mhs.PRIMARY'
+CRITICAL - 2022-09-09 13:56:52 --> Duplicate entry '201915001' for key 'mhs.PRIMARY'
+in SYSTEMPATH/Database/MySQLi/Connection.php on line 292.
+ 1 SYSTEMPATH/Database/MySQLi/Connection.php(292): mysqli->query()
+ 2 SYSTEMPATH/Database/BaseConnection.php(695): CodeIgniter\Database\MySQLi\Connection->execute()
+ 3 SYSTEMPATH/Database/BaseConnection.php(609): CodeIgniter\Database\BaseConnection->simpleQuery()
+ 4 SYSTEMPATH/Model.php(767): CodeIgniter\Database\BaseConnection->query()
+ 5 APPPATH/Controllers/Admin/Mahasiswa.php(50): CodeIgniter\Model->__call()
+ 6 SYSTEMPATH/CodeIgniter.php(896): App\Controllers\Admin\Mahasiswa->importing()
+ 7 SYSTEMPATH/CodeIgniter.php(466): CodeIgniter\CodeIgniter->runController()
+ 8 SYSTEMPATH/CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest()
+ 9 FCPATH/index.php(55): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH/Commands/Server/rewrite.php(43): require_once('FCPATH/index.php')
+ERROR - 2022-09-09 13:57:10 --> Duplicate entry '201915001' for key 'mhs.PRIMARY'
+ERROR - 2022-09-09 13:57:10 --> Duplicate entry '201915002' for key 'mhs.PRIMARY'
+ERROR - 2022-09-09 13:57:10 --> Duplicate entry '201915003' for key 'mhs.PRIMARY'
+ERROR - 2022-09-09 13:57:10 --> Duplicate entry '201915004' for key 'mhs.PRIMARY'
+ERROR - 2022-09-09 13:57:10 --> Duplicate entry '201915005' for key 'mhs.PRIMARY'
+ERROR - 2022-09-09 13:57:10 --> Duplicate entry '201915006' for key 'mhs.PRIMARY'
+ERROR - 2022-09-09 13:57:10 --> Duplicate entry '201915007' for key 'mhs.PRIMARY'
+ERROR - 2022-09-09 13:57:10 --> Duplicate entry '201915008' for key 'mhs.PRIMARY'
+ERROR - 2022-09-09 13:57:10 --> Duplicate entry '201915009' for key 'mhs.PRIMARY'
+ERROR - 2022-09-09 13:57:10 --> Duplicate entry '201915010' for key 'mhs.PRIMARY'
+ERROR - 2022-09-09 13:57:10 --> Duplicate entry '201915011' for key 'mhs.PRIMARY'
+ERROR - 2022-09-09 13:57:10 --> Duplicate entry '201915012' for key 'mhs.PRIMARY'
+ERROR - 2022-09-09 13:57:10 --> Duplicate entry '201915013' for key 'mhs.PRIMARY'
+ERROR - 2022-09-09 13:57:10 --> Duplicate entry '201915014' for key 'mhs.PRIMARY'
+ERROR - 2022-09-09 13:58:16 --> Duplicate entry '201915001' for key 'mhs.PRIMARY'
+ERROR - 2022-09-09 13:58:16 --> Duplicate entry '201915002' for key 'mhs.PRIMARY'
+ERROR - 2022-09-09 13:58:16 --> Duplicate entry '201915003' for key 'mhs.PRIMARY'
+ERROR - 2022-09-09 13:58:16 --> Duplicate entry '201915004' for key 'mhs.PRIMARY'
+ERROR - 2022-09-09 13:58:16 --> Duplicate entry '201915005' for key 'mhs.PRIMARY'
+ERROR - 2022-09-09 13:58:16 --> Duplicate entry '201915006' for key 'mhs.PRIMARY'
+ERROR - 2022-09-09 13:58:17 --> Duplicate entry '201915007' for key 'mhs.PRIMARY'
+ERROR - 2022-09-09 13:58:17 --> Duplicate entry '201915008' for key 'mhs.PRIMARY'
+ERROR - 2022-09-09 13:58:17 --> Duplicate entry '201915009' for key 'mhs.PRIMARY'
+ERROR - 2022-09-09 13:58:17 --> Duplicate entry '201915010' for key 'mhs.PRIMARY'
+ERROR - 2022-09-09 13:58:17 --> Duplicate entry '201915011' for key 'mhs.PRIMARY'
+ERROR - 2022-09-09 13:58:17 --> Duplicate entry '201915012' for key 'mhs.PRIMARY'
+ERROR - 2022-09-09 13:58:17 --> Duplicate entry '201915013' for key 'mhs.PRIMARY'
+ERROR - 2022-09-09 13:58:17 --> Duplicate entry '201915014' for key 'mhs.PRIMARY'
+CRITICAL - 2022-09-09 13:58:17 --> Undefined variable $berhasil
+in APPPATH/Controllers/Admin/Mahasiswa.php on line 59.
+ 1 APPPATH/Controllers/Admin/Mahasiswa.php(59): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/CodeIgniter.php(896): App\Controllers\Admin\Mahasiswa->importing()
+ 3 SYSTEMPATH/CodeIgniter.php(466): CodeIgniter\CodeIgniter->runController()
+ 4 SYSTEMPATH/CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest()
+ 5 FCPATH/index.php(55): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH/Commands/Server/rewrite.php(43): require_once('FCPATH/index.php')
+ERROR - 2022-09-09 13:58:30 --> Duplicate entry '201915001' for key 'mhs.PRIMARY'
+ERROR - 2022-09-09 13:58:30 --> Duplicate entry '201915002' for key 'mhs.PRIMARY'
+ERROR - 2022-09-09 13:58:30 --> Duplicate entry '201915003' for key 'mhs.PRIMARY'
+ERROR - 2022-09-09 13:58:30 --> Duplicate entry '201915004' for key 'mhs.PRIMARY'
+ERROR - 2022-09-09 13:58:30 --> Duplicate entry '201915005' for key 'mhs.PRIMARY'
+ERROR - 2022-09-09 13:58:30 --> Duplicate entry '201915006' for key 'mhs.PRIMARY'
+ERROR - 2022-09-09 13:58:31 --> Duplicate entry '201915007' for key 'mhs.PRIMARY'
+ERROR - 2022-09-09 13:58:31 --> Duplicate entry '201915008' for key 'mhs.PRIMARY'
+ERROR - 2022-09-09 13:58:31 --> Duplicate entry '201915009' for key 'mhs.PRIMARY'
+ERROR - 2022-09-09 13:58:31 --> Duplicate entry '201915010' for key 'mhs.PRIMARY'
+ERROR - 2022-09-09 13:58:31 --> Duplicate entry '201915011' for key 'mhs.PRIMARY'
+ERROR - 2022-09-09 13:58:31 --> Duplicate entry '201915012' for key 'mhs.PRIMARY'
+ERROR - 2022-09-09 13:58:31 --> Duplicate entry '201915013' for key 'mhs.PRIMARY'
+ERROR - 2022-09-09 13:58:31 --> Duplicate entry '201915014' for key 'mhs.PRIMARY'
+ERROR - 2022-09-09 13:58:43 --> Duplicate entry '201915001' for key 'mhs.PRIMARY'
+ERROR - 2022-09-09 13:58:43 --> Duplicate entry '201915002' for key 'mhs.PRIMARY'
+ERROR - 2022-09-09 13:58:43 --> Duplicate entry '201915003' for key 'mhs.PRIMARY'
+ERROR - 2022-09-09 13:58:43 --> Duplicate entry '201915004' for key 'mhs.PRIMARY'
+ERROR - 2022-09-09 13:58:43 --> Duplicate entry '201915005' for key 'mhs.PRIMARY'
+ERROR - 2022-09-09 13:58:43 --> Duplicate entry '201915006' for key 'mhs.PRIMARY'
+ERROR - 2022-09-09 13:58:43 --> Duplicate entry '201915007' for key 'mhs.PRIMARY'
+ERROR - 2022-09-09 13:58:43 --> Duplicate entry '201915008' for key 'mhs.PRIMARY'
+ERROR - 2022-09-09 13:58:43 --> Duplicate entry '201915009' for key 'mhs.PRIMARY'
+ERROR - 2022-09-09 13:58:43 --> Duplicate entry '201915010' for key 'mhs.PRIMARY'
+ERROR - 2022-09-09 13:58:43 --> Duplicate entry '201915011' for key 'mhs.PRIMARY'
+ERROR - 2022-09-09 13:58:50 --> Duplicate entry '201915001' for key 'mhs.PRIMARY'
+ERROR - 2022-09-09 13:58:50 --> Duplicate entry '201915002' for key 'mhs.PRIMARY'
+ERROR - 2022-09-09 13:58:50 --> Duplicate entry '201915003' for key 'mhs.PRIMARY'
+ERROR - 2022-09-09 13:58:50 --> Duplicate entry '201915004' for key 'mhs.PRIMARY'
+ERROR - 2022-09-09 13:58:50 --> Duplicate entry '201915005' for key 'mhs.PRIMARY'
+ERROR - 2022-09-09 13:58:50 --> Duplicate entry '201915006' for key 'mhs.PRIMARY'
+ERROR - 2022-09-09 13:58:51 --> Duplicate entry '201915007' for key 'mhs.PRIMARY'
+ERROR - 2022-09-09 13:58:51 --> Duplicate entry '201915008' for key 'mhs.PRIMARY'
+ERROR - 2022-09-09 13:58:51 --> Duplicate entry '201915009' for key 'mhs.PRIMARY'
+ERROR - 2022-09-09 13:58:51 --> Duplicate entry '201915010' for key 'mhs.PRIMARY'
+ERROR - 2022-09-09 13:58:51 --> Duplicate entry '201915011' for key 'mhs.PRIMARY'
+ERROR - 2022-09-09 13:58:51 --> Duplicate entry '201915012' for key 'mhs.PRIMARY'
+ERROR - 2022-09-09 13:58:51 --> Duplicate entry '201915013' for key 'mhs.PRIMARY'
+ERROR - 2022-09-09 13:58:51 --> Duplicate entry '201915014' for key 'mhs.PRIMARY'
+ERROR - 2022-09-09 13:59:15 --> Duplicate entry '201915001' for key 'mhs.PRIMARY'
+ERROR - 2022-09-09 13:59:15 --> Duplicate entry '201915002' for key 'mhs.PRIMARY'
+ERROR - 2022-09-09 13:59:15 --> Duplicate entry '201915003' for key 'mhs.PRIMARY'
+ERROR - 2022-09-09 13:59:15 --> Duplicate entry '201915004' for key 'mhs.PRIMARY'
+ERROR - 2022-09-09 13:59:15 --> Duplicate entry '201915005' for key 'mhs.PRIMARY'
+ERROR - 2022-09-09 13:59:15 --> Duplicate entry '201915006' for key 'mhs.PRIMARY'
+ERROR - 2022-09-09 13:59:15 --> Duplicate entry '201915007' for key 'mhs.PRIMARY'
+ERROR - 2022-09-09 13:59:15 --> Duplicate entry '201915008' for key 'mhs.PRIMARY'
+ERROR - 2022-09-09 13:59:15 --> Duplicate entry '201915009' for key 'mhs.PRIMARY'
+ERROR - 2022-09-09 13:59:15 --> Duplicate entry '201915010' for key 'mhs.PRIMARY'
+ERROR - 2022-09-09 13:59:15 --> Duplicate entry '201915011' for key 'mhs.PRIMARY'
+ERROR - 2022-09-09 13:59:15 --> Duplicate entry '201915012' for key 'mhs.PRIMARY'
+ERROR - 2022-09-09 13:59:15 --> Duplicate entry '201915013' for key 'mhs.PRIMARY'
+ERROR - 2022-09-09 13:59:15 --> Duplicate entry '201915014' for key 'mhs.PRIMARY'
+ERROR - 2022-09-09 13:59:29 --> Duplicate entry '201915001' for key 'mhs.PRIMARY'
+ERROR - 2022-09-09 13:59:29 --> Duplicate entry '201915002' for key 'mhs.PRIMARY'
+ERROR - 2022-09-09 13:59:29 --> Duplicate entry '201915003' for key 'mhs.PRIMARY'
+ERROR - 2022-09-09 13:59:29 --> Duplicate entry '201915004' for key 'mhs.PRIMARY'
+ERROR - 2022-09-09 13:59:29 --> Duplicate entry '201915005' for key 'mhs.PRIMARY'
+ERROR - 2022-09-09 13:59:29 --> Duplicate entry '201915006' for key 'mhs.PRIMARY'
+ERROR - 2022-09-09 13:59:29 --> Duplicate entry '201915012' for key 'mhs.PRIMARY'
+ERROR - 2022-09-09 13:59:29 --> Duplicate entry '201915013' for key 'mhs.PRIMARY'
+ERROR - 2022-09-09 13:59:29 --> Duplicate entry '201915014' for key 'mhs.PRIMARY'
+ERROR - 2022-09-09 14:01:34 --> Duplicate entry '201915001' for key 'mhs.PRIMARY'
+ERROR - 2022-09-09 14:01:34 --> Duplicate entry '201915002' for key 'mhs.PRIMARY'
+ERROR - 2022-09-09 14:01:34 --> Duplicate entry '201915003' for key 'mhs.PRIMARY'
+ERROR - 2022-09-09 14:01:34 --> Duplicate entry '201915004' for key 'mhs.PRIMARY'
+ERROR - 2022-09-09 14:01:34 --> Duplicate entry '201915005' for key 'mhs.PRIMARY'
+ERROR - 2022-09-09 14:01:34 --> Duplicate entry '201915006' for key 'mhs.PRIMARY'
+ERROR - 2022-09-09 14:01:34 --> Duplicate entry '201915007' for key 'mhs.PRIMARY'
+ERROR - 2022-09-09 14:01:34 --> Duplicate entry '201915008' for key 'mhs.PRIMARY'
+ERROR - 2022-09-09 14:01:34 --> Duplicate entry '201915009' for key 'mhs.PRIMARY'
+ERROR - 2022-09-09 14:01:34 --> Duplicate entry '201915010' for key 'mhs.PRIMARY'
+ERROR - 2022-09-09 14:01:34 --> Duplicate entry '201915011' for key 'mhs.PRIMARY'
+ERROR - 2022-09-09 14:01:35 --> Duplicate entry '201915012' for key 'mhs.PRIMARY'
+ERROR - 2022-09-09 14:02:47 --> Duplicate entry '201915001' for key 'mhs.PRIMARY'
+ERROR - 2022-09-09 14:02:47 --> Duplicate entry '201915002' for key 'mhs.PRIMARY'
+ERROR - 2022-09-09 14:02:47 --> Duplicate entry '201915003' for key 'mhs.PRIMARY'
+ERROR - 2022-09-09 14:02:47 --> Duplicate entry '201915004' for key 'mhs.PRIMARY'
+ERROR - 2022-09-09 14:02:47 --> Duplicate entry '201915005' for key 'mhs.PRIMARY'
+ERROR - 2022-09-09 14:02:47 --> Duplicate entry '201915006' for key 'mhs.PRIMARY'
+ERROR - 2022-09-09 14:02:47 --> Duplicate entry '201915007' for key 'mhs.PRIMARY'
+ERROR - 2022-09-09 14:02:48 --> Duplicate entry '201915008' for key 'mhs.PRIMARY'
+ERROR - 2022-09-09 14:02:48 --> Duplicate entry '201915009' for key 'mhs.PRIMARY'
+ERROR - 2022-09-09 14:02:48 --> Duplicate entry '201915010' for key 'mhs.PRIMARY'
+ERROR - 2022-09-09 14:02:48 --> Duplicate entry '201915011' for key 'mhs.PRIMARY'
+ERROR - 2022-09-09 14:02:48 --> Duplicate entry '201915012' for key 'mhs.PRIMARY'
+ERROR - 2022-09-09 14:02:48 --> Duplicate entry '201915013' for key 'mhs.PRIMARY'
+ERROR - 2022-09-09 14:02:48 --> Duplicate entry '201915014' for key 'mhs.PRIMARY'
+ERROR - 2022-09-09 14:03:11 --> Duplicate entry '201915001' for key 'mhs.PRIMARY'
+ERROR - 2022-09-09 14:03:11 --> Duplicate entry '201915002' for key 'mhs.PRIMARY'
+ERROR - 2022-09-09 14:03:11 --> Duplicate entry '201915003' for key 'mhs.PRIMARY'
+ERROR - 2022-09-09 14:03:11 --> Duplicate entry '201915004' for key 'mhs.PRIMARY'
+ERROR - 2022-09-09 14:03:11 --> Duplicate entry '201915005' for key 'mhs.PRIMARY'
+ERROR - 2022-09-09 14:03:11 --> Duplicate entry '201915006' for key 'mhs.PRIMARY'
+ERROR - 2022-09-09 14:03:11 --> Duplicate entry '201915007' for key 'mhs.PRIMARY'
+ERROR - 2022-09-09 14:03:11 --> Duplicate entry '201915008' for key 'mhs.PRIMARY'
+ERROR - 2022-09-09 14:03:12 --> Duplicate entry '201915009' for key 'mhs.PRIMARY'
+ERROR - 2022-09-09 14:03:12 --> Duplicate entry '201915010' for key 'mhs.PRIMARY'
+ERROR - 2022-09-09 14:03:12 --> Duplicate entry '201915011' for key 'mhs.PRIMARY'
+ERROR - 2022-09-09 14:03:12 --> Duplicate entry '201915012' for key 'mhs.PRIMARY'
+ERROR - 2022-09-09 14:03:12 --> Duplicate entry '201915013' for key 'mhs.PRIMARY'
+ERROR - 2022-09-09 14:03:12 --> Duplicate entry '201915014' for key 'mhs.PRIMARY'
+ERROR - 2022-09-09 14:04:06 --> Duplicate entry '201915001' for key 'mhs.PRIMARY'
+ERROR - 2022-09-09 14:04:06 --> Duplicate entry '201915002' for key 'mhs.PRIMARY'
+ERROR - 2022-09-09 14:04:06 --> Duplicate entry '201915003' for key 'mhs.PRIMARY'
+ERROR - 2022-09-09 14:04:06 --> Duplicate entry '201915004' for key 'mhs.PRIMARY'
+ERROR - 2022-09-09 14:04:06 --> Duplicate entry '201915005' for key 'mhs.PRIMARY'
+ERROR - 2022-09-09 14:04:06 --> Duplicate entry '201915006' for key 'mhs.PRIMARY'
+ERROR - 2022-09-09 14:04:06 --> Duplicate entry '201915007' for key 'mhs.PRIMARY'
+ERROR - 2022-09-09 14:04:06 --> Duplicate entry '201915008' for key 'mhs.PRIMARY'
+ERROR - 2022-09-09 14:04:06 --> Duplicate entry '201915009' for key 'mhs.PRIMARY'
+ERROR - 2022-09-09 14:04:06 --> Duplicate entry '201915010' for key 'mhs.PRIMARY'
+ERROR - 2022-09-09 14:04:07 --> Duplicate entry '201915011' for key 'mhs.PRIMARY'
+ERROR - 2022-09-09 14:04:07 --> Duplicate entry '201915012' for key 'mhs.PRIMARY'
+ERROR - 2022-09-09 14:04:07 --> Duplicate entry '201915013' for key 'mhs.PRIMARY'
+ERROR - 2022-09-09 14:04:07 --> Duplicate entry '201915014' for key 'mhs.PRIMARY'
+CRITICAL - 2022-09-09 14:04:48 --> Unclosed '{' on line 67
+in APPPATH/Views/admin/mahasiswa.php on line 127.
+ 1 SYSTEMPATH/View/View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 2 SYSTEMPATH/Common.php(1135): CodeIgniter\View\View->render()
+ 3 APPPATH/Controllers/Admin/Mahasiswa.php(17): view()
+ 4 SYSTEMPATH/CodeIgniter.php(896): App\Controllers\Admin\Mahasiswa->index()
+ 5 SYSTEMPATH/CodeIgniter.php(466): CodeIgniter\CodeIgniter->runController()
+ 6 SYSTEMPATH/CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest()
+ 7 FCPATH/index.php(55): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH/Commands/Server/rewrite.php(43): require_once('FCPATH/index.php')
+CRITICAL - 2022-09-09 14:04:53 --> Unclosed '{' on line 10
+in APPPATH/Controllers/Admin/Mahasiswa.php on line 88.
+ 1 SYSTEMPATH/Router/Router.php(499): CodeIgniter\Router\AutoRouter->getRoute()
+ 2 SYSTEMPATH/Router/Router.php(205): CodeIgniter\Router\Router->autoRoute()
+ 3 SYSTEMPATH/CodeIgniter.php(771): CodeIgniter\Router\Router->handle()
+ 4 SYSTEMPATH/CodeIgniter.php(415): CodeIgniter\CodeIgniter->tryToRouteIt()
+ 5 SYSTEMPATH/CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest()
+ 6 FCPATH/index.php(55): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH/Commands/Server/rewrite.php(43): require_once('FCPATH/index.php')
+ERROR - 2022-09-09 14:05:29 --> Duplicate entry '201915001' for key 'mhs.PRIMARY'
+ERROR - 2022-09-09 14:05:29 --> Duplicate entry '201915002' for key 'mhs.PRIMARY'
+ERROR - 2022-09-09 14:05:29 --> Duplicate entry '201915003' for key 'mhs.PRIMARY'
+ERROR - 2022-09-09 14:05:29 --> Duplicate entry '201915004' for key 'mhs.PRIMARY'
+ERROR - 2022-09-09 14:05:29 --> Duplicate entry '201915005' for key 'mhs.PRIMARY'
+ERROR - 2022-09-09 14:05:29 --> Duplicate entry '201915006' for key 'mhs.PRIMARY'
+ERROR - 2022-09-09 14:05:29 --> Duplicate entry '201915007' for key 'mhs.PRIMARY'
+ERROR - 2022-09-09 14:05:29 --> Duplicate entry '201915008' for key 'mhs.PRIMARY'
+ERROR - 2022-09-09 14:05:29 --> Duplicate entry '201915009' for key 'mhs.PRIMARY'
+ERROR - 2022-09-09 14:05:29 --> Duplicate entry '201915010' for key 'mhs.PRIMARY'
+ERROR - 2022-09-09 14:05:29 --> Duplicate entry '201915011' for key 'mhs.PRIMARY'
+ERROR - 2022-09-09 14:05:29 --> Duplicate entry '201915012' for key 'mhs.PRIMARY'
+ERROR - 2022-09-09 14:05:30 --> Duplicate entry '201915013' for key 'mhs.PRIMARY'
+ERROR - 2022-09-09 14:05:30 --> Duplicate entry '201915014' for key 'mhs.PRIMARY'
+ERROR - 2022-09-09 22:11:15 --> You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '1, 2, 2)' at line 2
+ERROR - 2022-09-09 22:11:15 --> You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '2, 3, 3)' at line 2
+ERROR - 2022-09-09 22:11:15 --> You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '3, 4, 4)' at line 2
+ERROR - 2022-09-09 22:11:15 --> You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '4, 2, 2)' at line 2
+ERROR - 2022-09-09 22:11:15 --> You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '5, 4, 4)' at line 2
+ERROR - 2022-09-09 22:11:15 --> You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '6, 4, 4)' at line 2
+ERROR - 2022-09-09 22:11:15 --> You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '7, 2, 2)' at line 2
+ERROR - 2022-09-09 22:11:15 --> You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '8, 3, 3)' at line 2
+ERROR - 2022-09-09 22:11:15 --> You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '9, 3, 3)' at line 2
+ERROR - 2022-09-09 22:11:15 --> You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '10, 4, 4)' at line 2
+ERROR - 2022-09-09 22:11:15 --> You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '11, 2, 2)' at line 2
+ERROR - 2022-09-09 22:11:15 --> You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '12, 2, 2)' at line 2
+ERROR - 2022-09-09 22:11:15 --> You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '13, 2, 2)' at line 2
+ERROR - 2022-09-09 22:11:15 --> You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '14, 2, 2)' at line 2
+ERROR - 2022-09-09 22:11:42 --> You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '1, 2, 1)' at line 2
+ERROR - 2022-09-09 22:11:42 --> You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '2, 3, 2)' at line 2
+ERROR - 2022-09-09 22:11:42 --> You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '3, 4, 3)' at line 2
+ERROR - 2022-09-09 22:11:42 --> You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '4, 2, 3)' at line 2
+ERROR - 2022-09-09 22:11:42 --> You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '5, 4, 2)' at line 2
+ERROR - 2022-09-09 22:11:42 --> You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '6, 4, 3)' at line 2
+ERROR - 2022-09-09 22:11:42 --> You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '7, 2, 2)' at line 2
+ERROR - 2022-09-09 22:11:42 --> You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '8, 3, 1)' at line 2
+ERROR - 2022-09-09 22:11:42 --> You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '9, 3, 3)' at line 2
+ERROR - 2022-09-09 22:11:42 --> You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '10, 4, 4)' at line 2
+ERROR - 2022-09-09 22:11:42 --> You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '11, 2, 7)' at line 2
+ERROR - 2022-09-09 22:11:42 --> You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '12, 2, 2)' at line 2
+ERROR - 2022-09-09 22:11:42 --> You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '13, 2, 1)' at line 2
+ERROR - 2022-09-09 22:11:42 --> You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '14, 2, 2)' at line 2
+ERROR - 2022-09-09 22:12:09 --> You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '1, 2, 1)' at line 2
+ERROR - 2022-09-09 22:12:09 --> You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '2, 3, 2)' at line 2
+ERROR - 2022-09-09 22:12:09 --> You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '3, 4, 3)' at line 2
+ERROR - 2022-09-09 22:12:09 --> You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '4, 2, 3)' at line 2
+ERROR - 2022-09-09 22:12:09 --> You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '5, 4, 2)' at line 2
+ERROR - 2022-09-09 22:12:09 --> You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '6, 4, 3)' at line 2
+ERROR - 2022-09-09 22:12:09 --> You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '7, 2, 2)' at line 2
+ERROR - 2022-09-09 22:12:09 --> You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '8, 3, 1)' at line 2
+ERROR - 2022-09-09 22:12:09 --> You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '9, 3, 3)' at line 2
+ERROR - 2022-09-09 22:12:09 --> You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '10, 4, 4)' at line 2
+ERROR - 2022-09-09 22:12:09 --> You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '11, 2, 7)' at line 2
+ERROR - 2022-09-09 22:12:09 --> You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '12, 2, 2)' at line 2
+ERROR - 2022-09-09 22:12:09 --> You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '13, 2, 1)' at line 2
+ERROR - 2022-09-09 22:12:09 --> You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '14, 2, 2)' at line 2
+CRITICAL - 2022-09-09 22:22:19 --> Undefined property: App\Controllers\Admin\Dosen::$mhs
+in APPPATH/Controllers/Admin/Dosen.php on line 60.
+ 1 APPPATH/Controllers/Admin/Dosen.php(60): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/CodeIgniter.php(896): App\Controllers\Admin\Dosen->importing()
+ 3 SYSTEMPATH/CodeIgniter.php(466): CodeIgniter\CodeIgniter->runController()
+ 4 SYSTEMPATH/CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest()
+ 5 FCPATH/index.php(55): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH/Commands/Server/rewrite.php(43): require_once('FCPATH/index.php')
+CRITICAL - 2022-09-09 22:22:26 --> Undefined property: App\Controllers\Admin\Dosen::$mhs
+in APPPATH/Controllers/Admin/Dosen.php on line 60.
+ 1 APPPATH/Controllers/Admin/Dosen.php(60): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/CodeIgniter.php(896): App\Controllers\Admin\Dosen->importing()
+ 3 SYSTEMPATH/CodeIgniter.php(466): CodeIgniter\CodeIgniter->runController()
+ 4 SYSTEMPATH/CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest()
+ 5 FCPATH/index.php(55): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH/Commands/Server/rewrite.php(43): require_once('FCPATH/index.php')
+CRITICAL - 2022-09-09 22:22:54 --> Undefined property: App\Controllers\Admin\Dosen::$mhs
+in APPPATH/Controllers/Admin/Dosen.php on line 60.
+ 1 APPPATH/Controllers/Admin/Dosen.php(60): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/CodeIgniter.php(896): App\Controllers\Admin\Dosen->importing()
+ 3 SYSTEMPATH/CodeIgniter.php(466): CodeIgniter\CodeIgniter->runController()
+ 4 SYSTEMPATH/CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest()
+ 5 FCPATH/index.php(55): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH/Commands/Server/rewrite.php(43): require_once('FCPATH/index.php')
+CRITICAL - 2022-09-09 23:43:29 --> Undefined variable $no
+in APPPATH/Controllers/Admin/Kelas.php on line 55.
+ 1 APPPATH/Controllers/Admin/Kelas.php(55): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/CodeIgniter.php(896): App\Controllers\Admin\Kelas->getsmsh()
+ 3 SYSTEMPATH/CodeIgniter.php(466): CodeIgniter\CodeIgniter->runController()
+ 4 SYSTEMPATH/CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest()
+ 5 FCPATH/index.php(55): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH/Commands/Server/rewrite.php(43): require_once('FCPATH/index.php')
+CRITICAL - 2022-09-09 23:43:40 --> Undefined property: stdClass::$nama
+in APPPATH/Controllers/Admin/Kelas.php on line 59.
+ 1 APPPATH/Controllers/Admin/Kelas.php(59): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/CodeIgniter.php(896): App\Controllers\Admin\Kelas->getsmsh()
+ 3 SYSTEMPATH/CodeIgniter.php(466): CodeIgniter\CodeIgniter->runController()
+ 4 SYSTEMPATH/CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest()
+ 5 FCPATH/index.php(55): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH/Commands/Server/rewrite.php(43): require_once('FCPATH/index.php')
+CRITICAL - 2022-09-09 23:43:52 --> Call to a member function countAll() on array
+in APPPATH/Controllers/Admin/Kelas.php on line 66.
+ 1 SYSTEMPATH/CodeIgniter.php(896): App\Controllers\Admin\Kelas->getsmsh()
+ 2 SYSTEMPATH/CodeIgniter.php(466): CodeIgniter\CodeIgniter->runController()
+ 3 SYSTEMPATH/CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest()
+ 4 FCPATH/index.php(55): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH/Commands/Server/rewrite.php(43): require_once('FCPATH/index.php')
