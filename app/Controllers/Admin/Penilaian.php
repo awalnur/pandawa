@@ -53,7 +53,7 @@ class Penilaian extends AdminController
 
 //        header("Content-type:application/pdf");
         $mpdf = new Mpdf();
-//        $mpdf->Image('/assets/img/logounsiq.jpg', 0, 0, 210, 297, 'jpg', '', true, false);
+        $mpdf->Image('/assets/img/logounsiq.jpg', 0, 0, 210, 297, 'jpg', '', true, false);
 
         $mpdf->WriteHTML('<h1>Hello world!</h1>');
         $mpdf->Output();
