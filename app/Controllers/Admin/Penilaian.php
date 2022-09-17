@@ -37,27 +37,62 @@ class Penilaian extends AdminController
         }
 
     }
+    function preview(){
+        echo view('cetaks');
+    }
     function report(){
-        $filename = "AppName_Day_gen_".date("Y-m-d_H-i").".pdf";
 
-// Send headers
+//        header("Content-type:application/pdf");
+        $filename = "AppName_Day_gen_".date("Y-m-d_H-i").".pdf";
         header("Content-Type: application/pdf");
         header("Pragma: public");
         header("Expires: 0");
         header("Cache-Control: must-revalidate, post-check=0, pre-check=0");
-        header("Content-Type: application/force-download");
-        header("Content-Type: application/octet-stream");
-        header("Content-Type: application/download");
         header('Content-Disposition: attachment; filename="'.$filename.'"');
         header("Content-Transfer-Encoding: binary ");
+// Send headers
 
-//        header("Content-type:application/pdf");
-        $mpdf = new Mpdf();
-        $mpdf->Image('../../assets/img/logounsiq.jpg', 0, 0, 210, 297, 'jpg', '', true, false);
+        $html='';
 
-        $mpdf->WriteHTML('<h1>Hello world!</h1>');
-        $mpdf->Output();
-        exit;
+        $mpdf = new \Mpdf\Mpdf([
+            'mode' => 'c',
+            'format'=>'legal-P',
+            'margin_left' => 32,
+            'margin_right' => 25,
+            'margin_top' => 27,
+            'margin_bottom' => 25,
+            'margin_header' => 16,
+            'margin_footer' => 13
+        ]);
+        $mpdf->addPage('P');
+//        $mpdf->showImageErrors = true;
+        $s='
+    <img src="assets/img/logounsiq.jpg" alt="" style="margin-top: 150px">
+
+<h1 style="font-family: \'Times New Roman\', serif; text-align: center; margin-top: 40px; font-size: 14pt">
+    LAPORAN HASIL
+</h1>
+
+<h1 style="font-family: \'Times New Roman\', serif; text-align: center; margin-top: 5px; font-size: 14pt">
+    PENILAIAN DAN EVALUASI DOSEN OLEH MAHASISWA
+</h1>
+
+<h1 style="font-family: \'Times New Roman\', serif; text-align: center; margin-top: 5px; font-size: 14pt">
+    PEDOMA
+</h1>';
+        $mpdf->writeHtml($s, 2);
+        $mpdf->SetDisplayMode('fullpage');
+        $mpdf->addPage('L');
+        $mpdf->list_indent_first_level = 0; // 1 or 0 - whether to indent the first level of a list
+
+// Load a stylesheet
+//        $stylesheet = file_get_contents('assets/mpdfstyletables.css');
+
+//        $mpdf->WriteHTML($stylesheet, 1); // The parameter 1 tells that this is css/style only and no body/html/text
+        $mpdf->WriteHTML($html,1);
+
+        $mpdf->Output('php://output' );
+//        return response($mpdf->Output('test.pdf',"I"),200)->header('Content-Type','application/pdf');
 
     }
 }
