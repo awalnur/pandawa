@@ -145,10 +145,11 @@
 
 <script>
     $(function () {
-        $('.selectdosen').select2({
-            placeholder: 'Pilih Dosen',
+
+        $("#searchjurusan").select2({
+            placeholder: 'Pilih Prodi',
             ajax: {
-                url: '<?= base_url('admin/kelas/getdosen')?>',
+                url: '<?= base_url('admin/penilaian/getProdi')?>',
                 dataType: 'json',
                 delay: 250,
                 data: function (data) {
@@ -164,6 +165,32 @@
                 cache: true
             }
         });
+
+        $("#searchta").select2({
+            placeholder: 'Pilih Prodi',
+            ajax: {
+                url: '<?= base_url('admin/penilaian/ta')?>',
+                dataType: 'json',
+                delay: 250,
+                data: function (data) {
+                    return {
+                        searchTerm: data.term // search term
+                    };
+                },
+                processResults: function (response) {
+                    return {
+                        results:response
+                    };
+                },
+                cache: true
+            }
+        });
+        $("#btndownloadlaporan").click(function (){
+            let jurusan=$("#searchjurusan").val();
+            let ta=$("#searchta").val();
+
+            return window.open('<?= base_url("/admin/penilaian/report")?>/'+jurusan+'/'+ta, '_blank');
+        })
         $('.smk').select2({
             placeholder: 'Pilih Mata Kuliah',
             ajax: {

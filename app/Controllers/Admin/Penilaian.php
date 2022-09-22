@@ -108,14 +108,14 @@ class Penilaian extends AdminController
         $dosen = $this->db->table('dosen')->select(' dosen.nid as nid, nama_dosen, count(nama_dosen) as totalkelas')->join('kelas', 'dosen.nid=kelas.nid', 'left')->where(['kelas.idprodi' => $idprodi, 'thn_akademik' => $thaka])->groupBy('dosen.nid')->get()->getResult();
         $n = 1;
         foreach ($dosen as $item) {
-            $nilai = $this->db->table('nilai')->join('kelas', 'nilai.nid=kelas.nid', 'inner')->where(['kelas.idprodi' => $idprodi, 'kelas.thn_akademik' => $thaka, 'kelas.nid'=>$item->nid]);
+            $nilai = $this->db->table('nilai')->join('kelas', 'nilai.nid=kelas.nid', 'inner')->where(['kelas.idprodi' => $idprodi, 'nilai.thn_akademik' => $thaka, 'kelas.nid'=>$item->nid]);
             $pdf->Cell(10, 7, $n++, 1, 0, 'C');
             $pdf->Cell(100, 7, ' ' . $item->nama_dosen, 1, 0, 'L');
             foreach ($jenispert as $items) {
                 $sub = $this->db->table('pertanyaan')->where(['idjenis_pertanyaan' => $items->idjenis_pertanyaan])->get()->getResult();
 //                e$pdf->Cell(160/sizeof($jenispert),7,$item->jenis,1,0,'C',true);
                 foreach ($sub as $it) {
-                    $sub = $nilai->select('AVG(nilai) as rata')->where(['id_pertanyaan' => $it->idpertanyaan, 'nilai.nid' => $item->nid])->get()->getRow();
+                    $sub = $nilai->select('AVG(nilai) as rata')->where(['id_pertanyaan' => $it->idpertanyaan, 'nilai.nid' => $item->nid, 'nilai.thn_akademik' => $thaka])->get()->getRow();
                     if ($sub->rata != 0) {
                         $pdf->Cell(8, 7, number_format($sub->rata, 1), 1, 0, 'C');
                     } else {
@@ -123,7 +123,7 @@ class Penilaian extends AdminController
                     }
                 }
             }
-            $resp = $nilai->select('count(id_pertanyaan) as responden, avg(nilai) as rata,  avg(nilai)*25 as ikm')->where(['nilai.nid' => $item->nid])->get()->getRow();
+            $resp = $nilai->select('count(id_pertanyaan) as responden, avg(nilai) as rata,  avg(nilai)*25 as ikm')->where(['nilai.nid' => $item->nid, 'nilai.thn_akademik' => $thaka])->get()->getRow();
             $pdf->Cell(35, 7, $resp->responden, 1, 0, 'C');
             $pdf->Cell(15, 7, (!empty($resp->rata)) ? number_format($resp->rata, 1) : "0", 1, 0, 'C');
             $pdf->Cell(15, 7, (!empty($resp->ikm)) ? number_format($resp->ikm, 1) : "0", 1, 0, 'C');
@@ -132,7 +132,7 @@ class Penilaian extends AdminController
         }
         $pdf->SetFont('Times', 'B', 12);
 
-        $tol = $nilai->select('avg(nilai) as tol, COUNT(nilai) as total')->get()->getRow();
+        $tol = $nilai->select('avg(nilai) as tol, COUNT(nilai) as total')->where(['nilai.thn_akademik' => $thaka])->get()->getRow();
         $pdf->Cell(270, 7, "TOTAL NILAI INDEX KEPUASAN MAHASISWA", 1, 0, 'L');
         $pdf->Cell(65, 7, (!empty($tol->tol)) ? number_format($tol->tol, 1) : '0', 1, 1, 'C');
 
@@ -202,8 +202,8 @@ class Penilaian extends AdminController
             }
 
             $pdf->setFont('Times', 'B', 11);
-            $nitotal=$nilai->select('avg(nilai) as n,count(nim) as responden')->where('nid', $ldosen->nid)->get()->getRow();
-            $respp=$nilai->select('count(DISTINCT nim) as responden')->where('nid', $ldosen->nid)->groupBy('nim')->get()->getRow();
+            $nitotal=$nilai->select('avg(nilai) as n,count(nim) as responden')->where(['nilai.thn_akademik' => $thaka, 'nid'=> $ldosen->nid])->get()->getRow();
+            $respp=$nilai->select('count(DISTINCT nim) as responden')->where(['nilai.thn_akademik' => $thaka, 'nid'=> $ldosen->nid])->groupBy('nim')->get()->getRow();
 //            var_dump($responden);
             if ($respp==null){
                 $responden="0";
@@ -239,7 +239,35 @@ class Penilaian extends AdminController
         $pdf->Output();
 
     }
+    function getProdi(){
+        if(!isset($_GET['searchTerm'])){
+            $json = [];
+        }else{
+            $search = $_GET['searchTerm'];
+            $dos=$this->db->table('prodi')->like('nama_prodi',$search)->get();
+            $json = [];
+            foreach($dos->getResultObject() as $d){
+                $json[] = ['id'=>$d->idprodi, 'text'=>$d->nama_prodi];
+            }
+        }
 
+        echo json_encode($json);
+    }
+
+    function ta(){
+        if(!isset($_GET['searchTerm'])){
+            $json = [];
+        }else{
+            $search = $_GET['searchTerm'];
+            $dos=$this->db->table('thn_akademik')->like('thn_akademik',$search)->get();
+            $json = [];
+            foreach($dos->getResultObject() as $d){
+                $json[] = ['id'=>$d->thn_akademik, 'text'=>$d->thn_akademik];
+            }
+        }
+
+        echo json_encode($json);
+    }
     function huruf($nilai = 0)
     {
         return ($nilai>= 3.5)? "A":(($nilai>=2.5)?"B":(($nilai>=2)?"C":(($nilai>=1)?"D":"E")));

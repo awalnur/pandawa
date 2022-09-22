@@ -153,7 +153,7 @@
 
                 <li class="treeview">
                     <a href="">
-                        <i class="fa fa-pie-chart"></i>
+                        <i class="fa fa-users"></i>
                         <span>Dosen</span>
                         <span class="pull-right-container">
                           <i class="fa fa-angle-left pull-right"></i>
@@ -166,7 +166,7 @@
                 </li>
                 <li class="treeview">
                     <a href="">
-                        <i class="fa fa-pie-chart"></i>
+                        <i class="fa fa-list"></i>
                         <span>Prodi</span>
                         <span class="pull-right-container">
                           <i class="fa fa-angle-left pull-right"></i>
@@ -179,7 +179,7 @@
                 </li>
                 <li class="treeview">
                     <a href="">
-                        <i class="fa fa-pie-chart"></i>
+                        <i class="fa fa-graduation-cap"></i>
                         <span>Mahasiswa</span>
                         <span class="pull-right-container">
                               <i class="fa fa-angle-left pull-right"></i>
@@ -192,7 +192,7 @@
                 </li>
                 <li class="treeview">
                     <a href="">
-                        <i class="fa fa-pie-chart"></i>
+                        <i class="fa fa-tasks"></i>
                         <span>Mata Kuliah</span>
                         <span class="pull-right-container">
                               <i class="fa fa-angle-left pull-right"></i>
@@ -205,7 +205,7 @@
                 </li>
                 <li class="treeview">
                     <a href="">
-                        <i class="fa fa-pie-chart"></i>
+                        <i class="fa fa-question-circle"></i>
                         <span>Pertanyaan</span>
                         <span class="pull-right-container">
                               <i class="fa fa-angle-left pull-right"></i>
@@ -219,13 +219,19 @@
                 <li class="header">KELAS</li>
                 <li class="">
                     <a href="<?= base_url('admin/kelas')?>">
-                        <i class="fa fa-dashboard"></i> <span>KELAS</span>
+                        <i class="fa fa-book"></i> <span>KELAS</span>
                     </a>
                 </li>
                 <li class="header">PENILAIAN</li>
                 <li class="">
                     <a href="<?= base_url('admin/penilaian')?>">
                         <i class="fa fa-dashboard"></i> <span>Penilaian Dosen</span>
+                    </a>
+                </li>
+                <li class="header">Pengaturan</li>
+                <li class="">
+                    <a href="<?= base_url('admin/pengaturan')?>">
+                        <i class="fa fa-gear"></i> <span>Pengaturan</span>
                     </a>
                 </li>
 
