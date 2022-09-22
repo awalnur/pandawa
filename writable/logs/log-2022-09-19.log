@@ -1,0 +1,118 @@
+CRITICAL - 2022-09-19 00:50:59 --> fopen(): Invalid php:// URL specified
+in VENDORPATH/mpdf/mpdf/src/Mpdf.php on line 9624.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 VENDORPATH/mpdf/mpdf/src/Mpdf.php(9624): fopen()
+ 3 APPPATH/Controllers/Admin/Penilaian.php(94): Mpdf\Mpdf->Output()
+ 4 SYSTEMPATH/CodeIgniter.php(896): App\Controllers\Admin\Penilaian->report()
+ 5 SYSTEMPATH/CodeIgniter.php(466): CodeIgniter\CodeIgniter->runController()
+ 6 SYSTEMPATH/CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest()
+ 7 FCPATH/index.php(55): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH/Commands/Server/rewrite.php(43): require_once('FCPATH/index.php')
+CRITICAL - 2022-09-19 00:51:01 --> fopen(): Invalid php:// URL specified
+in VENDORPATH/mpdf/mpdf/src/Mpdf.php on line 9624.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 VENDORPATH/mpdf/mpdf/src/Mpdf.php(9624): fopen()
+ 3 APPPATH/Controllers/Admin/Penilaian.php(94): Mpdf\Mpdf->Output()
+ 4 SYSTEMPATH/CodeIgniter.php(896): App\Controllers\Admin\Penilaian->report()
+ 5 SYSTEMPATH/CodeIgniter.php(466): CodeIgniter\CodeIgniter->runController()
+ 6 SYSTEMPATH/CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest()
+ 7 FCPATH/index.php(55): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH/Commands/Server/rewrite.php(43): require_once('FCPATH/index.php')
+CRITICAL - 2022-09-19 00:51:06 --> fopen(): Invalid php:// URL specified
+in VENDORPATH/mpdf/mpdf/src/Mpdf.php on line 9624.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 VENDORPATH/mpdf/mpdf/src/Mpdf.php(9624): fopen()
+ 3 APPPATH/Controllers/Admin/Penilaian.php(94): Mpdf\Mpdf->Output()
+ 4 SYSTEMPATH/CodeIgniter.php(896): App\Controllers\Admin\Penilaian->report()
+ 5 SYSTEMPATH/CodeIgniter.php(466): CodeIgniter\CodeIgniter->runController()
+ 6 SYSTEMPATH/CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest()
+ 7 FCPATH/index.php(55): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH/Commands/Server/rewrite.php(43): require_once('FCPATH/index.php')
+CRITICAL - 2022-09-19 00:59:42 --> Unknown page format LEGAL-A4
+in VENDORPATH/mpdf/mpdf/src/PageFormat.php on line 78.
+ 1 VENDORPATH/mpdf/mpdf/src/Mpdf.php(1666): Mpdf\PageFormat::getSizeFromName()
+ 2 VENDORPATH/mpdf/mpdf/src/Mpdf.php(1299): Mpdf\Mpdf->_setPageSize()
+ 3 APPPATH/Controllers/Admin/Penilaian.php(54): Mpdf\Mpdf->__construct()
+ 4 SYSTEMPATH/CodeIgniter.php(896): App\Controllers\Admin\Penilaian->report()
+ 5 SYSTEMPATH/CodeIgniter.php(466): CodeIgniter\CodeIgniter->runController()
+ 6 SYSTEMPATH/CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest()
+ 7 FCPATH/index.php(55): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH/Commands/Server/rewrite.php(43): require_once('FCPATH/index.php')
+CRITICAL - 2022-09-19 01:04:36 --> strtoupper(): Argument #1 ($string) must be of type string, array given
+in VENDORPATH/mpdf/mpdf/src/Mpdf.php on line 3055.
+ 1 VENDORPATH/mpdf/mpdf/src/Mpdf.php(3055): strtoupper()
+ 2 APPPATH/Controllers/Admin/Penilaian.php(92): Mpdf\Mpdf->AddPage()
+ 3 SYSTEMPATH/CodeIgniter.php(896): App\Controllers\Admin\Penilaian->report()
+ 4 SYSTEMPATH/CodeIgniter.php(466): CodeIgniter\CodeIgniter->runController()
+ 5 SYSTEMPATH/CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest()
+ 6 FCPATH/index.php(55): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH/Commands/Server/rewrite.php(43): require_once('FCPATH/index.php')
+CRITICAL - 2022-09-19 01:04:53 --> strtoupper(): Argument #1 ($string) must be of type string, array given
+in VENDORPATH/mpdf/mpdf/src/Mpdf.php on line 3055.
+ 1 VENDORPATH/mpdf/mpdf/src/Mpdf.php(3055): strtoupper()
+ 2 APPPATH/Controllers/Admin/Penilaian.php(92): Mpdf\Mpdf->AddPage()
+ 3 SYSTEMPATH/CodeIgniter.php(896): App\Controllers\Admin\Penilaian->report()
+ 4 SYSTEMPATH/CodeIgniter.php(466): CodeIgniter\CodeIgniter->runController()
+ 5 SYSTEMPATH/CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest()
+ 6 FCPATH/index.php(55): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH/Commands/Server/rewrite.php(43): require_once('FCPATH/index.php')
+ERROR - 2022-09-19 23:26:08 --> Table 'pandawa.mahasiswa' doesn't exist
+CRITICAL - 2022-09-19 23:26:08 --> Table 'pandawa.mahasiswa' doesn't exist
+in SYSTEMPATH/Database/MySQLi/Connection.php on line 292.
+ 1 SYSTEMPATH/Database/MySQLi/Connection.php(292): mysqli->query()
+ 2 SYSTEMPATH/Database/BaseConnection.php(695): CodeIgniter\Database\MySQLi\Connection->execute()
+ 3 SYSTEMPATH/Database/BaseConnection.php(609): CodeIgniter\Database\BaseConnection->simpleQuery()
+ 4 SYSTEMPATH/Database/BaseBuilder.php(1614): CodeIgniter\Database\BaseConnection->query()
+ 5 APPPATH/Controllers/Admin/Home.php(8): CodeIgniter\Database\BaseBuilder->countAll()
+ 6 SYSTEMPATH/CodeIgniter.php(896): App\Controllers\Admin\Home->index()
+ 7 SYSTEMPATH/CodeIgniter.php(466): CodeIgniter\CodeIgniter->runController()
+ 8 SYSTEMPATH/CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest()
+ 9 FCPATH/index.php(55): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH/Commands/Server/rewrite.php(43): require_once('FCPATH/index.php')
+ERROR - 2022-09-19 23:40:23 --> Table 'pandawa.mhsprodi' doesn't exist
+CRITICAL - 2022-09-19 23:40:23 --> Table 'pandawa.mhsprodi' doesn't exist
+in SYSTEMPATH/Database/MySQLi/Connection.php on line 292.
+ 1 SYSTEMPATH/Database/MySQLi/Connection.php(292): mysqli->query()
+ 2 SYSTEMPATH/Database/BaseConnection.php(695): CodeIgniter\Database\MySQLi\Connection->execute()
+ 3 SYSTEMPATH/Database/BaseConnection.php(609): CodeIgniter\Database\BaseConnection->simpleQuery()
+ 4 SYSTEMPATH/Database/BaseBuilder.php(1585): CodeIgniter\Database\BaseConnection->query()
+ 5 APPPATH/Controllers/Admin/Kelas.php(52): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH/CodeIgniter.php(896): App\Controllers\Admin\Kelas->getsmsh()
+ 7 SYSTEMPATH/CodeIgniter.php(466): CodeIgniter\CodeIgniter->runController()
+ 8 SYSTEMPATH/CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest()
+ 9 FCPATH/index.php(55): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH/Commands/Server/rewrite.php(43): require_once('FCPATH/index.php')
+ERROR - 2022-09-19 23:40:55 --> Table 'pandawa.mhsprodi' doesn't exist
+CRITICAL - 2022-09-19 23:40:55 --> Table 'pandawa.mhsprodi' doesn't exist
+in SYSTEMPATH/Database/MySQLi/Connection.php on line 292.
+ 1 SYSTEMPATH/Database/MySQLi/Connection.php(292): mysqli->query()
+ 2 SYSTEMPATH/Database/BaseConnection.php(695): CodeIgniter\Database\MySQLi\Connection->execute()
+ 3 SYSTEMPATH/Database/BaseConnection.php(609): CodeIgniter\Database\BaseConnection->simpleQuery()
+ 4 SYSTEMPATH/Database/BaseBuilder.php(1585): CodeIgniter\Database\BaseConnection->query()
+ 5 APPPATH/Controllers/Admin/Kelas.php(52): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH/CodeIgniter.php(896): App\Controllers\Admin\Kelas->getsmsh()
+ 7 SYSTEMPATH/CodeIgniter.php(466): CodeIgniter\CodeIgniter->runController()
+ 8 SYSTEMPATH/CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest()
+ 9 FCPATH/index.php(55): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH/Commands/Server/rewrite.php(43): require_once('FCPATH/index.php')
+ERROR - 2022-09-19 23:54:21 --> Table 'pandawa.mhsprodi' doesn't exist
+CRITICAL - 2022-09-19 23:54:21 --> Table 'pandawa.mhsprodi' doesn't exist
+in SYSTEMPATH/Database/MySQLi/Connection.php on line 292.
+ 1 SYSTEMPATH/Database/MySQLi/Connection.php(292): mysqli->query()
+ 2 SYSTEMPATH/Database/BaseConnection.php(695): CodeIgniter\Database\MySQLi\Connection->execute()
+ 3 SYSTEMPATH/Database/BaseConnection.php(609): CodeIgniter\Database\BaseConnection->simpleQuery()
+ 4 SYSTEMPATH/Database/BaseBuilder.php(1585): CodeIgniter\Database\BaseConnection->query()
+ 5 APPPATH/Controllers/Admin/Kelas.php(52): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH/CodeIgniter.php(896): App\Controllers\Admin\Kelas->getsmsh()
+ 7 SYSTEMPATH/CodeIgniter.php(466): CodeIgniter\CodeIgniter->runController()
+ 8 SYSTEMPATH/CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest()
+ 9 FCPATH/index.php(55): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH/Commands/Server/rewrite.php(43): require_once('FCPATH/index.php')
+CRITICAL - 2022-09-19 23:56:08 --> Undefined property: stdClass::$angkatan
+in APPPATH/Controllers/Admin/Kelas.php on line 69.
+ 1 APPPATH/Controllers/Admin/Kelas.php(69): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/CodeIgniter.php(896): App\Controllers\Admin\Kelas->getsmsh()
+ 3 SYSTEMPATH/CodeIgniter.php(466): CodeIgniter\CodeIgniter->runController()
+ 4 SYSTEMPATH/CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest()
+ 5 FCPATH/index.php(55): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH/Commands/Server/rewrite.php(43): require_once('FCPATH/index.php')

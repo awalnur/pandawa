@@ -1,0 +1,53 @@
+CRITICAL - 2022-09-13 10:56:35 --> Call to undefined function CodeIgniter\locale_set_default()
+in SYSTEMPATH/CodeIgniter.php on line 193.
+ 1 ROOTPATH/spark(71): CodeIgniter\CodeIgniter->initialize()
+CRITICAL - 2022-09-13 05:57:05 --> Creation of dynamic property App\Controllers\Admin\Home::$session is deprecated
+in APPPATH/Controllers/Admin/AdminController.php on line 50.
+ 1 APPPATH/Controllers/Admin/AdminController.php(50): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/CodeIgniter.php(859): App\Controllers\Admin\AdminController->initController()
+ 3 SYSTEMPATH/CodeIgniter.php(457): CodeIgniter\CodeIgniter->createController()
+ 4 SYSTEMPATH/CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest()
+ 5 FCPATH/index.php(55): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH/Commands/Server/rewrite.php(43): require_once('FCPATH/index.php')
+CRITICAL - 2022-09-13 05:57:22 --> Creation of dynamic property App\Controllers\Admin\Home::$session is deprecated
+in APPPATH/Controllers/Admin/AdminController.php on line 50.
+ 1 APPPATH/Controllers/Admin/AdminController.php(50): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/CodeIgniter.php(859): App\Controllers\Admin\AdminController->initController()
+ 3 SYSTEMPATH/CodeIgniter.php(457): CodeIgniter\CodeIgniter->createController()
+ 4 SYSTEMPATH/CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest()
+ 5 FCPATH/index.php(55): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH/Commands/Server/rewrite.php(43): require_once('FCPATH/index.php')
+CRITICAL - 2022-09-13 05:57:25 --> Creation of dynamic property App\Controllers\Admin\Penilaian::$session is deprecated
+in APPPATH/Controllers/Admin/AdminController.php on line 50.
+ 1 APPPATH/Controllers/Admin/AdminController.php(50): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/CodeIgniter.php(859): App\Controllers\Admin\AdminController->initController()
+ 3 SYSTEMPATH/CodeIgniter.php(457): CodeIgniter\CodeIgniter->createController()
+ 4 SYSTEMPATH/CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest()
+ 5 FCPATH/index.php(55): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH/Commands/Server/rewrite.php(43): require_once('FCPATH/index.php')
+CRITICAL - 2022-09-13 05:58:43 --> Creation of dynamic property App\Controllers\Admin\Penilaian::$session is deprecated
+in APPPATH/Controllers/Admin/AdminController.php on line 50.
+ 1 APPPATH/Controllers/Admin/AdminController.php(50): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/CodeIgniter.php(859): App\Controllers\Admin\AdminController->initController()
+ 3 SYSTEMPATH/CodeIgniter.php(457): CodeIgniter\CodeIgniter->createController()
+ 4 SYSTEMPATH/CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest()
+ 5 FCPATH/index.php(55): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH/Commands/Server/rewrite.php(43): require_once('FCPATH/index.php')
+CRITICAL - 2022-09-13 05:58:49 --> Creation of dynamic property App\Controllers\Admin\Penilaian::$session is deprecated
+in APPPATH/Controllers/Admin/AdminController.php on line 50.
+ 1 APPPATH/Controllers/Admin/AdminController.php(50): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/CodeIgniter.php(859): App\Controllers\Admin\AdminController->initController()
+ 3 SYSTEMPATH/CodeIgniter.php(457): CodeIgniter\CodeIgniter->createController()
+ 4 SYSTEMPATH/CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest()
+ 5 FCPATH/index.php(55): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH/Commands/Server/rewrite.php(43): require_once('FCPATH/index.php')
+CRITICAL - 2022-09-13 05:58:54 --> Undefined constant "CodeIgniter\Database\MySQLi\MYSQLI_STORE_RESULT"
+in SYSTEMPATH/Database/Database.php on line 136.
+ 1 SYSTEMPATH/Database/Database.php(56): CodeIgniter\Database\Database->initDriver()
+ 2 SYSTEMPATH/Database/Config.php(78): CodeIgniter\Database\Database->load()
+ 3 APPPATH/Controllers/Admin/AdminController.php(51): CodeIgniter\Database\Config::connect()
+ 4 SYSTEMPATH/CodeIgniter.php(859): App\Controllers\Admin\AdminController->initController()
+ 5 SYSTEMPATH/CodeIgniter.php(457): CodeIgniter\CodeIgniter->createController()
+ 6 SYSTEMPATH/CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest()
+ 7 FCPATH/index.php(55): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH/Commands/Server/rewrite.php(43): require_once('FCPATH/index.php')
