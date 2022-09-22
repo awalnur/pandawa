@@ -44,6 +44,7 @@ return array(
     'Laminas\\Escaper\\' => array($vendorDir . '/laminas/laminas-escaper/src'),
     'Kint\\' => array($vendorDir . '/kint-php/kint/src'),
     'Http\\Message\\' => array($vendorDir . '/php-http/message-factory/src'),
+    'Fpdf\\' => array($vendorDir . '/fpdf/fpdf/src/Fpdf'),
     'Faker\\' => array($vendorDir . '/fakerphp/faker/src/Faker'),
     'Doctrine\\Instantiator\\' => array($vendorDir . '/doctrine/instantiator/src/Doctrine/Instantiator'),
     'Doctrine\\Common\\Lexer\\' => array($vendorDir . '/doctrine/lexer/lib/Doctrine/Common/Lexer'),

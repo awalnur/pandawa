@@ -94,6 +94,7 @@ class ComposerStaticInite05846c99fea5283c2496be03de7c99a
         ),
         'F' => 
         array (
+            'Fpdf\\' => 5,
             'Faker\\' => 6,
         ),
         'D' => 
@@ -268,6 +269,10 @@ class ComposerStaticInite05846c99fea5283c2496be03de7c99a
         'Http\\Message\\' => 
         array (
             0 => __DIR__ . '/..' . '/php-http/message-factory/src',
+        ),
+        'Fpdf\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/fpdf/fpdf/src/Fpdf',
         ),
         'Faker\\' => 
         array (
@@ -1269,6 +1274,7 @@ class ComposerStaticInite05846c99fea5283c2496be03de7c99a
         'Faker\\Provider\\zh_TW\\Text' => __DIR__ . '/..' . '/fakerphp/faker/src/Faker/Provider/zh_TW/Text.php',
         'Faker\\UniqueGenerator' => __DIR__ . '/..' . '/fakerphp/faker/src/Faker/UniqueGenerator.php',
         'Faker\\ValidGenerator' => __DIR__ . '/..' . '/fakerphp/faker/src/Faker/ValidGenerator.php',
+        'Fpdf\\Fpdf' => __DIR__ . '/..' . '/fpdf/fpdf/src/Fpdf/Fpdf.php',
         'HTMLPurifier' => __DIR__ . '/..' . '/ezyang/htmlpurifier/library/HTMLPurifier.php',
         'HTMLPurifier_Arborize' => __DIR__ . '/..' . '/ezyang/htmlpurifier/library/HTMLPurifier/Arborize.php',
         'HTMLPurifier_AttrCollections' => __DIR__ . '/..' . '/ezyang/htmlpurifier/library/HTMLPurifier/AttrCollections.php',

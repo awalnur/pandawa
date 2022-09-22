@@ -1,17 +1,4 @@
 <!DOCTYPE html>
-
-<!-- =========================================================
-* Sneat - Bootstrap 5 HTML Admin Template - Pro | v1.0.0
-==============================================================
-
-* Product Page: https://themeselection.com/products/sneat-bootstrap-html-admin-template/
-* Created by: ThemeSelection
-* License: You must have a valid license purchased in order to legally use the theme for your project.
-* Copyright ThemeSelection (https://themeselection.com)
-
-=========================================================
- -->
-<!-- beautify ignore:start -->
 <html
     lang="en"
     class="light-style customizer-hide"
@@ -26,9 +13,10 @@
         content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0"
     />
 
-    <title>Login Basic - Pages | Sneat - Bootstrap 5 HTML Admin Template - Pro</title>
+    <title>PEDOMA | Penilaian dan Evaluasi Dosen Oleh Mahasiswa</title>
 
-    <meta name="description" content="" />
+    <meta name="description" content="
+    Sistem yang disediakan fakultas untuk memberikan kesempatan mahasiswa memberikan penilaian dan evaluasi terhadap Dosen" />
 
     <!-- Favicon -->
     <link rel="icon" type="image/x-icon" href="<?= base_url(); ?>/assets/img/favicon/favicon.ico" />
@@ -74,7 +62,7 @@
                 <div class="card-body">
                     <!-- Logo -->
                     <div class="app-brand justify-content-center">
-                        <a href="index.html" class="app-brand-link gap-2">
+                        <a href="/" class="app-brand-link gap-2">
                   <span class="app-brand-logo demo">
                     <svg
                         width="25"
@@ -130,12 +118,12 @@
                       </g>
                     </svg>
                   </span>
-                            <span class="app-brand-text demo text-body fw-bolder">Sneat</span>
+                            <span class="app-brand-text demo text-body fw-bolder">PEDOMA</span>
                         </a>
                     </div>
                     <!-- /Logo -->
-                    <h4 class="mb-2">Selamat Datang Di PANDAWA 👋</h4>
-                    <p class="mb-4">Penilaian Dosen Oleh Mahasiwa (PANDAWA), instrumen untuk menilai kinerja dosen dalam proses pembelajaran di akhir semester.</p>
+                    <h4 class="mb-2">Selamat Datang Di PEDOMA 👋</h4>
+                    <p class="mb-4">Penilaian dan Evaluasi Dosen Oleh Mahasiwa (PEDOMA), instrumen untuk menilai kinerja dosen dalam proses pembelajaran di akhir semester.</p>
                     <?= $error ; ?>
 
                     <form id="formAuthentication" class="mb-3" action="<?= base_url('auth/auth')?>" method="POST">
@@ -172,7 +160,7 @@
                     </form>
 
                     <p class="text-center">
-                        <a href="auth-register-basic.html">
+                        <a href="/tentang">
                             <span>Tentang Pandawa</span>
                         </a>
                     </p>

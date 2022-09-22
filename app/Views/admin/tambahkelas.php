@@ -32,6 +32,14 @@
                                 <div class="alert alert-success">Data Berhasil Ditambahkan</div>
                             <?php } ?>
                             <div class="form-group">
+                                <label>Prodi</label>
+                                <select name="pilprodi" id="pilprodi" class="form-control">
+                                    <option value="1">Akuntansi</option>
+                                    <option value="2">Manajemen</option>
+                                    <option value="3">Perbankan Syariah</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
                                 <label for="mk">Mata Kuliah</label>
                                 <select class="form-control select2 smk" name="mkk" style="width: 100%;">
 
@@ -59,16 +67,7 @@
                             <hr>
                             <div class="form-group">
                                  <div class="row">
-                                        <div class="col-md-6 sm-12">
-                                            <div class="form-group">
-                                                <label>Prodi</label>
-                                                <select name="pilprodi" id="pilprodi" class="form-control">
-                                                    <option value="1">Akuntansi</option>
-                                                    <option value="2">Manajemen</option>
-                                                    <option value="3">Perbankan Syariah</option>
-                                                </select>
-                                            </div>
-                                        </div>
+
                                      <div class="col-md-6 sm-12">
                                             <div class="form-group">
                                                 <label>Angkatan</label>

@@ -1,23 +1,23 @@
 <!DOCTYPE html>
-
 <html
-    lang="en"
-    class="light-style layout-menu-fixed"
-    dir="ltr"
-    data-theme="theme-default"
-    data-assets-path="<?= base_url(); ?>/assets/"
-    data-template="vertical-menu-template-free"
+        lang="en"
+        class="light-style customizer-hide"
+        dir="ltr"
+        data-theme="theme-default"
+        data-assets-path="<?= base_url(); ?>/assets/"
 >
 <head>
     <meta charset="utf-8" />
     <meta
-        name="viewport"
-        content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0"
+            name="viewport"
+            content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0"
     />
 
-    <title>PANDAWA | Sistem Penilaian Dosen oleh Mahasiswa</title>
+    <title>PEDOMA | Penilaian dan Evaluasi Dosen Oleh Mahasiswa</title>
 
-    <meta name="description" content="" />
+    <meta name="description" content="
+    Sistem yang disediakan fakultas untuk memberikan kesempatan mahasiswa memberikan penilaian dan evaluasi terhadap Dosen" />
+
 
     <!-- Favicon -->
     <link rel="icon" type="image/x-icon" href="<?= base_url(); ?>/assets/img/favicon/favicon.ico" />
@@ -76,13 +76,11 @@
                 <div class="navbar-nav-right d-flex align-items-center" id="navbar-collapse">
                     <!-- Search -->
                     <div class="navbar-nav align-items-center justify-content-center">
-                        <h2 class="logo text-black mb-0">Pandawa</h2>
+                        <h2 class="logo text-black mb-0">PEDOMA</h2>
                     </div>
                     <!-- /Search -->
 
                     <ul class="navbar-nav flex-row align-items-center ms-auto">
-
-                        <!-- User -->
                         <li class="nav-item navbar-dropdown dropdown-user dropdown">
                             <a class="nav-link dropdown-toggle hide-arrow" href="javascript:void(0);" data-bs-toggle="dropdown">
                                 <div class="avatar avatar-online">

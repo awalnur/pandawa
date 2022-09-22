@@ -46,6 +46,21 @@ class Kelas extends AdminController
 
         echo json_encode($json);
     }
+
+    function getmk(){
+        if(!isset($_GET['searchTerm'])){
+            $json = [];
+        }else{
+            $search = $_GET['searchTerm'];
+            $dos=$this->db->table('makul')->like('matkul',$search)->get();
+            $json = [];
+            foreach($dos->getResultObject() as $d){
+                $json[] = ['id'=>$d->kode_matkul, 'text'=>$d->matkul];
+            }
+        }
+
+        echo json_encode($json);
+    }
     function getsmsh($prodi=null,$angkatan=null){
                 $ds=$this->db->table('mhsprodi');
                 if ($angkatan==null and $prodi==null) {
@@ -59,7 +74,6 @@ class Kelas extends AdminController
                 }else{
 
                 }
-
                 $no=0;
                 foreach ($lists as $list) {
                     $no++;
@@ -80,6 +94,31 @@ class Kelas extends AdminController
             }
 
     function savekelas(){
-        var_dump($this->request->getPost());
+//        var_dump($this->request->getPost());
+        $mk=$this->request->getPost('mkk');
+        $idd=$this->request->getPost('dosen');
+        $kl=$this->request->getPost('kelas');
+        $idl=$this->request->getPost('pilprodi');
+        $ta=$this->request->getPost('ta');
+            $ins=['kode_matkul'=>$mk,
+                  'nid'=>$idd,
+                  'kelas'=>$kl,
+                  'thn_akademik'=>$ta,
+                'idprodi'=>$idl];
+            $tes=$this->db->table('kelas')->where($ins)->countAll();
+            if ($tes>0) {
+                $inskelas = $this->db->table('kelas')->insert($ins);
+                $iid = $this->db->insertID();
+                if (!empty($this->db->insertID())) {
+                    $kmhs = $this->request->getPost('msh');
+                    for ($i = 0; $i < sizeOf($kmhs); $i++) {
+                        $ins = $this->db->table('mhs_kelas')->insert(['nim' => $kmhs[$i], 'id_kelas' => $iid]);
+                    }
+                }
+                return redirect()->to(base_url('/admin/kelas'))->with('success', 'Kelas dan siswa berhasil ditambahkan');
+            }else{
+                return redirect()->to(base_url('/admin/kelas'))->with('gagal', 'Kelas dengan dosen yang sama sudah tersedia');
+
+            }
     }
 }

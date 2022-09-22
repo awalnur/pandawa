@@ -3,7 +3,7 @@
         'name' => 'codeigniter4/codeigniter4',
         'pretty_version' => 'dev-main',
         'version' => 'dev-main',
-        'reference' => '9f213db33246adcbda7895a145df8bb5628faff6',
+        'reference' => '99799322231d72e6fe525e34bcdb80613516184e',
         'type' => 'project',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
@@ -22,7 +22,7 @@
         'codeigniter4/codeigniter4' => array(
             'pretty_version' => 'dev-main',
             'version' => 'dev-main',
-            'reference' => '9f213db33246adcbda7895a145df8bb5628faff6',
+            'reference' => '99799322231d72e6fe525e34bcdb80613516184e',
             'type' => 'project',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
@@ -99,6 +99,15 @@
             'install_path' => __DIR__ . '/../fakerphp/faker',
             'aliases' => array(),
             'dev_requirement' => true,
+        ),
+        'fpdf/fpdf' => array(
+            'pretty_version' => '1.84.1',
+            'version' => '1.84.1.0',
+            'reference' => 'cfafa307947f7c646b87045d0decc67bdc423209',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../fpdf/fpdf',
+            'aliases' => array(),
+            'dev_requirement' => false,
         ),
         'friendsofphp/php-cs-fixer' => array(
             'pretty_version' => 'v3.6.0',

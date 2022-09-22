@@ -937,6 +937,7 @@ return array(
     'Faker\\Provider\\zh_TW\\Text' => $vendorDir . '/fakerphp/faker/src/Faker/Provider/zh_TW/Text.php',
     'Faker\\UniqueGenerator' => $vendorDir . '/fakerphp/faker/src/Faker/UniqueGenerator.php',
     'Faker\\ValidGenerator' => $vendorDir . '/fakerphp/faker/src/Faker/ValidGenerator.php',
+    'Fpdf\\Fpdf' => $vendorDir . '/fpdf/fpdf/src/Fpdf/Fpdf.php',
     'HTMLPurifier' => $vendorDir . '/ezyang/htmlpurifier/library/HTMLPurifier.php',
     'HTMLPurifier_Arborize' => $vendorDir . '/ezyang/htmlpurifier/library/HTMLPurifier/Arborize.php',
     'HTMLPurifier_AttrCollections' => $vendorDir . '/ezyang/htmlpurifier/library/HTMLPurifier/AttrCollections.php',

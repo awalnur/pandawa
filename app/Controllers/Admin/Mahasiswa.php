@@ -55,9 +55,9 @@ class Mahasiswa extends AdminController
                     $resp[$idx]='Gagal';
                 }
             }
-            return redirect()->back()->with('success','Import Berhasil, ('.$berhasil.'/'.sizeof($resp).')');
+            return redirect()->to(base_url('/admin/mahasiswa'))->with('success','Import Berhasil, ('.$berhasil.'/'.sizeof($resp).')');
         }else{
-            return redirect()->back()->with('gagalss','Terjadi kesalahan saat Import data');
+            return redirect()->to(base_url('/admin/mahasiswa'))->with('gagalss','Terjadi kesalahan saat Import data');
         }
 
     }
