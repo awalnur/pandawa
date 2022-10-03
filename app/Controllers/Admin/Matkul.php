@@ -10,7 +10,8 @@ class Matkul extends AdminController
         $data['matkul']=$this->db->table('makul')->get()->getResultObject();
         echo view('admin/template/header');
         echo view('admin/matakuliah',$data);
-        echo view('admin/template/footer');    }
+        echo view('admin/template/footer');
+    }
     function tambah(){
         echo view('admin/template/header');
         echo view('admin/tambahmatkul');
