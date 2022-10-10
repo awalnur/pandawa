@@ -18,11 +18,22 @@ class Dosen extends AdminController
         echo view('admin/tambahdosen');
         echo view('admin/template/footer');
     }
-    function savedosen(){
+
+    function edit($id=null){
+        if($id==null){
+
+        }else{
+            $data['dosen']=$this->db->table('dosen')->where(['nid'=>$id])->get()->getRow();
+            var_dump($data);
+            echo view('admin/template/header');
+            echo view('admin/editdosen', $data);
+            echo view('admin/template/footer');
+        }
+    }
+    function savedosen($edit=false, $id=null){
         $nid=$this->request->getPost('nid');
         $namadosen=$this->request->getPost('nama');
         $gelar=$this->request->getPost('gelar');
-//        $foto=$this->request->getPost('foto_dosen');
         $foto='default.png';
         $data=[
             'nid'=>$nid,
@@ -30,10 +41,25 @@ class Dosen extends AdminController
             'gelar'=>$gelar,
             'foto_dosen'=>$foto,
         ];
-        $this->db->table('dosen')->insert($data);
+        if ($edit=='edit'){
+            if (empty($nid)){
+                $d=[
+                    'nama_dosen'=>$namadosen,
+                    'gelar'=>$gelar,
+                    'foto_dosen'=>$foto,
+                ];
+            }else{
+                $d=$data;
+            }
+            var_dump($d);
+            $this->db->table('dosen')->update($d, ['nid'=>$id]);
+//            return redirect()->to()->with('success', 1);
+            return redirect()->to('/admin/dosen/edit/'.$nid)->with('success', 1);
 
-        return redirect()->back()->with('success', 1);
-
+        }else{
+            $this->db->table('dosen')->insert($data);
+            return redirect()->to('/admin/dosen/tambah')->with('success', 1);
+        }
     }
 
     function importing(){

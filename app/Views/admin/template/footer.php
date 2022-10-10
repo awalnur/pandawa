@@ -426,6 +426,14 @@
             tmhs.api().ajax.url(url).load();
             // alert($(this).val())
         })
+        $("#editnid").change(function (){
+            if(this.checked){
+                $("#nidedit").attr('disabled', false);
+            }else{
+                $("#nidedit").attr('disabled', true);
+
+            }
+        })
     });
 </script>
 </body>

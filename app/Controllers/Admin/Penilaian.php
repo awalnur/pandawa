@@ -107,6 +107,8 @@ class Penilaian extends AdminController
         $pdf->ln();
         $dosen = $this->db->table('dosen')->select(' dosen.nid as nid, nama_dosen, count(nama_dosen) as totalkelas')->join('kelas', 'dosen.nid=kelas.nid', 'left')->where(['kelas.idprodi' => $idprodi, 'thn_akademik' => $thaka])->groupBy('dosen.nid')->get()->getResult();
         $n = 1;
+        $pdf->SetFont('Times', '', 11);
+
         foreach ($dosen as $item) {
             $nilai = $this->db->table('nilai')->join('kelas', 'nilai.nid=kelas.nid', 'inner')->where(['kelas.idprodi' => $idprodi, 'nilai.thn_akademik' => $thaka, 'kelas.nid'=>$item->nid]);
             $pdf->Cell(10, 7, $n++, 1, 0, 'C');
@@ -130,7 +132,7 @@ class Penilaian extends AdminController
             $pdf->ln();
 
         }
-        $pdf->SetFont('Times', 'B', 12);
+        $pdf->SetFont('Times', 'B', 11);
 
         $tol = $nilai->select('avg(nilai) as tol, COUNT(nilai) as total')->where(['nilai.thn_akademik' => $thaka])->get()->getRow();
         $pdf->Cell(270, 7, "TOTAL NILAI INDEX KEPUASAN MAHASISWA", 1, 0, 'L');

@@ -94,5 +94,31 @@ class Mahasiswa extends AdminController
             }
             echo json_encode($ret);
     }
+    function mhs_sync(){
+        $curl = curl_init();
 
+        curl_setopt_array($curl, array(
+            CURLOPT_URL => "https://ebfis.feb-unsiq.ac.id/api/mahasiswa",
+            CURLOPT_RETURNTRANSFER => true,
+            CURLOPT_TIMEOUT => 30,
+            CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+            CURLOPT_CUSTOMREQUEST => "GET",
+            CURLOPT_HTTPHEADER => array(
+                "cache-control: no-cache"
+            ),
+        ));
+
+        $response = curl_exec($curl);
+        $err = curl_error($curl);
+
+        curl_close($curl);
+
+        $responses = (object)json_decode($response, true); //because of true, it's in an array
+        $dt=$responses->data;
+
+        foreach ($dt as $datum) {
+            echo $datum['id'];
+        }
+
+    }
 }

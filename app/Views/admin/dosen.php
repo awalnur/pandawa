@@ -104,7 +104,12 @@
                                 </td>
                                 <td><?=$ditem->nama_dosen;?></td>
                                 <td><?= $ditem->gelar;?></td>
-                                <td width="150"><button class="btn bg-navy btn-sm"><i class="fa fa-eye"></i></button> <button class="btn bg-orange btn-sm"><i class="fa fa-edit"></i></button> <button class="btn btn-danger btn-sm"  id="deletedosen" data-val="<?= $ditem->nid?>"><i class="fa fa-trash"></i></button></td>
+                                <td width="150">
+                                    <a href="<?= base_url('admin/dosen/edit/'.$ditem->nid)?>">
+                                        <button class="btn bg-orange btn-sm"><i class="fa fa-edit"></i></button>
+                                    </a>
+                                    <button class="btn btn-danger btn-sm" id="deletedosen" data-val="<?= $ditem->nid?>"><i class="fa fa-trash"></i></button>
+                                </td>
                             </tr>
                             <?php } ?>
                             </tbody>
