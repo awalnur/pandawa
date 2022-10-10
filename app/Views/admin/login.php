@@ -30,13 +30,20 @@
 <body class="hold-transition login-page">
 <div class="login-box">
     <div class="login-logo">
-        <a href="<?= base_url('admin') ?>/auth"><b>Admin</b>LTE</a>
+        <a href="<?= base_url('admin') ?>/auth">
+            <img src="/assets/img/logo-pedoma.png" style="width: 200px" alt="">
+            <br><b style="font-size: 16pt">Login Admin</b>
+        </a>
     </div>
     <!-- /.login-logo -->
     <div class="login-box-body">
         <p class="login-box-msg">Sign in to start your session</p>
 
         <form action="<?= base_url('admin') ?>/auth/ActLogin" method="post">
+            <div class="alert alert-danger alert-dismissable <?= (empty(session('error')))?'hidden':''?>">
+                Username atau Password salah
+                <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+            </div>
             <div class="form-group has-feedback">
                 <input type="text" class="form-control" name="username" placeholder="username Or Email">
                 <span class="glyphicon glyphicon-envelope form-control-feedback"></span>

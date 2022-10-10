@@ -23,7 +23,7 @@
                                         />
                                         <div class="button-wrapper">
                                             <h4><?= $dosen->nama_dosen?></h4>
-                                            <table class="no-border table ms-5">
+                                            <table class="no-border table ms-1">
                                                 <tr>
                                                     <td class="p-0">NID</td>
                                                     <td class="p-0">: <b class="ms-3"><?= $dosen->nid; ?></b></td>

@@ -46,4 +46,9 @@ class Auth extends AdminController
         }
     }
 
+    function logout(){
+        session_destroy();
+        return redirect()->to(base_url('/admin/auth'));
+    }
+
 }
