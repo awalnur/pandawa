@@ -8,7 +8,7 @@ use Config\Services;
 class Kelas extends AdminController
 {
     function index(){
-        $data['kelas']=$this->db->table('kelas')->join('makul', 'kelas.kode_matkul=makul.kode_matkul', 'inner')->join('dosen', 'kelas.nid=dosen.nid','inner')->join("(SELECT count(nim) as totalmhs, id_kelas FROM mhs_kelas GROUP BY id_kelas) as c", 'c.id_kelas=kelas.id_kelas', 'left' )->get()->getResultObject();
+        $data['kelas']=$this->db->table('kelas')->select('*, kelas.id_kelas as idkelas')->join('makul', 'kelas.kode_matkul=makul.kode_matkul', 'inner')->join('dosen', 'kelas.nid=dosen.nid','inner')->join("(SELECT count(nim) as totalmhs, id_kelas FROM mhs_kelas GROUP BY id_kelas) as c", 'c.id_kelas=kelas.id_kelas', 'left' )->get()->getResultObject();
         echo view('admin/template/header');
         echo view('admin/kelas', $data);
         echo view('admin/template/footer');
@@ -32,6 +32,7 @@ class Kelas extends AdminController
 
         echo json_encode($json);
     }
+
     function getmhs(){
         if(!isset($_GET['searchTerm'])){
             $json = [];
@@ -120,5 +121,31 @@ class Kelas extends AdminController
                 return redirect()->to(base_url('/admin/kelas'))->with('gagal', 'Kelas dengan dosen yang sama sudah tersedia');
 
             }
+    }
+    function editkelas(){
+
+    }
+    function viewkelas($id=null){
+        if ($id==null){
+            redirect()->back();
+        }
+
+        $data['kelas']=$this->db->table('kelas')->join('makul', 'kelas.kode_matkul=makul.kode_matkul', 'inner')->join('dosen', 'kelas.nid=dosen.nid','inner')->join("(SELECT count(nim) as totalmhs, id_kelas FROM mhs_kelas GROUP BY id_kelas) as c", 'c.id_kelas=kelas.id_kelas', 'left' )->join('prodi', 'kelas.idprodi=prodi.idprodi')->where('kelas.id_kelas', $id)->get()->getRow();
+        $data['mhs']=$this->db->table('mhs_kelas')->join('mhs', 'mhs_kelas.nim=mhs.nim', 'inner')->where('mhs_kelas.id_kelas', $id)->get()->getResultObject();
+        echo view('admin/template/header');
+        echo view('admin/detailkelas', $data);
+        echo view('admin/template/footer');
+    }
+    function delete(){
+        $kelas=$this->request->getPost('id');
+        $d2=$this->db->table('mhs_kelas')->delete(['id_kelas'=>$kelas]);
+        $res=$this->db->table('kelas')->delete(['id_kelas'=>$kelas]);
+
+        if ($res){
+            $ret['success']=1;
+        }else{
+            $ret['success']=0;
+        }
+        echo json_encode($ret);
     }
 }

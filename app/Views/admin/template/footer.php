@@ -353,7 +353,28 @@
                 }
             });
         });
+        //hapuskelas
 
+        $(document).on("click", "#hapuskelas", function (s) {
+            alert($(this).attr('data-val'));
+            if(confirm("Hapus Kelas ?")){
+                $.ajax({
+                    url: '<?= base_url('admin/kelas/delete')?>',
+                    data:'id='+$(this).attr("data-val"),
+                    dataType: 'Json',
+                    type: 'post',
+                    success:function (e){
+                        if (e.success==1){
+                            alert('Kelas Berhasil Dihapus');
+                            window.location.reload();
+                        }else{
+                            alert('Kelas Gagal Dihapus');
+
+                        }
+                    }
+                })
+            }
+        });
         $(document).on("click", "#deletemhs", function (s) {
             // alert("S");
             if(confirm("Hapus Mahasiswa ?")){
@@ -364,11 +385,10 @@
                     type: 'post',
                     success:function (e){
                         if (e.success==1){
-                            alert('Jenis Berhasil Dihapus');
+                            alert('Mahasiswa Berhasil Dihapus');
                             window.location.reload();
                         }else{
-                            alert('Jenis Gagal Dihapus');
-
+                            alert('Mahasiswa Gagal Dihapus');
                         }
                     }
                 })

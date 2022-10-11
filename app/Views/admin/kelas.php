@@ -56,7 +56,9 @@
                                     <td><?= $ditem->nama_dosen;?>, <?= $ditem->gelar;?></td>
                                     <td><?= $ditem->thn_akademik;?></td>
                                     <td><?= $ditem->totalmhs;?></td>
-                                    <td width="150"><button class="btn bg-navy btn-sm"><i class="fa fa-eye"></i></button> <button class="btn bg-orange btn-sm"><i class="fa fa-edit"></i></button> <button class="btn btn-danger btn-sm"><i class="fa fa-trash"></i></button></td>
+                                    <td width="150">
+                                        <a href="<?= base_url('/admin/kelas/viewkelas/'.$ditem->idkelas)?>" class="btn bg-navy btn-sm"><i class="fa fa-eye"></i></a>
+                                        <button class="btn bg-orange btn-sm"><i class="fa fa-edit"></i></button> <button class="btn btn-danger btn-sm"  id="hapuskelas" data-val="<?=$ditem->idkelas?>"><i class="fa fa-trash"></i></button></td>
                                 </tr>
                             <?php } ?>
                             </tbody>
