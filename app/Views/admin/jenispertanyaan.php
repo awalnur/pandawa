@@ -82,7 +82,39 @@
                                     <td>
                                         <a href="<?= base_url('admin/pertanyaan/pertanyaan/' . $jitem->idjenis_pertanyaan) ?>" class="btn btn-info">List Pertanyaan</a></td>
                                     <td width="150">
-                                        <button class="btn bg-orange btn-sm"><i class="fa fa-edit"></i></button>
+                                        <button class="btn bg-orange btn-sm" data-toggle="modal" data-target="#modal-edit<?= $jitem->idjenis_pertanyaan?>"><i class="fa fa-edit"></i></button>
+
+                                        <div class="modal fade" id="modal-edit<?= $jitem->idjenis_pertanyaan?>">
+                                            <div class="modal-dialog modal-sm">
+                                                <div class="modal-content">
+                                                    <div class="modal-header">
+                                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                            <span aria-hidden="true">&times;</span></button>
+                                                        <h4 class="modal-title">Jenis Pertanyaan</h4>
+                                                    </div>
+                                                    <form action="#" id="editjenis_pertanyaan">
+
+                                                        <div class="modal-body">
+
+                                                            <div class="form-group">
+                                                                <label for="jenis">
+                                                                    Jenis Pertanyaan
+                                                                </label>
+                                                                <input type="text" name="id" value="<?=$jitem->idjenis_pertanyaan?>" class="form-control hidden" required hidden>
+                                                                <input type="text" name="jenis" value="<?=$jitem->jenis?>" class="form-control" required>
+                                                            </div>
+
+                                                        </div>
+                                                        <div class="modal-footer">
+                                                            <button type="button" class="btn btn-danger pull-left" data-dismiss="modal">Batal</button>
+                                                            <button type="submit" class="btn btn-primary">Simpan</button>
+                                                        </div>
+                                                    </form>
+                                                </div>
+                                                <!-- /.modal-content -->
+                                            </div>
+                                            <!-- /.modal-dialog -->
+                                        </div>
                                         <button class="btn btn-danger btn-sm" id="deletejenis" data-val="<?= $jitem->idjenis_pertanyaan?>"><i class="fa fa-trash"></i></button>
                                     </td>
                                 </tr>

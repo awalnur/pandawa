@@ -29,11 +29,21 @@ class Pertanyaan extends AdminController
         $data['data']=$this->db->table('jenis_pertanyaan')->get()->getResultObject();
         return $data;
     }
-    function savejenis(){
-        $jenis=$this->request->getPost('jenis');
-        $data=['jenis'=>$jenis];
-        $ins=$this->db->table('jenis_pertanyaan')->insert($data);
-        $d['success']=1;
+    function savejenis($edit=null){
+        if ($edit==null){
+
+            $jenis=$this->request->getPost('jenis');
+            $data=['jenis'=>$jenis];
+            $ins=$this->db->table('jenis_pertanyaan')->insert($data);
+            $d['success']=1;
+        }else{
+
+            $id=$this->request->getPost('id');
+            $jenis=$this->request->getPost('jenis');
+            $data=['jenis'=>$jenis];
+            $ins=$this->db->table('jenis_pertanyaan')->update($data, ['idjenis_pertanyaan'=>$id]);
+            $d['success']=1;
+        }
         return json_encode($d);
     }
 
@@ -69,14 +79,28 @@ class Pertanyaan extends AdminController
         echo view('admin/template/footer');
     }
 
-    function savepertanyaan(){
-        $jenis=$this->request->getPost('jenis');
-        $pertanyaan=$this->request->getPost('pertanyaan');
-        $data=['idjenis_pertanyaan'=>$jenis,
-            'pertanyaan'=>$pertanyaan];
-        $ins=$this->db->table('pertanyaan')->insert($data);
-        if ($ins){
-            $d['success']=1;
+    function savepertanyaan($edit=null){
+        if ($edit==null){
+
+            $jenis=$this->request->getPost('jenis');
+            $pertanyaan=$this->request->getPost('pertanyaan');
+            $data=['idjenis_pertanyaan'=>$jenis,
+                'pertanyaan'=>$pertanyaan];
+            $ins=$this->db->table('pertanyaan')->insert($data);
+            if ($ins){
+                $d['success']=1;
+            }
+        }else{
+
+            $jenis=$this->request->getPost('jenis');
+            $id=$this->request->getPost('id');
+            $pertanyaan=$this->request->getPost('pertanyaan');
+            $data=['idjenis_pertanyaan'=>$jenis,
+                'pertanyaan'=>$pertanyaan];
+            $ins=$this->db->table('pertanyaan')->update($data,['idpertanyaan'=>$id]);
+            if ($ins){
+                $d['success']=1;
+            }
         }
         return json_encode($d);
     }

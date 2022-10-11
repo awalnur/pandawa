@@ -26,11 +26,12 @@
                     <!-- /.box-header -->
                     <!-- form start -->
                     <form role="form" action="<?= base_url('admin/dosen/savedosen')?>" method="post">
-                        <div class="alert alert-success alert-dismissable <?= (empty(session('success')))?'hidden':''?>">
-                            Data Berhasil Ditambahkan
-                            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
-                        </div>
+
                         <div class="box-body">
+                            <div class="alert alert-success alert-dismissable <?= (empty(session('success')))?'hidden':''?>">
+                                Data Berhasil Ditambahkan
+                                <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+                            </div>
                             <div class="form-group">
                                 <label for="nid">NID</label>
                                 <input type="text" class="form-control" id="nid" name="nid" placeholder="NID Dosen">

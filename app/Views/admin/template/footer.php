@@ -243,6 +243,7 @@
             'info'        : true,
             'autoWidth'   : false
         });
+
         $("#jenispertanyaan").submit(function (s){
             s.preventDefault();
             $.ajax({
@@ -255,6 +256,23 @@
 
                     if(s.success==1){
                         alert('Jenis Baru Ditambahkan')
+                        window.location.reload()
+                    }
+                }
+            })
+        });
+        $("#editjenis_pertanyaan").submit(function (s){
+            s.preventDefault();
+            $.ajax({
+                url: '<?= base_url('admin/pertanyaan/savejenis/edit')?>',
+                data: $(this).serialize(),
+                dataType: 'json',
+                type: 'post',
+                success:function (s){
+                    console.log(s)
+
+                    if(s.success==1){
+                        alert('Edit Jenis Berhasil');
                         window.location.reload()
                     }
                 }
@@ -300,6 +318,7 @@
                 })
             }
         });
+
         $("#pertanyaan").submit(function (s){
             s.preventDefault();
             $.ajax({
@@ -311,7 +330,24 @@
                     console.log(s)
 
                     if(s.success==1){
-                        alert('Jenis Baru Ditambahkan')
+                        alert('Pertanyaan Baru Ditambahkan')
+                        window.location.reload()
+                    }
+                }
+            });
+        });
+        $("#edit_pertanyaan").submit(function (s){
+            s.preventDefault();
+            $.ajax({
+                url: '<?= base_url('admin/pertanyaan/savepertanyaan/edit')?>',
+                data: $(this).serialize(),
+                dataType: 'json',
+                type: 'post',
+                success:function (s){
+                    console.log(s)
+
+                    if(s.success==1){
+                        alert('Edit Pertanyaan Berhasil')
                         window.location.reload()
                     }
                 }
@@ -348,10 +384,10 @@
                     type: 'post',
                     success:function (e){
                         if (e.success==1){
-                            alert('Jenis Berhasil Dihapus');
+                            alert('Mata Kuliah Berhasil Dihapus');
                             window.location.reload();
                         }else{
-                            alert('Jenis Gagal Dihapus');
+                            alert('Mata Kuliah Gagal Dihapus');
 
                         }
                     }
@@ -368,10 +404,10 @@
                     type: 'post',
                     success:function (e){
                         if (e.success==1){
-                            alert('Jenis Berhasil Dihapus');
+                            alert('Dosen Berhasil Dihapus');
                             window.location.reload();
                         }else{
-                            alert('Jenis Gagal Dihapus');
+                            alert('Dosen Gagal Dihapus');
 
                         }
                     }
@@ -431,7 +467,13 @@
                 $("#nidedit").attr('disabled', false);
             }else{
                 $("#nidedit").attr('disabled', true);
-
+            }
+        })
+        $("#editkodematkul").change(function (e) {
+            if(this.checked){
+                $("#kodematkul").attr('disabled', false);
+            }else{
+                $("#kodematkul").attr('disabled', true);
             }
         })
     });

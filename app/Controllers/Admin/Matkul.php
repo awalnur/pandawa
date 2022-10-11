@@ -17,7 +17,17 @@ class Matkul extends AdminController
         echo view('admin/tambahmatkul');
         echo view('admin/template/footer');
     }
-    function savematkul(){
+
+    function edit($kodematkul=null){
+        if($kodematkul==null){
+            return redirect()->back()->with('error', 'kode matakuliah tidak ditemukan');
+        }
+        $data['matkul']=$this->db->table('makul')->where(['kode_matkul'=>$kodematkul])->get()->getRow();
+        echo view('admin/template/header');
+        echo view('admin/editmatkul',$data);
+        echo view('admin/template/footer');
+    }
+    function savematkul($edit=false, $kodemk=null){
         $kodematkul=$this->request->getPost('kodematkul');
         $nama=$this->request->getPost('nama');
         $sks=$this->request->getPost('sks');
@@ -28,13 +38,34 @@ class Matkul extends AdminController
             'sks'=>$sks,
             'semester'=>$semester,
         ];
-        $f=$this->db->table('makul')->insert($data);
-        if ($f){
-            return redirect()->back()->with('success', 1);
+        if ($edit==false){
+            $f=$this->db->table('makul')->insert($data);
 
+            if ($f){
+                return redirect()->to(base_url('/admin/matkul/tambah'))->with('success', 1);
+
+            }else{
+                return redirect()->to(base_url('/admin/matkul/tambah'))->with('error', 1);
+            }
         }else{
-            return redirect()->back()->with('error', 1);
+            if(empty($kodematkul)){
+                $d=[
+                    'matkul'=>$nama,
+                    'sks'=>$sks,
+                    'semester'=>$semester,
+                ];
+            }else{
+                $d=$data;
+            }
+            $f=$this->db->table('makul')->update($d, ['kode_matkul'=>$kodemk]);
 
+
+            if ($f){
+                return redirect()->to(base_url('/admin/matkul/edit/'.$kodemk))->with('success', 1);
+
+            }else{
+                return redirect()->to(base_url('/admin/matkul/edit/'.$kodemk))->with('error', 1);
+            }
         }
 
     }

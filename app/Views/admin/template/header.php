@@ -148,19 +148,19 @@
                         <li><a href="<?= base_url('admin/dosen')?>"><i class="fa fa-circle-o"></i> Data Dosen</a></li>
                       </ul>
                 </li>
-                <li class="treeview">
-                    <a href="">
-                        <i class="fa fa-list"></i>
-                        <span>Prodi</span>
-                        <span class="pull-right-container">
-                          <i class="fa fa-angle-left pull-right"></i>
-                        </span>
-                    </a>
-                    <ul class="treeview-menu">
-                        <li><a href="<?= base_url('admin/dosen/tambah')?>"><i class="fa fa-circle-o"></i> Tambah Dosen</a></li>
-                        <li><a href="<?= base_url('admin/dosen')?>"><i class="fa fa-circle-o"></i> Data Dosen</a></li>
-                    </ul>
-                </li>
+<!--                <li class="treeview">-->
+<!--                    <a href="">-->
+<!--                        <i class="fa fa-list"></i>-->
+<!--                        <span>Prodi</span>-->
+<!--                        <span class="pull-right-container">-->
+<!--                          <i class="fa fa-angle-left pull-right"></i>-->
+<!--                        </span>-->
+<!--                    </a>-->
+<!--                    <ul class="treeview-menu">-->
+<!--                        <li><a href="--><?//= base_url('admin/dosen/tambah')?><!--"><i class="fa fa-circle-o"></i> Tambah Dosen</a></li>-->
+<!--                        <li><a href="--><?//= base_url('admin/dosen')?><!--"><i class="fa fa-circle-o"></i> Data Dosen</a></li>-->
+<!--                    </ul>-->
+<!--                </li>-->
                 <li class="treeview">
                     <a href="">
                         <i class="fa fa-graduation-cap"></i>

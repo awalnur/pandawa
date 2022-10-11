@@ -21,10 +21,10 @@ class Dosen extends AdminController
 
     function edit($id=null){
         if($id==null){
-
+            return redirect()->back()->with('error', 'NID tidak ditemukan');
         }else{
             $data['dosen']=$this->db->table('dosen')->where(['nid'=>$id])->get()->getRow();
-            var_dump($data);
+//            var_dump($data);
             echo view('admin/template/header');
             echo view('admin/editdosen', $data);
             echo view('admin/template/footer');
@@ -54,7 +54,7 @@ class Dosen extends AdminController
             var_dump($d);
             $this->db->table('dosen')->update($d, ['nid'=>$id]);
 //            return redirect()->to()->with('success', 1);
-            return redirect()->to('/admin/dosen/edit/'.$nid)->with('success', 1);
+            return redirect()->to('/admin/dosen/edit/'.$id)->with('success', 1);
 
         }else{
             $this->db->table('dosen')->insert($data);

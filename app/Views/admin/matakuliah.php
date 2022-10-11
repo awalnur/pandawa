@@ -104,7 +104,9 @@
                                     <td><?=$ditem->matkul;?></td>
                                     <td><?= $ditem->sks;?></td>
                                     <td><?= $ditem->semester;?></td>
-                                    <td width="150"><button class="btn bg-orange btn-sm"><i class="fa fa-edit"></i></button> <button class="btn btn-danger btn-sm"  id="deletemk" data-val="<?= $ditem->kode_matkul?>"><i class="fa fa-trash"></i></button></td>
+                                    <td width="150">
+                                        <a href="<?= base_url('/admin/matkul/edit/'.$ditem->kode_matkul)?>"> <button class="btn bg-orange btn-sm"><i class="fa fa-edit"></i></button></a>
+                                        <button class="btn btn-danger btn-sm"  id="deletemk" data-val="<?= $ditem->kode_matkul?>"><i class="fa fa-trash"></i></button></td>
                                 </tr>
                             <?php } ?>
                             </tbody>

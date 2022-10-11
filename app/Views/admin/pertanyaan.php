@@ -38,9 +38,7 @@
                                         <h4 class="modal-title">Pertanyaan Baru</h4>
                                     </div>
                                     <form action="#" id="pertanyaan">
-
                                         <div class="modal-body">
-
                                             <div class="form-group">
                                                 <label for="jenis">
                                                     Jenis Pertanyaan
@@ -94,7 +92,54 @@
                                     <td><?=$jitem->jenis;?>
                                     <td><?=$jitem->pertanyaan;?>
                                     </td><td width="150">
-                                        <button class="btn bg-orange btn-sm"><i class="fa fa-edit"></i></button>
+                                        <button class="btn bg-orange btn-sm" data-toggle="modal" data-target="#modal-editpert<?= $jitem->idpertanyaan?>"><i class="fa fa-edit"></i></button>
+
+                                        <div class="modal fade" id="modal-editpert<?= $jitem->idpertanyaan?>">
+                                            <div class="modal-dialog modal-sm">
+                                                <div class="modal-content">
+                                                    <div class="modal-header">
+                                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                            <span aria-hidden="true">&times;</span></button>
+                                                        <h4 class="modal-title">Jenis Pertanyaan</h4>
+                                                    </div>
+                                                    <form action="#" id="edit_pertanyaan">                                                        <div class="modal-body">
+                                                            <div class="form-group">
+                                                                <label for="jenis">
+                                                                    Jenis Pertanyaan
+                                                                </label>
+                                                                <input type="text" name="id" value="<?=$jitem->idpertanyaan?>" class="form-control hidden" required hidden>
+                                                                <label for="jenis">
+                                                                    Jenis Pertanyaan
+                                                                </label>
+                                                                <select name="jenis" id="" class="form-control">
+                                                                    <?php
+                                                                    foreach ($jenis as $jens){
+                                                                        ?>
+                                                                        <option value="<?=$jens->idjenis_pertanyaan?>" <?=($jens->idjenis_pertanyaan==$jitem->jenis)?'selected':''; ?>><?= $jens->jenis?></option>
+                                                                        <?php
+                                                                    }
+                                                                    ?>
+                                                                </select>
+                                                            </div>
+                                                            <div class="form-group">
+                                                                <label for="Pertanyaan">
+                                                                    Pertanyaan
+                                                                </label>
+                                                                <textarea type="text" name="pertanyaan" class="form-control" placeholder="pertanyaan" required><?=$jitem->pertanyaan?></textarea>
+                                                            </div>
+
+
+                                                        </div>
+                                                        <div class="modal-footer">
+                                                            <button type="button" class="btn btn-danger pull-left" data-dismiss="modal">Batal</button>
+                                                            <button type="submit" class="btn btn-primary">Simpan</button>
+                                                        </div>
+                                                    </form>
+                                                </div>
+                                                <!-- /.modal-content -->
+                                            </div>
+                                            <!-- /.modal-dialog -->
+                                        </div>
                                         <button class="btn btn-danger btn-sm" id="deletepertanyaan" data-val="<?= $jitem->idpertanyaan?>"><i class="fa fa-trash"></i></button>
                                     </td>
                                 </tr>
