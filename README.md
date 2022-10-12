@@ -1,3 +1,3 @@
 
 
-always use the lates.sql on db folder
+always use the lates.sql on db folder.
