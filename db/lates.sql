@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Sep 22, 2022 at 09:55 AM
+-- Generation Time: Oct 12, 2022 at 11:46 PM
 -- Server version: 8.0.30-0ubuntu0.22.04.1
 -- PHP Version: 8.1.10
 
@@ -39,13 +39,13 @@ CREATE TABLE `dosen` (
 --
 
 INSERT INTO `dosen` (`nid`, `nama_dosen`, `gelar`, `foto_dosen`) VALUES
-('12344556', 'Dosen ABC D', '', 'default.png'),
-('12344557', 'Dosen ABC7D', '', 'default.png'),
-('12344558', 'Dosen C', '', 'default.png'),
-('12344559', 'Dosen0', '', 'default.png'),
-('12344560', 'Dosen AB45', '', 'default.png'),
-('12344570', 'Dosen AB45D', '', 'default.png'),
-('123466', 'sadasdasd', 'S,pd', 'default.png');
+('12314448', 'Dosen ABC7D ', 'M.si A.md, I7-64000U', 'default.png'),
+('12344557', 'Dosen ABC7D ', 'M.si, M.Op, EsDm', 'default.png'),
+('12344558', 'Dosen ABC7D', '', 'default.png'),
+('12344559', 'Dosen ABC7D', '', 'default.png'),
+('12344560', 'Dosen ABC7D', '', 'default.png'),
+('12344570', 'Dosen ABC7D', '', 'default.png'),
+('123466', 'Dosen ABC7D', '', 'default.png');
 
 -- --------------------------------------------------------
 
@@ -88,13 +88,10 @@ CREATE TABLE `kelas` (
 --
 
 INSERT INTO `kelas` (`id_kelas`, `kode_matkul`, `nid`, `kelas`, `thn_akademik`, `idprodi`) VALUES
-(1, 'MK.1234.12', '12344556', '2', '20212', 1),
+(1, 'MK.1234.12', '12314448', '2', '20212', 1),
 (2, 'MK.1234.13', '12344557', '10', '20212', 1),
-(3, 'MK.1234.15', '12344560', '1', '20212', 1),
-(4, 'MK.1234.12', '12344560', '12', '20221', 1),
-(5, 'MK.1234.12', '12344560', '12', '20221', 1),
 (6, 'MK.1234.12', '12344560', '13', '20221', 1),
-(7, 'MK.1234.12', '12344556', '4', '20221', 1),
+(7, 'MK.1234.12', '12314448', '4', '20221', 1),
 (8, 'MK.1234.12', '12344558', '1', '20221', 1),
 (9, 'MK.1234.12', '12344560', '3', '20221', 1),
 (10, 'MK.1234.12', '12344560', '12', '20221', 1);
@@ -118,20 +115,34 @@ CREATE TABLE `kritiksaran` (
 --
 
 INSERT INTO `kritiksaran` (`id_ks`, `nid`, `nim`, `kritiksaran`, `thn_akademik`) VALUES
-(1, '12344560', '12230', 'asdasdasd', '20222'),
-(2, '12344560', '12230', 'asdasdasd', '20222'),
-(3, '12344560', '12230', 'asdasdasd', '20212'),
-(4, '12344560', '12230', 'asdasdasd', '20212'),
-(5, '12344556', '12230', 'asdasd', '20212'),
-(6, '12344560', '12230', 'asd', '20212'),
-(7, '12344556', '12230', 'sd', '20212'),
-(8, '12344560', '12230', 'asdasdd', '20212'),
-(9, '12344560', '12230', 'asdasdd', '20212'),
-(10, '12344560', '12230', 'asdasdd', '20212'),
-(11, '12344560', '12230', 'asdasdd', '20212'),
-(12, '12344560', '12230', 'asdasdd', '20212'),
-(13, '12344560', '12230', 'asdasdd', '20212'),
-(14, '12344560', '12230', 'sd', '20212');
+(1, '12314448', '12230', 'asdasdasd', '20221'),
+(2, '12314448', '12230', 'asdasdasd', '20221'),
+(3, '12314448', '12230', 'asdasdasd', '20221'),
+(4, '12314448', '12230', 'asdasdasd', '20221'),
+(5, '12314448', '12230', 'asdasd', '20221'),
+(6, '12314448', '12230', 'asd', '20221'),
+(7, '12314448', '12230', 'sd', '20221'),
+(8, '12314448', '12230', 'asdasdd', '20221'),
+(9, '12314448', '12230', 'asdasdd', '20221'),
+(10, '12314448', '12230', 'asdasdd', '20221'),
+(11, '12314448', '12230', 'asdasdd', '20221'),
+(12, '12314448', '12230', 'asdasdd', '20221'),
+(13, '12314448', '12230', 'asdasdd', '20221'),
+(14, '12314448', '12230', 'sd', '20221'),
+(15, '12314448', '12230', 'asdasdasd', '20221'),
+(16, '12314448', '12230', 'asdasdasd', '20221'),
+(17, '12314448', '12230', 'asdasdasd', '20221'),
+(18, '12314448', '12230', 'asdasdasd', '20221'),
+(19, '12314448', '12230', 'asdasd', '20221'),
+(20, '12314448', '12230', 'asd', '20221'),
+(21, '12314448', '12230', 'sd', '20221'),
+(22, '12314448', '12230', 'asdasdd', '20221'),
+(23, '12314448', '12230', 'asdasdd', '20221'),
+(24, '12314448', '12230', 'asdasdd', '20221'),
+(25, '12314448', '12230', 'asdasdd', '20221'),
+(26, '12314448', '12230', 'asdasdd', '20221'),
+(27, '12314448', '12230', 'asdasdd', '20221'),
+(28, '12314448', '12230', 'sd', '20221');
 
 -- --------------------------------------------------------
 
@@ -151,7 +162,7 @@ CREATE TABLE `makul` (
 --
 
 INSERT INTO `makul` (`kode_matkul`, `matkul`, `sks`, `semester`) VALUES
-('MK.1234.12', 'Makul 1', '', '2'),
+('MK.1234.12', 'Makul 1344', '3', '5'),
 ('MK.1234.13', 'Makul 2', '', '2'),
 ('MK.1234.15', 'Makul 3', '', '2'),
 ('MK.1234.53', 'Makul 54', '', '2'),
@@ -176,7 +187,7 @@ CREATE TABLE `mhs` (
 --
 
 INSERT INTO `mhs` (`nim`, `nama_mhs`, `angkatan`, `idprodi`, `password`) VALUES
-('12230', 'nama saya', '2019', 1, '$2y$10$3xqIcuKC08wapn5//FmKKe1aSs2lt5kX2Gni0xO62A3vRfcc9QFwK'),
+('12230', 'nama saya', '2018', 1, '$2y$10$3xqIcuKC08wapn5//FmKKe1aSs2lt5kX2Gni0xO62A3vRfcc9QFwK'),
 ('201915001', 'Mhs 1', '2019', 2, '$2y$10$filz8PkqZouv1.Gl29a.2ua5DMjEYdA.EVTnBE6eDdJIGGupRfAUG'),
 ('201915002', 'Mhs 2', '2019', 1, '$2y$10$jTYqSs1iVxhmltTdDmO0buNy27FBU4OEZqfKICrIbcv1aly3z./B2'),
 ('201915003', 'Mhs 3', '2019', 1, '$2y$10$uM9ct.807ApKSyuPQ/N44ORWnTysI/i.LgFChguyzFfYt/WsMovkS'),
@@ -199,12 +210,12 @@ INSERT INTO `mhs` (`nim`, `nama_mhs`, `angkatan`, `idprodi`, `password`) VALUES
 -- (See below for the actual view)
 --
 CREATE TABLE `mhsprodi` (
-`angkatan` varchar(4)
-,`fakultas` varchar(100)
-,`idprodi` int
+`nim` varchar(11)
 ,`nama_mhs` varchar(45)
+,`angkatan` varchar(4)
 ,`nama_prodi` varchar(45)
-,`nim` varchar(11)
+,`idprodi` int
+,`fakultas` varchar(100)
 );
 
 -- --------------------------------------------------------
@@ -225,7 +236,6 @@ CREATE TABLE `mhs_kelas` (
 --
 
 INSERT INTO `mhs_kelas` (`id_kelasmhs`, `nim`, `id_kelas`, `dinilai`) VALUES
-(1, '12230', 3, 1),
 (2, '12230', 1, 0),
 (3, '12230', 2, 1),
 (4, '12230', 9, 0),
@@ -235,7 +245,11 @@ INSERT INTO `mhs_kelas` (`id_kelasmhs`, `nim`, `id_kelas`, `dinilai`) VALUES
 (8, '12230', 10, 0),
 (9, '201915002', 10, 0),
 (10, '201915003', 10, 0),
-(11, '201915004', 10, 0);
+(11, '201915004', 10, 0),
+(12, '201915002', 1, 0),
+(13, '201915003', 1, 0),
+(14, '201915004', 1, 0),
+(15, '201915006', 1, 0);
 
 -- --------------------------------------------------------
 
@@ -269,18 +283,18 @@ INSERT INTO `nilai` (`id_nilai`, `id_pertanyaan`, `nid`, `nim`, `nilai`, `thn_ak
 (10, 10, '12344560', '12230', 4, '20221'),
 (11, 11, '12344560', '12230', 4, '20221'),
 (12, 12, '12344560', '12230', 3, '20221'),
-(13, 1, '12344556', '12230', 4, '20221'),
-(14, 2, '12344556', '12230', 4, '20221'),
-(15, 3, '12344556', '12230', 4, '20221'),
-(16, 4, '12344556', '12230', 3, '20221'),
-(17, 5, '12344556', '12230', 3, '20221'),
-(18, 6, '12344556', '12230', 4, '20221'),
-(19, 7, '12344556', '12230', 4, '20221'),
-(20, 8, '12344556', '12230', 4, '20221'),
-(21, 9, '12344556', '12230', 3, '20221'),
-(22, 10, '12344556', '12230', 3, '20221'),
-(23, 11, '12344556', '12230', 3, '20221'),
-(24, 12, '12344556', '12230', 2, '20221'),
+(13, 1, '12314448', '12230', 4, '20221'),
+(14, 2, '12314448', '12230', 4, '20221'),
+(15, 3, '12314448', '12230', 4, '20221'),
+(16, 4, '12314448', '12230', 3, '20221'),
+(17, 5, '12314448', '12230', 3, '20221'),
+(18, 6, '12314448', '12230', 4, '20221'),
+(19, 7, '12314448', '12230', 4, '20221'),
+(20, 8, '12314448', '12230', 4, '20221'),
+(21, 9, '12314448', '12230', 3, '20221'),
+(22, 10, '12314448', '12230', 3, '20221'),
+(23, 11, '12314448', '12230', 3, '20221'),
+(24, 12, '12314448', '12230', 2, '20221'),
 (25, 13, '12344560', '12230', 4, '20221'),
 (26, 14, '12344560', '12230', 4, '20221'),
 (27, 15, '12344560', '12230', 3, '20221'),
@@ -293,18 +307,18 @@ INSERT INTO `nilai` (`id_nilai`, `id_pertanyaan`, `nid`, `nim`, `nilai`, `thn_ak
 (34, 10, '12344560', '12230', 4, '20221'),
 (35, 11, '12344560', '12230', 4, '20221'),
 (36, 12, '12344560', '12230', 3, '20221'),
-(37, 1, '12344556', '12230', 4, '20221'),
-(38, 2, '12344556', '12230', 4, '20221'),
-(39, 3, '12344556', '12230', 4, '20221'),
-(40, 4, '12344556', '12230', 4, '20221'),
-(41, 5, '12344556', '12230', 3, '20221'),
-(42, 6, '12344556', '12230', 4, '20221'),
-(43, 7, '12344556', '12230', 4, '20221'),
-(44, 8, '12344556', '12230', 4, '20221'),
-(45, 9, '12344556', '12230', 4, '20221'),
-(46, 10, '12344556', '12230', 3, '20221'),
-(47, 11, '12344556', '12230', 4, '20221'),
-(48, 12, '12344556', '12230', 3, '20221'),
+(37, 1, '12314448', '12230', 4, '20221'),
+(38, 2, '12314448', '12230', 4, '20221'),
+(39, 3, '12314448', '12230', 4, '20221'),
+(40, 4, '12314448', '12230', 4, '20221'),
+(41, 5, '12314448', '12230', 3, '20221'),
+(42, 6, '12314448', '12230', 4, '20221'),
+(43, 7, '12314448', '12230', 4, '20221'),
+(44, 8, '12314448', '12230', 4, '20221'),
+(45, 9, '12314448', '12230', 4, '20221'),
+(46, 10, '12314448', '12230', 3, '20221'),
+(47, 11, '12314448', '12230', 4, '20221'),
+(48, 12, '12314448', '12230', 3, '20221'),
 (49, 1, '12344560', '12230', 4, '20221'),
 (50, 2, '12344560', '12230', 3, '20221'),
 (51, 3, '12344560', '12230', 3, '20221'),
@@ -452,6 +466,27 @@ INSERT INTO `prodi` (`idprodi`, `nama_prodi`, `fakultas`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `thn_akademik`
+--
+
+CREATE TABLE `thn_akademik` (
+  `thn_akademik` varchar(6) NOT NULL,
+  `aktif` int NOT NULL DEFAULT '0'
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+--
+-- Dumping data for table `thn_akademik`
+--
+
+INSERT INTO `thn_akademik` (`thn_akademik`, `aktif`) VALUES
+('20211', 0),
+('20212', 0),
+('20221', 0),
+('20222', 1);
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `user`
 --
 
@@ -558,6 +593,12 @@ ALTER TABLE `prodi`
   ADD PRIMARY KEY (`idprodi`);
 
 --
+-- Indexes for table `thn_akademik`
+--
+ALTER TABLE `thn_akademik`
+  ADD PRIMARY KEY (`thn_akademik`);
+
+--
 -- Indexes for table `user`
 --
 ALTER TABLE `user`
@@ -577,13 +618,13 @@ ALTER TABLE `kelas`
 -- AUTO_INCREMENT for table `kritiksaran`
 --
 ALTER TABLE `kritiksaran`
-  MODIFY `id_ks` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+  MODIFY `id_ks` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
 
 --
 -- AUTO_INCREMENT for table `mhs_kelas`
 --
 ALTER TABLE `mhs_kelas`
-  MODIFY `id_kelasmhs` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `id_kelasmhs` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 
 --
 -- AUTO_INCREMENT for table `nilai`
@@ -617,8 +658,8 @@ ALTER TABLE `user`
 -- Constraints for table `kelas`
 --
 ALTER TABLE `kelas`
-  ADD CONSTRAINT `kelas_ibfk_1` FOREIGN KEY (`nid`) REFERENCES `dosen` (`nid`),
-  ADD CONSTRAINT `kelas_ibfk_2` FOREIGN KEY (`kode_matkul`) REFERENCES `makul` (`kode_matkul`);
+  ADD CONSTRAINT `kelas_ibfk_2` FOREIGN KEY (`kode_matkul`) REFERENCES `makul` (`kode_matkul`),
+  ADD CONSTRAINT `kelas_ibfk_3` FOREIGN KEY (`nid`) REFERENCES `dosen` (`nid`) ON UPDATE CASCADE;
 
 --
 -- Constraints for table `kritiksaran`
@@ -643,9 +684,9 @@ ALTER TABLE `mhs_kelas`
 -- Constraints for table `nilai`
 --
 ALTER TABLE `nilai`
-  ADD CONSTRAINT `nilai_ibfk_1` FOREIGN KEY (`nid`) REFERENCES `dosen` (`nid`),
   ADD CONSTRAINT `nilai_ibfk_2` FOREIGN KEY (`nim`) REFERENCES `mhs` (`nim`),
-  ADD CONSTRAINT `nilai_ibfk_3` FOREIGN KEY (`id_pertanyaan`) REFERENCES `pertanyaan` (`idpertanyaan`);
+  ADD CONSTRAINT `nilai_ibfk_3` FOREIGN KEY (`id_pertanyaan`) REFERENCES `pertanyaan` (`idpertanyaan`),
+  ADD CONSTRAINT `nilai_ibfk_4` FOREIGN KEY (`nid`) REFERENCES `dosen` (`nid`) ON UPDATE CASCADE;
 
 --
 -- Constraints for table `pertanyaan`
