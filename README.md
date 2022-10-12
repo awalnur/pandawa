@@ -1,1 +1,3 @@
-Pandawa adalah sebuah perangkat lunak berbasis web yang dibuat untuk meningkatkan performa dosen berdasarkan dengan penilaian yang dilakukan oleh mahasiswa kepada dosen terkait metode mengajar dan lain lain yang telah dilaksanakan selama satu semester
+
+
+always use the lates.sql on db folder
