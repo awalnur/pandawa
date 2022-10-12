@@ -14,7 +14,7 @@ class Penilaian extends AdminController
         echo view('admin/penilaian',$data);
         echo view('admin/template/footer');
     }
-    function getnilai($thn_ajaran=null){
+    function getnilai($thn_ajaran=null, $prodi=null){
 
         $tab = $this->db->table('dosen');
         $tab->select('dosen.nid,nama_dosen, gelar, sum(nilai.nilai) as totalnilai,sum(nilai.nilai)/count(nilai.nilai) as rata')->join('nilai', 'dosen.nid=nilai.nid', 'left')->where('nilai.thn_akademik', $thn_ajaran)->groupBy('dosen.nid');
@@ -30,7 +30,7 @@ class Penilaian extends AdminController
             $row[] = $list->nama_dosen;
             $row[] = $list->totalnilai;
             $row[] = $list->rata;
-            $row[] = '<td width="160" class="text-center"><a href="'.base_url('admin/penilaian/download/'.$list->nid.'/'.$thn_ajaran).'"> <button class="btn bg-navy btn-sm"><i class="fa fa-download"></i> Download Rekap</button></a> <button class="btn btn-danger btn-sm"><i class="fa fa-trash"></i></button></td>';
+            $row[] = '<td width="160" class="text-center"><a href="'.base_url('admin/penilaian/single/'.$prodi.'/'.$thn_ajaran.'/'.$list->nid).'"> <button class="btn bg-navy btn-sm"><i class="fa fa-download"></i> Download Rekap</button></a> <button class="btn btn-danger btn-sm"><i class="fa fa-trash"></i></button></td>';
 
             $data[] = $row;
         }
@@ -363,7 +363,7 @@ class Penilaian extends AdminController
             $nilai = $this->db->table('nilai')->join('kelas', 'nilai.nid=kelas.nid', 'inner')->where(['kelas.idprodi' => $idprodi, 'nilai.thn_akademik' => $thaka]);
 
             $nitotal=$nilai->select('avg(nilai) as n,count(nim) as responden')->where(['nilai.thn_akademik' => $thaka, 'kelas.nid'=> $ldosen->nid])->get()->getRow();
-            $respp=$nilai->select('count(DISTINCT nim) as responden')->where(['nilai.thn_akademik' => $thaka, 'nid'=> $ldosen->nid])->groupBy('nim')->get()->getRow();
+            $respp=$nilai->select('count(DISTINCT nim) as responden')->where(['nilai.thn_akademik' => $thaka, 'nid'=> $ldosen->nid])->get()->getRow();
 //            var_dump($responden);
             if ($respp==null){
                 $responden="0";

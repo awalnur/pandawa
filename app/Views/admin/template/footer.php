@@ -471,17 +471,22 @@
             }
         });
         var thnsaktif=$("#searchta").val();
+        var prodi=$("#searchjurusan").val();
 
         var tbpenilaian=$("#tbnilaidosen").dataTable({
             searchable: true,
             "ajax": {
-                "url": "<?= base_url('admin/penilaian/getnilai/') ?>/"+thnsaktif,
+                "url": "<?= base_url('admin/penilaian/getnilai/') ?>/"+thnsaktif+"/"+prodi,
                 "type": "POST"
             }
             });
 
         $("#searchta").change(function(){
-            let url='<?= base_url("admin/penilaian/getnilai/")?>/'+$(this).val();
+            let url='<?= base_url("admin/penilaian/getnilai/")?>/'+$(this).val()+"/"+prodi;
+            tbpenilaian.api().ajax.url(url).load();
+        })
+        $("#searchjurusan").change(function(){
+            let url='<?= base_url("admin/penilaian/getnilai/")?>/'+thnsaktif+'/'+$(this).val();
             tbpenilaian.api().ajax.url(url).load();
         })
         var tmhs=$("#tablekelasmhs").dataTable({
