@@ -14,8 +14,11 @@ class Kelas extends AdminController
         echo view('admin/template/footer');
     }
     function tambahkls(){
+        $data['angkatan']=$this->db->table('mhs')->select('angkatan')->groupBy('angkatan')->get()->getResult();
+        $data['ta']=$this->db->table('thn_akademik')->get()->getResult();
+//        var_dump($data);
         echo view('admin/template/header');
-        echo view('admin/tambahkelas');
+        echo view('admin/tambahkelas',$data);
         echo view('admin/template/footer');
     }
     function getDosen(){
@@ -33,7 +36,7 @@ class Kelas extends AdminController
         echo json_encode($json);
     }
 
-    function getmhs(){
+    function getmhs($prodi=null){
         if(!isset($_GET['searchTerm'])){
             $json = [];
         }else{
@@ -62,13 +65,34 @@ class Kelas extends AdminController
 
         echo json_encode($json);
     }
-    function getsmsh($prodi=null,$angkatan=null){
+    function addmhs(){
+//        var_dump($this->request->getPost());
+        $data['suc']=0;
+        $data['all']=0;
+        $data['succees']=1;
+        $mhs=$this->request->getPost('msh');
+        $idkelas=$this->request->getPost('idkelas');
+        foreach ($mhs as $item) {
+            $cek=$this->db->table('mhs_kelas')->where(['id_kelas'=>$idkelas, 'nim'=>$item])->countAllResults();
+            $data['all']++;
+
+            //            echo $cek;
+            if($cek==0){
+//                echo $item;
+                $inst=$this->db->table('mhs_kelas')->insert(['nim'=>$item,'id_kelas'=>$idkelas]);
+                $data['suc']++;
+            }
+        }
+        return json_encode($data);
+    }
+    function getsmsh($prodi=null, $angkatan=null){
                 $ds=$this->db->table('mhsprodi');
                 if ($angkatan==null and $prodi==null) {
                     $lists=$ds->get()->getResult();
+                }elseif ($angkatan==null and $prodi!=null) {
+                    $lists=$ds->where('idprodi',$prodi)->get()->getResult();
                 }else{
                     $lists=$ds->where('idprodi',$prodi)->where('angkatan',$angkatan)->get()->getResult();
-
                 }
                 if (sizeof($lists)==0){
                     $data=[];
@@ -129,23 +153,40 @@ class Kelas extends AdminController
         if ($id==null){
             redirect()->back();
         }
-
+        $data['angkatan']=$this->db->table('mhs')->select('angkatan')->groupBy('angkatan')->get()->getResult();
+        $data['ta']=$this->db->table('thn_akademik')->get()->getResult();
         $data['kelas']=$this->db->table('kelas')->join('makul', 'kelas.kode_matkul=makul.kode_matkul', 'inner')->join('dosen', 'kelas.nid=dosen.nid','inner')->join("(SELECT count(nim) as totalmhs, id_kelas FROM mhs_kelas GROUP BY id_kelas) as c", 'c.id_kelas=kelas.id_kelas', 'left' )->join('prodi', 'kelas.idprodi=prodi.idprodi')->where('kelas.id_kelas', $id)->get()->getRow();
         $data['mhs']=$this->db->table('mhs_kelas')->join('mhs', 'mhs_kelas.nim=mhs.nim', 'inner')->where('mhs_kelas.id_kelas', $id)->get()->getResultObject();
         echo view('admin/template/header');
         echo view('admin/detailkelas', $data);
         echo view('admin/template/footer');
     }
-    function delete(){
-        $kelas=$this->request->getPost('id');
-        $d2=$this->db->table('mhs_kelas')->delete(['id_kelas'=>$kelas]);
-        $res=$this->db->table('kelas')->delete(['id_kelas'=>$kelas]);
+    function delete($mhs=null){
+        if($mhs!=null){
 
-        if ($res){
-            $ret['success']=1;
+            $kelas=$this->request->getPost('id');
+            $nim=$this->request->getPost('nim');
+            $res=$this->db->table('mhs_kelas')->delete(['id_kelas'=>$kelas,'nim'=>$nim]);
+//            $res=$this->db->table('kelas')->delete(['id_kelas'=>$kelas]);
+
+            if ($res){
+                $ret['success']=1;
+            }else{
+                $ret['success']=0;
+            }
+            echo json_encode($ret);
         }else{
-            $ret['success']=0;
+
+            $kelas=$this->request->getPost('id');
+            $d2=$this->db->table('mhs_kelas')->delete(['id_kelas'=>$kelas]);
+            $res=$this->db->table('kelas')->delete(['id_kelas'=>$kelas]);
+
+            if ($res){
+                $ret['success']=1;
+            }else{
+                $ret['success']=0;
+            }
+            echo json_encode($ret);
         }
-        echo json_encode($ret);
     }
 }

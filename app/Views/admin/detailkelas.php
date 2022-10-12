@@ -19,8 +19,9 @@
             <div class="col-xs-12">
 
                 <div class="box">
-                    <div class="box-header">
+                    <div class="box-header with-border">
                         <h3 class="box-title">Kelas</h3>
+
                     </div>
                     <!-- /.box-header -->
                     <div class="box-body">
@@ -54,11 +55,11 @@
                             </div>
                         </div>
                         <hr>
-                        <dvi class="btn-group margin-bottom">
-                            <button class="btn btn-primary"><i class="fa fa-plus-circle"></i> Tambah Mahasiswa</button>
-                            <!--                            <button class="btn btn-success"><i class="fa fa-print"></i> Cetak Data Mahasiswa</button>?-->
-                            <!--                                <butto class="btn btn-primary"><i class="fa fa-plus-circle"></i> Tambah Dosen</butto>-->
-                        </dvi>
+                        <div class="btn-group margin-bottom">
+                            <button class="btn btn-primary" data-toggle="modal" data-target="#modal-addmhs"><i class="fa fa-plus-circle"></i> Tambah Mahasiswa</button>
+
+<!--                            <button class="btn btn-warning" data-toggle="modal" data-target="#edit-kelas"><i class="fa fa-edit"></i>Edit Kelas</button>-->
+                        </div>
                         <br>
                         <table id="example1" class="table table-bordered table-striped">
                             <thead>
@@ -83,7 +84,7 @@
                                     <td><?=$mhs->nama_mhs;?></td>
                                     <td><?= $mhs->angkatan?></td>
                                     <td width="150">
-                                        <button class="btn btn-danger btn-sm"><i class="fa fa-trash"></i> Hapus Dari Kelas</button>
+                                        <button class="btn btn-danger btn-sm" id="deletemhskelas" data-val-idkelas="<?= $kelas->id_kelas?>" data-val-nim="<?= $mhs->nim?>"><i class="fa fa-trash"></i> Hapus Dari Kelas</button>
                                     </td>
                                 </tr>
                             <?php } ?>
@@ -110,3 +111,52 @@
     <!-- /.content -->
 </div>
 <!-- /.content-wrapper -->
+
+<div class="modal fade" id="modal-addmhs">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title">Jenis Pertanyaan</h4>
+            </div>
+            <form action="#" id="tambahmhs_kelas">
+                <div class="modal-body">
+
+                        <div class="row">
+
+                            <div class="col-md-6 sm-12">
+                                <div class="form-group">
+                                    <label>Angkatan</label>
+                                    <select name="pilangkatan" id="pilangkatans" class="form-control">
+                                        <?php foreach ($angkatan as $item) {?>
+                                            <option value="<?=$item->angkatan?>"><?=$item->angkatan?></option>
+                                        <?php } ?>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    <input type="hidden" value="<?= $kelas->idprodi?>" id="idprodis"/>
+                    <input type="hidden" value="<?= $kelas->id_kelas?>" name="idkelas"/>
+                        <table class="table table-bordered table-responsive col-12" style="width: 100%!important;" id="tablekelasmhs2">
+                            <thead >
+                                <tr>
+                                    <td class="text-center">No</td>
+                                    <td>Nim</td>
+                                    <td>Nama Mahasiswa</td>
+                                    <td>Anggkatan</td>
+                                    <td>Prodi</td>
+                                </tr>
+                            </thead>
+                        </table>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-danger pull-left" data-dismiss="modal">Batal</button>
+                    <button type="submit" class="btn btn-primary">Simpan</button>
+                </div>
+            </form>
+        </div>
+        <!-- /.modal-content -->
+    </div>
+    <!-- /.modal-dialog -->
+</div>

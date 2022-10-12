@@ -19,7 +19,7 @@
             <div class="col-xs-12">
 
                 <div class="box">
-                    <div class="box-header">
+                    <div class="box-header  with-border">
                         <h3 class="box-title">Kelas</h3>
                     </div>
                     <!-- /.box-header -->
@@ -56,9 +56,10 @@
                                     <td><?= $ditem->nama_dosen;?>, <?= $ditem->gelar;?></td>
                                     <td><?= $ditem->thn_akademik;?></td>
                                     <td><?= $ditem->totalmhs;?></td>
-                                    <td width="150">
+                                    <td width="150" class="text-center">
                                         <a href="<?= base_url('/admin/kelas/viewkelas/'.$ditem->idkelas)?>" class="btn bg-navy btn-sm"><i class="fa fa-eye"></i></a>
-                                        <button class="btn bg-orange btn-sm"><i class="fa fa-edit"></i></button> <button class="btn btn-danger btn-sm"  id="hapuskelas" data-val="<?=$ditem->idkelas?>"><i class="fa fa-trash"></i></button></td>
+<!--                                        <button class="btn bg-orange btn-sm"><i class="fa fa-edit"></i></button>-->
+                                        <button class="btn btn-danger btn-sm"  id="hapuskelas" data-val="<?=$ditem->idkelas?>"><i class="fa fa-trash"></i></button></td>
                                 </tr>
                             <?php } ?>
                             </tbody>

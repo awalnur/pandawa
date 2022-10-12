@@ -58,10 +58,13 @@
                             </div>
                             <div class="form-group">
                                 <label for="nid">Tahun Akademik</label>
-                                <!--                                <input type="text" class="form-control" id="nid" placeholder="NID Dosen">-->
                                 <select name="ta" class="form-control" id="">
-                                    <option value="20221"> 20221</option>
-                                    <option value="20222"> 20222</option>
+                                    <?php
+                                    foreach ($ta as $item) {
+                                        ?>
+                                    <option value="<?= $item->thn_akademik?>"> <?= $item->thn_akademik?></option>
+                                    <?php } ?>
+
                                 </select>
                             </div>
                             <hr>
@@ -72,9 +75,9 @@
                                             <div class="form-group">
                                                 <label>Angkatan</label>
                                                 <select name="pilangkatan" id="pilangkatan" class="form-control">
-                                                    <option value="2018">2018</option>
-                                                    <option value="2019">2019</option>
-                                                    <option value="2020">2020</option>
+                                                    <?php foreach ($angkatan as $item) {?>
+                                                    <option value="<?=$item->angkatan?>"><?=$item->angkatan?></option>
+                                                    <?php } ?>
                                                 </select>
                                             </div>
                                         </div>

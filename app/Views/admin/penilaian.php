@@ -29,7 +29,12 @@
                             <div class="form-group col-sm-12 col-md-6 col-lg-3">
                                 <label for="">Pilih Tahun Akademik</label>
                                 <select name="taAjaran" class="form-control select2" id="searchta">
-                                    <option value="20212" selected>20212</option>
+                                    <?php foreach ($thnaka as $item) {
+                                        ?>
+                                        <option value="<?= $item->thn_akademik?>"  <?= ($item->aktif==1)?'selected':'';?> ><?= $item->thn_akademik?></option>
+
+                                        <?php
+                                    }?>
 
                                 </select>
                             </div>
@@ -48,43 +53,17 @@
                             </div>
                         </div>
                         <hr class="border-light">
-                        <table id="example1" class="table table-bordered table-striped">
+                        <table class="table table-bordered table-striped" id="tbnilaidosen" style="width: 100% !important;">
                             <thead>
-                            <tr>
-                                <th>No</th>
-                                <th>NID</th>
-                                <th>Nama Dosen</th>
-                                <th>Total Nilai</th>
-                                <th>Aksi</th>
-                            </tr>
-                            </thead>
-                            <tbody>
-                            <?php
-                            $n=0;
-                            foreach ($dosen as $ditem) {
-                                $n++;
-                                ?>
                                 <tr>
-                                    <td><?=$n;?></td>
-                                    <td><?=$ditem->nid;?>
-                                    </td>
-                                    <td><?=$ditem->nama_dosen;?></td>
-                                    <td><?= $ditem->totalnilai;?></td>
-                                    <td><?= $ditem->rata;?></td>
-                                    <td width="160" class="text-center"><a href="<?= base_url('admin/penilaian/detail/'.$ditem->nid);?>"> <button class="btn bg-navy btn-sm"><i class="fa fa-download"></i> Download Rekap</button></a> <button class="btn btn-danger btn-sm"><i class="fa fa-trash"></i></button></td>
+                                    <th>No</th>
+                                    <th>NID</th>
+                                    <th>Nama Dosen</th>
+                                    <th>Total Nilai</th>
+                                    <th>Rata Rata</th>
+                                    <th style="width: 140px !important;">Aksi</th>
                                 </tr>
-                            <?php } ?>
-                            </tbody>
-                            <tfoot>
-                            <tr>
-                                <th>No</th>
-                                <th>NID</th>
-                                <th>Nama Dosen</th>
-                                <th>Total Nilai</th>
-                                <th>Rata-rata Nilai</th>
-                                <th>Aksi</th>
-                            </tr>
-                            </tfoot>
+                            </thead>
                         </table>
                     </div>
                     <!-- /.box-body -->

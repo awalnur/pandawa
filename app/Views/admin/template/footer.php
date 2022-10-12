@@ -353,10 +353,26 @@
                 }
             });
         });
+
+        $("#tambahmhs_kelas").submit(function (s){
+            s.preventDefault();
+            $.ajax({
+                url: '<?= base_url('admin/kelas/addmhs/')?>',
+                data: $(this).serialize(),
+                dataType: 'json',
+                type: 'post',
+                success:function (s){
+                    // console.log(s)
+
+                        alert(s.suc+' dari '+s.all+' Mahasiswa Berhasil Ditambahkan');
+                        window.location.reload()
+                }
+            });
+        });
         //hapuskelas
 
         $(document).on("click", "#hapuskelas", function (s) {
-            alert($(this).attr('data-val'));
+            // alert($(this).attr('data-val'));
             if(confirm("Hapus Kelas ?")){
                 $.ajax({
                     url: '<?= base_url('admin/kelas/delete')?>',
@@ -370,6 +386,26 @@
                         }else{
                             alert('Kelas Gagal Dihapus');
 
+                        }
+                    }
+                })
+            }
+        });
+        // deletemhskelas
+        $(document).on("click", "#deletemhskelas", function (s) {
+            // alert($(this).attr('data-val'));
+            if(confirm("Hapus Mahasiswa dari Kelas ?")){
+                $.ajax({
+                    url: '<?= base_url('admin/kelas/delete/mhs')?>',
+                    data:'id='+$(this).attr("data-val-idkelas")+'&nim='+$(this).attr("data-val-nim"),
+                    dataType: 'Json',
+                    type: 'post',
+                    success:function (e){
+                        if (e.success==1){
+                            alert('Mahasiswa Berhasil Dihapus dari Kelas');
+                            window.location.reload();
+                        }else{
+                            alert('Mahasiswa Gagal Dihapus Kelas');
                         }
                     }
                 })
@@ -434,6 +470,20 @@
                 })
             }
         });
+        var thnsaktif=$("#searchta").val();
+
+        var tbpenilaian=$("#tbnilaidosen").dataTable({
+            searchable: true,
+            "ajax": {
+                "url": "<?= base_url('admin/penilaian/getnilai/') ?>/"+thnsaktif,
+                "type": "POST"
+            }
+            });
+
+        $("#searchta").change(function(){
+            let url='<?= base_url("admin/penilaian/getnilai/")?>/'+$(this).val();
+            tbpenilaian.api().ajax.url(url).load();
+        })
         var tmhs=$("#tablekelasmhs").dataTable({
             searchable: false,
             "ajax":{
@@ -470,16 +520,60 @@
                 selector: 'td:first-child'
             },
         })
+        var sidk=$("#idprodis").val();
+        var tmhs2=$("#tablekelasmhs2").dataTable({
+            searchable: false,
+            "ajax":{
+                "url": "<?= base_url('admin/kelas/getsmsh/') ?>/"+sidk,
+                "type": "POST"
+            },
+            columnDefs: [{
+                "targets": 0,
+                "data": [0],
+                "render": function (data, type, row, meta) {
+                    return '<input type="checkbox" name="msh[]" value="'+data+'"/>';
+                }
+            },
+                {
+                    "targets": 1,
+                    "data": [0]
+                },
+                {
+                    "targets": 2,
+                    "data": [1]
+                },
+                {
+                    "targets": 3,
+                    "data": [2]
+                },
+                {
+                    "targets": 4,
+                    "data": [3]
+                }
+
+            ],
+            select: {
+                style:    'os',
+                selector: 'td:first-child'
+            },
+        })
         $("#pilprodi").change(function () {
             let url='<?= base_url("admin/kelas/getsmsh/")?>/'+$(this).val()+'/'+$("#pilangkatan").val()+'';
             console.log(url)
             tmhs.api().ajax.url(url).load();
             // alert($(this).val())
         });
+
         $("#pilangkatan").change(function () {
             let url='<?= base_url("admin/kelas/getsmsh/")?>/'+$("#pilprodi").val()+'/'+$(this).val()+'';
             console.log(url)
             tmhs.api().ajax.url(url).load();
+            // alert($(this).val())
+        })
+        $("#pilangkatans").change(function () {
+            let url='<?= base_url("admin/kelas/getsmsh/")?>/'+sidk+'/'+$(this).val()+'';
+            console.log(url)
+            tmhs2.api().ajax.url(url).load();
             // alert($(this).val())
         })
         $("#editnid").change(function (){
