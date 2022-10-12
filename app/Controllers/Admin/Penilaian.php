@@ -421,7 +421,7 @@ class Penilaian extends AdminController
         $pdf->ln(3);
         $pdf->Cell(10, 10, "No", 1, 0, 'C', true);
         $pdf->Cell(325, 10, "Kritik Saran", 1, 1, 'C', true);
-        $kritiksaran=$this->db->table('kritiksaran')->where(['nid'=>$nid, 'idprodi'=>$idprodi, 'thn_akademik'=>$thaka])->get()->getResult();
+        $kritiksaran=$this->db->table('kritiksaran')->join('mhs', 'kritiksaran.nim=mhs.nim', 'inner')->where(['nid'=>$nid, 'mhs.idprodi'=>$idprodi, 'thn_akademik'=>$thaka])->get()->getResult();
         $number=0;
         $pdf->setFont('Times', '', 12);
         foreach ($kritiksaran as $item) {
