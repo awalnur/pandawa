@@ -7,7 +7,31 @@ class Pengaturan extends AdminController
     function index(){
         $data=[];
         echo view('admin/template/header');
-        echo view('admin/pengaturan',$data);
+        echo view('admin/pengaturan', $data);
         echo view('admin/template/footer');
+    }
+    function cpassword(){
+        if(empty(session('id_user'))){
+            redirect()->to('admin/auth');
+        }else{
+            $id=session('id_user');
+            $passbaru=$this->request->getPost('upasswordbaru');
+            $passwordlama=$this->request->getPost('passlama');
+            $cek=$this->db->table('user');
+            $ceksplama=$cek->where('id_user', $id)->get()->getRow();
+            $pbaru=password_hash($passbaru, PASSWORD_DEFAULT);
+            if (password_verify($passwordlama, $ceksplama->password)){
+
+                $lap['suc']=1;
+                $cek->update(['password'=>$pbaru]);
+            }else{
+                $lap['error']=1;
+            }
+            echo json_encode($lap);
+
+        }
+    }
+    function thnajaran($a=false, $thn=null){
+
     }
 }

@@ -58,22 +58,17 @@ class Matkul extends AdminController
                 $d=$data;
             }
             $f=$this->db->table('makul')->update($d, ['kode_matkul'=>$kodemk]);
-
-
             if ($f){
                 return redirect()->to(base_url('/admin/matkul/edit/'.$kodemk))->with('success', 1);
-
             }else{
                 return redirect()->to(base_url('/admin/matkul/edit/'.$kodemk))->with('error', 1);
             }
         }
-
     }
     function importing(){
         $file = $this->request->getFile('importMatkul');
         if($file){
             $fileLocation = $file->getTempName();
-            //baca file
 
             $reader 	= new Xlsx();
             $spreadsheet 	= $reader->load($fileLocation);
