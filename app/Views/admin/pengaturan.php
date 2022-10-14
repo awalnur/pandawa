@@ -36,6 +36,34 @@
                                             <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
                                             Tahun Akademik Aktif Gagal diubah
                                         </div>
+
+                                        <div class="modal fade" id="modal-add-thnajaran">
+                                            <div class="modal-dialog modal-sm">
+                                                <div class="modal-content">
+                                                    <div class="modal-header">
+                                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                            <span aria-hidden="true">&times;</span></button>
+                                                        <h4 class="modal-title">Tahun Ajaran Baru</h4>
+                                                    </div>
+                                                    <form action="#" id="savetahunajaran">
+                                                        <div class="modal-body">
+                                                            <div class="form-group">
+                                                                <label for="tahunajaran">
+                                                                    Tahun Ajaran
+                                                                </label>
+                                                                <input type="text" class="form-control" name="tahunajaran" maxlength="5" placeholder="Tahun Ajaran (6 Digit)">
+                                                            </div>
+                                                        </div>
+                                                        <div class="modal-footer">
+                                                            <button type="button" class="btn btn-danger pull-left" data-dismiss="modal">Batal</button>
+                                                            <button type="submit" class="btn btn-primary">Simpan</button>
+                                                        </div>
+                                                    </form>
+                                                </div>
+                                                <!-- /.modal-content -->
+                                            </div>
+                                            <!-- /.modal-dialog -->
+                                        </div>
                                         <form class="form-horizontal" id="taaktif">
                                             <div class="form-group">
                                                 <label for="inputName" class="col-sm-2 control-label">Tahun Ajaran</label>
@@ -49,7 +77,7 @@
                                                                 <?php
                                                             } ?>
                                                         </select>
-                                                        <span class="input-group-addon" style="cursor: pointer" id="setaktif"><i class="fa fa-plus " id="yee"></i></span>
+                                                        <span class="input-group-addon" style="cursor: pointer" id="btnsetaktif"><i class="fa fa-plus " id="yee"></i></span>
                                                     </div>
                                                 </div>
                                             </div>

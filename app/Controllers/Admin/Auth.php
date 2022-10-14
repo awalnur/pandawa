@@ -50,5 +50,9 @@ class Auth extends AdminController
         session_destroy();
         return redirect()->to(base_url('/admin/auth'));
     }
+    function test(){
+                        echo password_hash('123', PASSWORD_DEFAULT)."<br>";
+
+    }
 
 }

@@ -43,4 +43,14 @@ class Pengaturan extends AdminController
         echo json_encode($res);
 
     }
+    function saveta(){
+        $thnajara=$this->request->getPost('tahunajaran');
+        $ins=$this->db->table('thn_akademik')->insert(['thn_akademik'=>$thnajara, 'aktif'=>0]);
+        if ($ins){
+            $resp['success']=1;
+        }else{
+            $resp['success']=0;
+        }
+        echo json_encode($resp);
+    }
 }

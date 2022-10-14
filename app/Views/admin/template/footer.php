@@ -651,8 +651,6 @@
                 'data': $(this).serialize(),
                 'dataType':'JSON',
                 success:function (s){
-                    console.log(s.success);
-                    console.log(s);
                     if(s.success == 1){
                         $("#respsa").removeClass('hidden');
                     }else{
@@ -661,6 +659,26 @@
                 },
                 error:function (ee){
                     $("#respsae").removeClass('hidden');
+                }
+            })
+        });
+        $("#btnsetaktif").click(function (e) {
+            $("#modal-add-thnajaran").modal('show');
+        })
+        $("#savetahunajaran").submit(function (e) {
+            e.preventDefault();
+            $.ajax({
+                url: '<?= base_url('admin/pengaturan/saveta'); ?>',
+                data: $(this).serialize(),
+                type: 'POST',
+                dataType: 'JSON',
+                success:function (e){
+                    if  (e.success==1){
+                        alert('Tahun Ajaran Berhasil Ditambahkan');
+                        window.location.reload();
+                    }else{
+                        alert('Terjadi Kesalahan Saat Menyimpan');
+                    }
                 }
             })
         })
