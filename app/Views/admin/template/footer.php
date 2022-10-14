@@ -681,6 +681,31 @@
                     }
                 }
             })
+        });
+        $("#sync").submit(function (e){
+            e.preventDefault();
+            $("#loading").removeClass('hidden');
+            $.ajax({
+                'url':'<?= base_url('admin/mahasiswa/mhs_sync')?>',
+                'type':'post',
+                'data':$(this).serialize(),
+                'dataType':'JSON',
+                success:function (s){
+                    // $("#loading").addClass('hidden');
+
+                    if (s.paserror==1){
+                        $("#passie").parent().addClass('has-error');
+                        $("#loading").addClass('hidden');
+                    }else{
+                        $("#passie").parent().removeClass('has-error');
+                        $("#loading").addClass('hidden');
+                        $("#resusltsyn").removeClass('hidden');
+                        $("#totalsmua").html(s.all)
+                        $("#berhasil").html(s.success);
+                    }
+                }
+            })
+            console.log($(this).serialize());
         })
     });
 </script>

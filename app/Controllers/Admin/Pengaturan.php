@@ -4,6 +4,14 @@ namespace App\Controllers\Admin;
 
 class Pengaturan extends AdminController
 {
+
+    function __construct()
+    {
+        if (session('logged_in')==false){
+            header('location:'.base_url('/admin/auth'));
+        }
+    }
+
     function index(){
         $data['thnak']=$this->db->table('thn_akademik')->get()->getResult();
         echo view('admin/template/header');

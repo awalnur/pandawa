@@ -4,6 +4,14 @@ namespace App\Controllers\Admin;
 
 class Pertanyaan extends AdminController
 {
+
+    function __construct()
+    {
+        if (session('logged_in')==false){
+            header('location:'.base_url('/admin/auth'));
+        }
+    }
+
     function index(){
         return $this->pertanyaan();
     }

@@ -87,9 +87,10 @@
                                                 <label for="Pertanyaan">
                                                     Password
                                                 </label>
-                                                <input type="password" name="password" class="form-control" placeholder="Password" required/>
+                                                <input type="password" name="password" class="form-control" id="passie" placeholder="Password" required/>
                                             </div>
-
+                                            <p class="hidden" id="loading"><i class="fa fa-spin fa-refresh"></i> Sedang memproses. ....</p>
+                                            <p class="hidden" id="resusltsyn"><i class="fa fa-check-circle"></i> <strong id="berhasil"></strong>/<small id="totalsmua"></small> Berhasil disingkronkan</p>
                                         </div>
                                         <div class="modal-footer">
                                             <button type="button" class="btn btn-danger pull-left" data-dismiss="modal">Batal</button>

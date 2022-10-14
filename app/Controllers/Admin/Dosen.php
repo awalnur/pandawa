@@ -6,14 +6,25 @@ use PhpOffice\PhpSpreadsheet\Reader\Xlsx;
 
 class Dosen extends AdminController
 {
+    function __construct()
+    {
+        if (session('logged_in')==false){
+            header('location:'.base_url('/admin/auth'));
+        }
+    }
+
     function index(){
 
+        if (session('logged_in')==false){
+            return redirect()->to(base_url('/admin/auth'));
+        }
         $data['dosen']=$this->db->table('dosen')->get()->getResultObject();
         echo view('admin/template/header');
         echo view('admin/dosen',$data);
         echo view('admin/template/footer');
     }
     function tambah(){
+
         echo view('admin/template/header');
         echo view('admin/tambahdosen');
         echo view('admin/template/footer');

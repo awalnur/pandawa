@@ -7,6 +7,14 @@ use Config\Services;
 
 class Kelas extends AdminController
 {
+
+    function __construct()
+    {
+        if (session('logged_in')==false){
+            header('location:'.base_url('/admin/auth'));
+        }
+    }
+
     function index(){
         $data['kelas']=$this->db->table('kelas')->select('*, kelas.id_kelas as idkelas')->join('makul', 'kelas.kode_matkul=makul.kode_matkul', 'inner')->join('dosen', 'kelas.nid=dosen.nid','inner')->join("(SELECT count(nim) as totalmhs, id_kelas FROM mhs_kelas GROUP BY id_kelas) as c", 'c.id_kelas=kelas.id_kelas', 'left' )->get()->getResultObject();
         echo view('admin/template/header');

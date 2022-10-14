@@ -6,6 +6,14 @@ use PhpOffice\PhpSpreadsheet\Reader\Xlsx;
 
 class Matkul extends AdminController
 {
+
+    function __construct()
+    {
+        if (session('logged_in')==false){
+            header('location:'.base_url('/admin/auth'));
+        }
+    }
+
     function index(){
         $data['matkul']=$this->db->table('makul')->get()->getResultObject();
         echo view('admin/template/header');

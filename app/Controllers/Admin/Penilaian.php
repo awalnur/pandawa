@@ -7,6 +7,14 @@ use Mpdf\Mpdf;
 
 class Penilaian extends AdminController
 {
+
+    function __construct()
+    {
+        if (session('logged_in')==false){
+            header('location:'.base_url('/admin/auth'));
+        }
+    }
+
     function index()
     {
         $data['thnaka']=$this->db->table('thn_akademik')->get()->getResult();

@@ -28,7 +28,6 @@ class Mahasiswa extends AdminController
         if($file){
             $fileLocation = $file->getTempName();
             //baca file
-
                 $reader 	= new Xlsx();
             $spreadsheet 	= $reader->load($fileLocation);
 
@@ -95,30 +94,54 @@ class Mahasiswa extends AdminController
             echo json_encode($ret);
     }
     function mhs_sync(){
-        $curl = curl_init();
+        $pas=$this->request->getPost('password');
+        $user=$this->db->table('user')->where('id_user', session('id_user'))->get()->getRow();
+        if(password_verify($pas, $user->password)) {
+            $curl = curl_init();
+            curl_setopt_array($curl, array(
+                CURLOPT_URL => "https://ebfis.feb-unsiq.ac.id/api/mahasiswa",
+                CURLOPT_RETURNTRANSFER => true,
+                CURLOPT_TIMEOUT => 30,
+                CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+                CURLOPT_CUSTOMREQUEST => "GET",
+                CURLOPT_HTTPHEADER => array(
+                    "cache-control: no-cache"
+                ),
+            ));
 
-        curl_setopt_array($curl, array(
-            CURLOPT_URL => "https://ebfis.feb-unsiq.ac.id/api/mahasiswa",
-            CURLOPT_RETURNTRANSFER => true,
-            CURLOPT_TIMEOUT => 30,
-            CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
-            CURLOPT_CUSTOMREQUEST => "GET",
-            CURLOPT_HTTPHEADER => array(
-                "cache-control: no-cache"
-            ),
-        ));
+            $response = curl_exec($curl);
+            $err = curl_error($curl);
 
-        $response = curl_exec($curl);
-        $err = curl_error($curl);
+            curl_close($curl);
 
-        curl_close($curl);
-
-        $responses = (object)json_decode($response, true); //because of true, it's in an array
-        $dt=$responses->data;
-
-        foreach ($dt as $datum) {
-            echo $datum['id'];
+            $responses = (object)json_decode($response, true); //because of true, it's in an array
+            $dt = $responses->data;
+            $jurusan = ['akuntansi' => 1, 'manajemen' => 2, 'perbankan syariah' => 3];
+            $suc = 0;
+            $er = 0;
+            $all = 0;
+            $this->db->table('mhs')->emptyTable();
+            foreach ($dt as $datum) {
+                $all++;
+                $nim = $datum['nim'];
+                $nama = $datum['nama'];
+                $angkatan = substr($datum['nim'], 0, 4);
+                $idprodi = $jurusan[$datum['prodi']];
+                $password = password_hash($nim, PASSWORD_DEFAULT);
+                $datains = ['nim' => $nim, 'nama_mhs' => $nama, 'angkatan' => $angkatan, 'idprodi' => $idprodi, 'password' => $password];
+                $d = $this->db->table('mhs')->insert($datains);
+                if ($d) {
+                    $suc++;
+                } else {
+                    $er++;
+                }
+            }
+            $data['success'] = $suc;
+            $data['error'] = $er;
+            $data['all'] = $all;
+        }else{
+            $data['paserror']=1;
         }
-
+        echo json_encode($data);
     }
 }
