@@ -82,7 +82,7 @@
                             <!-- Menu Body -->
                              <li class="user-footer">
                                 <div class="pull-left">
-                                    <a href="#" class="btn btn-default btn-flat">Profile</a>
+                                    <a href="<?= base_url('/admin/pengaturan')?>" class="btn btn-default btn-flat">Setting</a>
                                 </div>
                                 <div class="pull-right">
                                     <a href="<?=base_url('/admin/auth/logout')?>" class="btn btn-default btn-flat">Sign out</a>

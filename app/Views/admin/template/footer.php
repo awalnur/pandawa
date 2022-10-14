@@ -595,6 +595,56 @@
                 $("#kodematkul").attr('disabled', true);
             }
         })
+        $(document).on('click', '#showpasswod',function (){
+            if  ($(this).children('#yee').hasClass('fa-eye-slash')){
+                $(this).parent().children('input').attr('type', 'text');
+                $(this).children('#yee').removeClass('fa-eye-slash').addClass('fa-eye')
+            }else{
+                $(this).parent().children('input').attr('type', 'password');
+                $(this).children('#yee').addClass('fa-eye-slash').removeClass('fa-eye')
+            }
+        })
+        $("#upasswordbaru").keyup(function (){
+            if($(this).val()!=$("#passwordbaru").val()){
+                $(this).parent().addClass('has-error')
+            }else{
+                $(this).parent().removeClass('has-error')
+
+            }
+            console.log($(this).val())
+        })
+        $("#passwordlama").keyup(function (){
+
+            if ($(this).parent().hasClass('has-error')){
+                $(this).parent().removeClass('has-error')
+            }else{
+            }
+
+        })
+
+        $("#ubahpasswordadmin").submit(
+            function (e){
+                e.preventDefault();
+                $.ajax({
+                    url:'<?= base_url('/admin/pengaturan/cpassword')?>',
+                    data:$(this).serialize(),
+                    dataType: 'json',
+                    type:'POST',
+                    success:function (res) {
+                        if(res.error==1){
+                            $("#passwordlama").parent().addClass('has-error');
+                        }else{
+                            $("#passwordlama").val('');
+                            $("#passwordbaru").val('');
+                            $("#upasswordbaru").val('');
+                            $("#resp").removeClass('hidden');
+
+                        }
+
+                    }
+                })
+            }
+        )
     });
 </script>
 </body>
