@@ -5,7 +5,7 @@ namespace App\Controllers\Admin;
 class Pengaturan extends AdminController
 {
     function index(){
-        $data=[];
+        $data['thnak']=$this->db->table('thn_akademik')->get()->getResult();
         echo view('admin/template/header');
         echo view('admin/pengaturan', $data);
         echo view('admin/template/footer');
@@ -21,7 +21,6 @@ class Pengaturan extends AdminController
             $ceksplama=$cek->where('id_user', $id)->get()->getRow();
             $pbaru=password_hash($passbaru, PASSWORD_DEFAULT);
             if (password_verify($passwordlama, $ceksplama->password)){
-
                 $lap['suc']=1;
                 $cek->update(['password'=>$pbaru]);
             }else{
@@ -31,7 +30,17 @@ class Pengaturan extends AdminController
 
         }
     }
-    function thnajaran($a=false, $thn=null){
+    function setaktif(){
+        $setedit=$this->db->table('thn_akademik');
+        $thn=$this->request->getPost('tahunajaran');
+        if (!empty($thn)){
+            $setedit->update(['aktif'=>0],['aktif'=>1]);
+            $setedit->update(['aktif'=>1], ['thn_akademik'=> $thn]);
+            $res['success']=1;
+        }else{
+            $res['error']=1;
+        }
+        echo json_encode($res);
 
     }
 }

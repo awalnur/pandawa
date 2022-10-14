@@ -26,7 +26,16 @@
 
                                 <div class="row">
                                     <div class="col-md-12">
+
                                         <h6 class="h4">Tahun Ajaran Aktif</h6>
+                                        <div class="alert alert-success alert-dismissible hidden" id="respsa">
+                                            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+                                            Tahun Akademik Aktif Berhasil diubah
+                                        </div>
+                                        <div class="alert alert-error alert-dismissible hidden" id="respsae">
+                                            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+                                            Tahun Akademik Aktif Gagal diubah
+                                        </div>
                                         <form class="form-horizontal" id="taaktif">
                                             <div class="form-group">
                                                 <label for="inputName" class="col-sm-2 control-label">Tahun Ajaran</label>
@@ -34,6 +43,11 @@
                                                 <div class="col-sm-10 col-md-4">
                                                     <div class="input-group">
                                                         <select name="tahunajaran" id="ta" class="form-control">
+                                                            <?php foreach ($thnak as $thnkaa){
+                                                              ?>
+                                                                <option value="<?= $thnkaa->thn_akademik?>" <?= ($thnkaa->aktif)?'selected':'';?>><?= $thnkaa->thn_akademik?></option>
+                                                                <?php
+                                                            } ?>
                                                         </select>
                                                         <span class="input-group-addon" style="cursor: pointer" id="setaktif"><i class="fa fa-plus " id="yee"></i></span>
                                                     </div>

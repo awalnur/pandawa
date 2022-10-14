@@ -619,7 +619,6 @@
                 $(this).parent().removeClass('has-error')
             }else{
             }
-
         })
 
         $("#ubahpasswordadmin").submit(
@@ -643,8 +642,28 @@
 
                     }
                 })
-            }
-        )
+            });
+        $("#taaktif").submit(function (e){
+            e.preventDefault();
+            $.ajax({
+                'url':'<?= base_url('admin/pengaturan/setaktif') ?>',
+                'type':'post',
+                'data': $(this).serialize(),
+                'dataType':'JSON',
+                success:function (s){
+                    console.log(s.success);
+                    console.log(s);
+                    if(s.success == 1){
+                        $("#respsa").removeClass('hidden');
+                    }else{
+                        $("#respsae").removeClass('hidden');
+                    }
+                },
+                error:function (ee){
+                    $("#respsae").removeClass('hidden');
+                }
+            })
+        })
     });
 </script>
 </body>

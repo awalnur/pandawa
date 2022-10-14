@@ -69,7 +69,6 @@ class Matkul extends AdminController
         $file = $this->request->getFile('importMatkul');
         if($file){
             $fileLocation = $file->getTempName();
-
             $reader 	= new Xlsx();
             $spreadsheet 	= $reader->load($fileLocation);
 
