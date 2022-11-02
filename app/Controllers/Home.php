@@ -89,5 +89,10 @@ class Home extends BaseController
         return json_encode($laporan);
         }
 
+        
+    }
+
+    function testne(){
+        echo dirname(__FILE__);
     }
 }
