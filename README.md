@@ -1,3 +1,4 @@
+++ PEDOMA ++
+do you have any Question ?
 
-
-always use the lates.sql on db folder.
+Contact the developer.
