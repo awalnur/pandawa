@@ -1,0 +1,322 @@
+CRITICAL - 2022-10-12 08:35:13 --> Undefined variable $jitem
+in APPPATH/Views/admin/detailkelas.php on line 115.
+ 1 APPPATH/Views/admin/detailkelas.php(115): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/View/View.php(213): include('APPPATH/Views/admin/detailkelas.php')
+ 3 SYSTEMPATH/View/View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1135): CodeIgniter\View\View->render()
+ 5 APPPATH/Controllers/Admin/Kelas.php(140): view()
+ 6 SYSTEMPATH/CodeIgniter.php(896): App\Controllers\Admin\Kelas->viewkelas()
+ 7 SYSTEMPATH/CodeIgniter.php(466): CodeIgniter\CodeIgniter->runController()
+ 8 SYSTEMPATH/CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest()
+ 9 FCPATH/index.php(55): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH/Commands/Server/rewrite.php(43): require_once('FCPATH/index.php')
+CRITICAL - 2022-10-12 08:35:30 --> Undefined variable $jitem
+in APPPATH/Views/admin/detailkelas.php on line 134.
+ 1 APPPATH/Views/admin/detailkelas.php(134): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/View/View.php(213): include('APPPATH/Views/admin/detailkelas.php')
+ 3 SYSTEMPATH/View/View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1135): CodeIgniter\View\View->render()
+ 5 APPPATH/Controllers/Admin/Kelas.php(140): view()
+ 6 SYSTEMPATH/CodeIgniter.php(896): App\Controllers\Admin\Kelas->viewkelas()
+ 7 SYSTEMPATH/CodeIgniter.php(466): CodeIgniter\CodeIgniter->runController()
+ 8 SYSTEMPATH/CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest()
+ 9 FCPATH/index.php(55): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH/Commands/Server/rewrite.php(43): require_once('FCPATH/index.php')
+CRITICAL - 2022-10-12 08:35:47 --> Undefined variable $jitem
+in APPPATH/Views/admin/detailkelas.php on line 134.
+ 1 APPPATH/Views/admin/detailkelas.php(134): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/View/View.php(213): include('APPPATH/Views/admin/detailkelas.php')
+ 3 SYSTEMPATH/View/View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1135): CodeIgniter\View\View->render()
+ 5 APPPATH/Controllers/Admin/Kelas.php(140): view()
+ 6 SYSTEMPATH/CodeIgniter.php(896): App\Controllers\Admin\Kelas->viewkelas()
+ 7 SYSTEMPATH/CodeIgniter.php(466): CodeIgniter\CodeIgniter->runController()
+ 8 SYSTEMPATH/CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest()
+ 9 FCPATH/index.php(55): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH/Commands/Server/rewrite.php(43): require_once('FCPATH/index.php')
+CRITICAL - 2022-10-12 08:39:14 --> Undefined property: stdClass::$ta
+in APPPATH/Views/admin/tambahkelas.php on line 65.
+ 1 APPPATH/Views/admin/tambahkelas.php(65): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/View/View.php(213): include('APPPATH/Views/admin/tambahkelas.php')
+ 3 SYSTEMPATH/View/View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1135): CodeIgniter\View\View->render()
+ 5 APPPATH/Controllers/Admin/Kelas.php(21): view()
+ 6 SYSTEMPATH/CodeIgniter.php(896): App\Controllers\Admin\Kelas->tambahkls()
+ 7 SYSTEMPATH/CodeIgniter.php(466): CodeIgniter\CodeIgniter->runController()
+ 8 SYSTEMPATH/CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest()
+ 9 FCPATH/index.php(55): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH/Commands/Server/rewrite.php(43): require_once('FCPATH/index.php')
+CRITICAL - 2022-10-12 08:59:17 --> Undefined property: stdClass::$id_prodi
+in APPPATH/Views/admin/detailkelas.php on line 141.
+ 1 APPPATH/Views/admin/detailkelas.php(141): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/View/View.php(213): include('APPPATH/Views/admin/detailkelas.php')
+ 3 SYSTEMPATH/View/View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1135): CodeIgniter\View\View->render()
+ 5 APPPATH/Controllers/Admin/Kelas.php(140): view()
+ 6 SYSTEMPATH/CodeIgniter.php(896): App\Controllers\Admin\Kelas->viewkelas()
+ 7 SYSTEMPATH/CodeIgniter.php(466): CodeIgniter\CodeIgniter->runController()
+ 8 SYSTEMPATH/CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest()
+ 9 FCPATH/index.php(55): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH/Commands/Server/rewrite.php(43): require_once('FCPATH/index.php')
+CRITICAL - 2022-10-12 09:45:12 --> Undefined variable $msh
+in APPPATH/Controllers/Admin/Kelas.php on line 72.
+ 1 APPPATH/Controllers/Admin/Kelas.php(72): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/CodeIgniter.php(896): App\Controllers\Admin\Kelas->addmhs()
+ 3 SYSTEMPATH/CodeIgniter.php(466): CodeIgniter\CodeIgniter->runController()
+ 4 SYSTEMPATH/CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest()
+ 5 FCPATH/index.php(55): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH/Commands/Server/rewrite.php(43): require_once('FCPATH/index.php')
+ERROR - 2022-10-12 10:02:20 --> Unknown column 'idkelas' in 'where clause'
+CRITICAL - 2022-10-12 10:02:20 --> Unknown column 'idkelas' in 'where clause'
+in SYSTEMPATH/Database/MySQLi/Connection.php on line 292.
+ 1 SYSTEMPATH/Database/MySQLi/Connection.php(292): mysqli->query()
+ 2 SYSTEMPATH/Database/BaseConnection.php(695): CodeIgniter\Database\MySQLi\Connection->execute()
+ 3 SYSTEMPATH/Database/BaseConnection.php(609): CodeIgniter\Database\BaseConnection->simpleQuery()
+ 4 SYSTEMPATH/Database/BaseBuilder.php(1669): CodeIgniter\Database\BaseConnection->query()
+ 5 APPPATH/Controllers/Admin/Kelas.php(73): CodeIgniter\Database\BaseBuilder->countAllResults()
+ 6 SYSTEMPATH/CodeIgniter.php(896): App\Controllers\Admin\Kelas->addmhs()
+ 7 SYSTEMPATH/CodeIgniter.php(466): CodeIgniter\CodeIgniter->runController()
+ 8 SYSTEMPATH/CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest()
+ 9 FCPATH/index.php(55): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH/Commands/Server/rewrite.php(43): require_once('FCPATH/index.php')
+ERROR - 2022-10-12 10:02:55 --> Unknown column 'idkelas' in 'where clause'
+CRITICAL - 2022-10-12 10:02:55 --> Unknown column 'idkelas' in 'where clause'
+in SYSTEMPATH/Database/MySQLi/Connection.php on line 292.
+ 1 SYSTEMPATH/Database/MySQLi/Connection.php(292): mysqli->query()
+ 2 SYSTEMPATH/Database/BaseConnection.php(695): CodeIgniter\Database\MySQLi\Connection->execute()
+ 3 SYSTEMPATH/Database/BaseConnection.php(609): CodeIgniter\Database\BaseConnection->simpleQuery()
+ 4 SYSTEMPATH/Database/BaseBuilder.php(1585): CodeIgniter\Database\BaseConnection->query()
+ 5 APPPATH/Controllers/Admin/Kelas.php(73): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH/CodeIgniter.php(896): App\Controllers\Admin\Kelas->addmhs()
+ 7 SYSTEMPATH/CodeIgniter.php(466): CodeIgniter\CodeIgniter->runController()
+ 8 SYSTEMPATH/CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest()
+ 9 FCPATH/index.php(55): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH/Commands/Server/rewrite.php(43): require_once('FCPATH/index.php')
+CRITICAL - 2022-10-12 10:03:08 --> Object of class CodeIgniter\Database\MySQLi\Result could not be converted to string
+in APPPATH/Controllers/Admin/Kelas.php on line 74.
+ 1 SYSTEMPATH/CodeIgniter.php(896): App\Controllers\Admin\Kelas->addmhs()
+ 2 SYSTEMPATH/CodeIgniter.php(466): CodeIgniter\CodeIgniter->runController()
+ 3 SYSTEMPATH/CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest()
+ 4 FCPATH/index.php(55): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH/Commands/Server/rewrite.php(43): require_once('FCPATH/index.php')
+ERROR - 2022-10-12 10:49:02 --> Unknown column 'kode_matkul' in 'field list'
+CRITICAL - 2022-10-12 10:49:02 --> Unknown column 'kode_matkul' in 'field list'
+in SYSTEMPATH/Database/MySQLi/Connection.php on line 292.
+ 1 SYSTEMPATH/Database/MySQLi/Connection.php(292): mysqli->query()
+ 2 SYSTEMPATH/Database/BaseConnection.php(695): CodeIgniter\Database\MySQLi\Connection->execute()
+ 3 SYSTEMPATH/Database/BaseConnection.php(609): CodeIgniter\Database\BaseConnection->simpleQuery()
+ 4 SYSTEMPATH/Database/BaseBuilder.php(1585): CodeIgniter\Database\BaseConnection->query()
+ 5 APPPATH/Controllers/Admin/Penilaian.php(54): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH/CodeIgniter.php(896): App\Controllers\Admin\Penilaian->detail()
+ 7 SYSTEMPATH/CodeIgniter.php(466): CodeIgniter\CodeIgniter->runController()
+ 8 SYSTEMPATH/CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest()
+ 9 FCPATH/index.php(55): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH/Commands/Server/rewrite.php(43): require_once('FCPATH/index.php')
+CRITICAL - 2022-10-12 10:52:50 --> syntax error, unexpected token ")"
+in APPPATH/Controllers/Admin/Penilaian.php on line 32.
+ 1 SYSTEMPATH/Router/Router.php(499): CodeIgniter\Router\AutoRouter->getRoute()
+ 2 SYSTEMPATH/Router/Router.php(205): CodeIgniter\Router\Router->autoRoute()
+ 3 SYSTEMPATH/CodeIgniter.php(771): CodeIgniter\Router\Router->handle()
+ 4 SYSTEMPATH/CodeIgniter.php(415): CodeIgniter\CodeIgniter->tryToRouteIt()
+ 5 SYSTEMPATH/CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest()
+ 6 FCPATH/index.php(55): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH/Commands/Server/rewrite.php(43): require_once('FCPATH/index.php')
+CRITICAL - 2022-10-12 10:55:55 --> Undefined variable $data
+in APPPATH/Controllers/Admin/Penilaian.php on line 39.
+ 1 APPPATH/Controllers/Admin/Penilaian.php(39): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/CodeIgniter.php(896): App\Controllers\Admin\Penilaian->getnilai()
+ 3 SYSTEMPATH/CodeIgniter.php(466): CodeIgniter\CodeIgniter->runController()
+ 4 SYSTEMPATH/CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest()
+ 5 FCPATH/index.php(55): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH/Commands/Server/rewrite.php(43): require_once('FCPATH/index.php')
+CRITICAL - 2022-10-12 11:18:58 --> include(/var/www/html/pandawa/vendor/fpdf/fpdf/src/Fpdf/font/timesn.php): Failed to open stream: No such file or directory
+in VENDORPATH/fpdf/fpdf/src/Fpdf/Fpdf.php on line 1143.
+ 1 VENDORPATH/fpdf/fpdf/src/Fpdf/Fpdf.php(1143): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 VENDORPATH/fpdf/fpdf/src/Fpdf/Fpdf.php(1143): include()
+ 3 VENDORPATH/fpdf/fpdf/src/Fpdf/Fpdf.php(461): Fpdf\Fpdf->_loadfont()
+ 4 VENDORPATH/fpdf/fpdf/src/Fpdf/Fpdf.php(509): Fpdf\Fpdf->AddFont()
+ 5 APPPATH/Controllers/Admin/Penilaian.php(291): Fpdf\Fpdf->SetFont()
+ 6 SYSTEMPATH/CodeIgniter.php(896): App\Controllers\Admin\Penilaian->single()
+ 7 SYSTEMPATH/CodeIgniter.php(466): CodeIgniter\CodeIgniter->runController()
+ 8 SYSTEMPATH/CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest()
+ 9 FCPATH/index.php(55): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH/Commands/Server/rewrite.php(43): require_once('FCPATH/index.php')
+CRITICAL - 2022-10-12 11:20:21 --> Undefined variable $jenispert
+in APPPATH/Controllers/Admin/Penilaian.php on line 313.
+ 1 APPPATH/Controllers/Admin/Penilaian.php(313): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/CodeIgniter.php(896): App\Controllers\Admin\Penilaian->single()
+ 3 SYSTEMPATH/CodeIgniter.php(466): CodeIgniter\CodeIgniter->runController()
+ 4 SYSTEMPATH/CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest()
+ 5 FCPATH/index.php(55): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH/Commands/Server/rewrite.php(43): require_once('FCPATH/index.php')
+CRITICAL - 2022-10-12 11:22:13 --> Attempt to read property "nid" on string
+in APPPATH/Controllers/Admin/Penilaian.php on line 322.
+ 1 APPPATH/Controllers/Admin/Penilaian.php(322): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/CodeIgniter.php(896): App\Controllers\Admin\Penilaian->single()
+ 3 SYSTEMPATH/CodeIgniter.php(466): CodeIgniter\CodeIgniter->runController()
+ 4 SYSTEMPATH/CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest()
+ 5 FCPATH/index.php(55): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH/Commands/Server/rewrite.php(43): require_once('FCPATH/index.php')
+CRITICAL - 2022-10-12 11:22:50 --> Undefined variable $nilai
+in APPPATH/Controllers/Admin/Penilaian.php on line 388.
+ 1 APPPATH/Controllers/Admin/Penilaian.php(388): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/CodeIgniter.php(896): App\Controllers\Admin\Penilaian->single()
+ 3 SYSTEMPATH/CodeIgniter.php(466): CodeIgniter\CodeIgniter->runController()
+ 4 SYSTEMPATH/CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest()
+ 5 FCPATH/index.php(55): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH/Commands/Server/rewrite.php(43): require_once('FCPATH/index.php')
+CRITICAL - 2022-10-12 11:24:25 --> Unclosed '{' on line 9
+in APPPATH/Controllers/Admin/Penilaian.php on line 463.
+ 1 SYSTEMPATH/Router/Router.php(499): CodeIgniter\Router\AutoRouter->getRoute()
+ 2 SYSTEMPATH/Router/Router.php(205): CodeIgniter\Router\Router->autoRoute()
+ 3 SYSTEMPATH/CodeIgniter.php(771): CodeIgniter\Router\Router->handle()
+ 4 SYSTEMPATH/CodeIgniter.php(415): CodeIgniter\CodeIgniter->tryToRouteIt()
+ 5 SYSTEMPATH/CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest()
+ 6 FCPATH/index.php(55): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH/Commands/Server/rewrite.php(43): require_once('FCPATH/index.php')
+CRITICAL - 2022-10-12 11:25:02 --> Unclosed '{' on line 9
+in APPPATH/Controllers/Admin/Penilaian.php on line 460.
+ 1 SYSTEMPATH/Router/Router.php(499): CodeIgniter\Router\AutoRouter->getRoute()
+ 2 SYSTEMPATH/Router/Router.php(205): CodeIgniter\Router\Router->autoRoute()
+ 3 SYSTEMPATH/CodeIgniter.php(771): CodeIgniter\Router\Router->handle()
+ 4 SYSTEMPATH/CodeIgniter.php(415): CodeIgniter\CodeIgniter->tryToRouteIt()
+ 5 SYSTEMPATH/CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest()
+ 6 FCPATH/index.php(55): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH/Commands/Server/rewrite.php(43): require_once('FCPATH/index.php')
+CRITICAL - 2022-10-12 11:25:09 --> Unclosed '{' on line 9
+in APPPATH/Controllers/Admin/Penilaian.php on line 462.
+ 1 SYSTEMPATH/Router/Router.php(499): CodeIgniter\Router\AutoRouter->getRoute()
+ 2 SYSTEMPATH/Router/Router.php(205): CodeIgniter\Router\Router->autoRoute()
+ 3 SYSTEMPATH/CodeIgniter.php(771): CodeIgniter\Router\Router->handle()
+ 4 SYSTEMPATH/CodeIgniter.php(415): CodeIgniter\CodeIgniter->tryToRouteIt()
+ 5 SYSTEMPATH/CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest()
+ 6 FCPATH/index.php(55): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH/Commands/Server/rewrite.php(43): require_once('FCPATH/index.php')
+CRITICAL - 2022-10-12 11:25:18 --> Undefined variable $nilai
+in APPPATH/Controllers/Admin/Penilaian.php on line 385.
+ 1 APPPATH/Controllers/Admin/Penilaian.php(385): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/CodeIgniter.php(896): App\Controllers\Admin\Penilaian->single()
+ 3 SYSTEMPATH/CodeIgniter.php(466): CodeIgniter\CodeIgniter->runController()
+ 4 SYSTEMPATH/CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest()
+ 5 FCPATH/index.php(55): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH/Commands/Server/rewrite.php(43): require_once('FCPATH/index.php')
+CRITICAL - 2022-10-12 11:25:26 --> Undefined variable $nilai
+in APPPATH/Controllers/Admin/Penilaian.php on line 386.
+ 1 APPPATH/Controllers/Admin/Penilaian.php(386): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/CodeIgniter.php(896): App\Controllers\Admin\Penilaian->single()
+ 3 SYSTEMPATH/CodeIgniter.php(466): CodeIgniter\CodeIgniter->runController()
+ 4 SYSTEMPATH/CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest()
+ 5 FCPATH/index.php(55): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH/Commands/Server/rewrite.php(43): require_once('FCPATH/index.php')
+CRITICAL - 2022-10-12 11:25:31 --> Undefined variable $respp
+in APPPATH/Controllers/Admin/Penilaian.php on line 388.
+ 1 APPPATH/Controllers/Admin/Penilaian.php(388): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/CodeIgniter.php(896): App\Controllers\Admin\Penilaian->single()
+ 3 SYSTEMPATH/CodeIgniter.php(466): CodeIgniter\CodeIgniter->runController()
+ 4 SYSTEMPATH/CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest()
+ 5 FCPATH/index.php(55): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH/Commands/Server/rewrite.php(43): require_once('FCPATH/index.php')
+ERROR - 2022-10-12 11:26:03 --> Column 'nid' in where clause is ambiguous
+CRITICAL - 2022-10-12 11:26:03 --> Column 'nid' in where clause is ambiguous
+in SYSTEMPATH/Database/MySQLi/Connection.php on line 292.
+ 1 SYSTEMPATH/Database/MySQLi/Connection.php(292): mysqli->query()
+ 2 SYSTEMPATH/Database/BaseConnection.php(695): CodeIgniter\Database\MySQLi\Connection->execute()
+ 3 SYSTEMPATH/Database/BaseConnection.php(609): CodeIgniter\Database\BaseConnection->simpleQuery()
+ 4 SYSTEMPATH/Database/BaseBuilder.php(1585): CodeIgniter\Database\BaseConnection->query()
+ 5 APPPATH/Controllers/Admin/Penilaian.php(387): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH/CodeIgniter.php(896): App\Controllers\Admin\Penilaian->single()
+ 7 SYSTEMPATH/CodeIgniter.php(466): CodeIgniter\CodeIgniter->runController()
+ 8 SYSTEMPATH/CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest()
+ 9 FCPATH/index.php(55): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH/Commands/Server/rewrite.php(43): require_once('FCPATH/index.php')
+ERROR - 2022-10-12 11:26:14 --> Column 'nid' in where clause is ambiguous
+CRITICAL - 2022-10-12 11:26:14 --> Column 'nid' in where clause is ambiguous
+in SYSTEMPATH/Database/MySQLi/Connection.php on line 292.
+ 1 SYSTEMPATH/Database/MySQLi/Connection.php(292): mysqli->query()
+ 2 SYSTEMPATH/Database/BaseConnection.php(695): CodeIgniter\Database\MySQLi\Connection->execute()
+ 3 SYSTEMPATH/Database/BaseConnection.php(609): CodeIgniter\Database\BaseConnection->simpleQuery()
+ 4 SYSTEMPATH/Database/BaseBuilder.php(1585): CodeIgniter\Database\BaseConnection->query()
+ 5 APPPATH/Controllers/Admin/Penilaian.php(387): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH/CodeIgniter.php(896): App\Controllers\Admin\Penilaian->single()
+ 7 SYSTEMPATH/CodeIgniter.php(466): CodeIgniter\CodeIgniter->runController()
+ 8 SYSTEMPATH/CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest()
+ 9 FCPATH/index.php(55): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH/Commands/Server/rewrite.php(43): require_once('FCPATH/index.php')
+ERROR - 2022-10-12 11:26:21 --> Unknown column 'dosen.nid' in 'where clause'
+CRITICAL - 2022-10-12 11:26:21 --> Unknown column 'dosen.nid' in 'where clause'
+in SYSTEMPATH/Database/MySQLi/Connection.php on line 292.
+ 1 SYSTEMPATH/Database/MySQLi/Connection.php(292): mysqli->query()
+ 2 SYSTEMPATH/Database/BaseConnection.php(695): CodeIgniter\Database\MySQLi\Connection->execute()
+ 3 SYSTEMPATH/Database/BaseConnection.php(609): CodeIgniter\Database\BaseConnection->simpleQuery()
+ 4 SYSTEMPATH/Database/BaseBuilder.php(1585): CodeIgniter\Database\BaseConnection->query()
+ 5 APPPATH/Controllers/Admin/Penilaian.php(387): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH/CodeIgniter.php(896): App\Controllers\Admin\Penilaian->single()
+ 7 SYSTEMPATH/CodeIgniter.php(466): CodeIgniter\CodeIgniter->runController()
+ 8 SYSTEMPATH/CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest()
+ 9 FCPATH/index.php(55): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH/Commands/Server/rewrite.php(43): require_once('FCPATH/index.php')
+CRITICAL - 2022-10-12 11:27:12 --> Attempt to read property "nid" on array
+in APPPATH/Controllers/Admin/Penilaian.php on line 345.
+ 1 APPPATH/Controllers/Admin/Penilaian.php(345): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/CodeIgniter.php(896): App\Controllers\Admin\Penilaian->single()
+ 3 SYSTEMPATH/CodeIgniter.php(466): CodeIgniter\CodeIgniter->runController()
+ 4 SYSTEMPATH/CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest()
+ 5 FCPATH/index.php(55): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH/Commands/Server/rewrite.php(43): require_once('FCPATH/index.php')
+CRITICAL - 2022-10-12 11:28:25 --> Undefined variable $jenispert
+in APPPATH/Controllers/Admin/Penilaian.php on line 328.
+ 1 APPPATH/Controllers/Admin/Penilaian.php(328): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/CodeIgniter.php(896): App\Controllers\Admin\Penilaian->single()
+ 3 SYSTEMPATH/CodeIgniter.php(466): CodeIgniter\CodeIgniter->runController()
+ 4 SYSTEMPATH/CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest()
+ 5 FCPATH/index.php(55): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH/Commands/Server/rewrite.php(43): require_once('FCPATH/index.php')
+CRITICAL - 2022-10-12 11:36:35 --> Undefined variable $n
+in APPPATH/Controllers/Admin/Penilaian.php on line 428.
+ 1 APPPATH/Controllers/Admin/Penilaian.php(428): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/CodeIgniter.php(896): App\Controllers\Admin\Penilaian->single()
+ 3 SYSTEMPATH/CodeIgniter.php(466): CodeIgniter\CodeIgniter->runController()
+ 4 SYSTEMPATH/CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest()
+ 5 FCPATH/index.php(55): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH/Commands/Server/rewrite.php(43): require_once('FCPATH/index.php')
+CRITICAL - 2022-10-12 11:39:29 --> Undefined constant "App\Controllers\Admin\l"
+in APPPATH/Controllers/Admin/Penilaian.php on line 423.
+ 1 SYSTEMPATH/CodeIgniter.php(896): App\Controllers\Admin\Penilaian->single()
+ 2 SYSTEMPATH/CodeIgniter.php(466): CodeIgniter\CodeIgniter->runController()
+ 3 SYSTEMPATH/CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest()
+ 4 FCPATH/index.php(55): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH/Commands/Server/rewrite.php(43): require_once('FCPATH/index.php')
+CRITICAL - 2022-10-12 12:00:14 --> syntax error, unexpected variable "$list", expecting ")"
+in APPPATH/Controllers/Admin/Penilaian.php on line 33.
+ 1 SYSTEMPATH/Router/Router.php(499): CodeIgniter\Router\AutoRouter->getRoute()
+ 2 SYSTEMPATH/Router/Router.php(205): CodeIgniter\Router\Router->autoRoute()
+ 3 SYSTEMPATH/CodeIgniter.php(771): CodeIgniter\Router\Router->handle()
+ 4 SYSTEMPATH/CodeIgniter.php(415): CodeIgniter\CodeIgniter->tryToRouteIt()
+ 5 SYSTEMPATH/CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest()
+ 6 FCPATH/index.php(55): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH/Commands/Server/rewrite.php(43): require_once('FCPATH/index.php')
+CRITICAL - 2022-10-12 12:00:16 --> syntax error, unexpected variable "$list", expecting ")"
+in APPPATH/Controllers/Admin/Penilaian.php on line 33.
+ 1 SYSTEMPATH/Router/Router.php(499): CodeIgniter\Router\AutoRouter->getRoute()
+ 2 SYSTEMPATH/Router/Router.php(205): CodeIgniter\Router\Router->autoRoute()
+ 3 SYSTEMPATH/CodeIgniter.php(771): CodeIgniter\Router\Router->handle()
+ 4 SYSTEMPATH/CodeIgniter.php(415): CodeIgniter\CodeIgniter->tryToRouteIt()
+ 5 SYSTEMPATH/CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest()
+ 6 FCPATH/index.php(55): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH/Commands/Server/rewrite.php(43): require_once('FCPATH/index.php')
+CRITICAL - 2022-10-12 12:04:05 --> Attempt to read property "nama_dosen" on null
+in APPPATH/Controllers/Admin/Penilaian.php on line 295.
+ 1 APPPATH/Controllers/Admin/Penilaian.php(295): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/CodeIgniter.php(896): App\Controllers\Admin\Penilaian->single()
+ 3 SYSTEMPATH/CodeIgniter.php(466): CodeIgniter\CodeIgniter->runController()
+ 4 SYSTEMPATH/CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest()
+ 5 FCPATH/index.php(55): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH/Commands/Server/rewrite.php(43): require_once('FCPATH/index.php')
+CRITICAL - 2022-10-12 12:04:21 --> Attempt to read property "nama_dosen" on null
+in APPPATH/Controllers/Admin/Penilaian.php on line 295.
+ 1 APPPATH/Controllers/Admin/Penilaian.php(295): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/CodeIgniter.php(896): App\Controllers\Admin\Penilaian->single()
+ 3 SYSTEMPATH/CodeIgniter.php(466): CodeIgniter\CodeIgniter->runController()
+ 4 SYSTEMPATH/CodeIgniter.php(349): CodeIgniter\CodeIgniter->handleRequest()
+ 5 FCPATH/index.php(55): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH/Commands/Server/rewrite.php(43): require_once('FCPATH/index.php')
