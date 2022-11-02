@@ -91,8 +91,4 @@ class Home extends BaseController
 
         
     }
-
-    function testne(){
-        echo dirname(__FILE__);
-    }
 }
