@@ -191,10 +191,30 @@
 
             return window.open('<?= base_url("/admin/penilaian/report")?>/'+jurusan+'/'+ta, '_blank');
         })
+
         $('.smk').select2({
             placeholder: 'Pilih Mata Kuliah',
             ajax: {
                 url: '<?= base_url('admin/kelas/getmk')?>',
+                dataType: 'json',
+                delay: 250,
+                data: function (data) {
+                    return {
+                        searchTerm: data.term // search term
+                    };
+                },
+                processResults: function (response) {
+                    return {
+                        results:response
+                    };
+                },
+                cache: true
+            }
+        });
+        $('.selectdosen').select2({
+            placeholder: 'Pilih Dosen',
+            ajax: {
+                url: '<?= base_url('admin/kelas/getDosen')?>',
                 dataType: 'json',
                 delay: 250,
                 data: function (data) {

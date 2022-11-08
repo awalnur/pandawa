@@ -378,7 +378,6 @@ UNLOCK TABLES;
 /*!50001 SET character_set_results     = utf8mb4 */;
 /*!50001 SET collation_connection      = utf8mb4_0900_ai_ci */;
 /*!50001 CREATE ALGORITHM=UNDEFINED */
-/*!50013 DEFINER=`dev`@`%` SQL SECURITY DEFINER */
 /*!50001 VIEW `mhsprodi` AS select `mhs`.`nim` AS `nim`,`mhs`.`nama_mhs` AS `nama_mhs`,`mhs`.`angkatan` AS `angkatan`,`prodi`.`nama_prodi` AS `nama_prodi`,`prodi`.`idprodi` AS `idprodi`,`prodi`.`fakultas` AS `fakultas` from (`mhs` join `prodi` on((`mhs`.`idprodi` = `prodi`.`idprodi`))) */;
 /*!50001 SET character_set_client      = @saved_cs_client */;
 /*!50001 SET character_set_results     = @saved_cs_results */;
