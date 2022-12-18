@@ -16,10 +16,15 @@ class Home extends BaseController
         if(empty(session('logged_in'))){
             return redirect()->to(base_url('auth'));
         }
-        $dos=$this->db->table('mhs_kelas')->join('kelas', 'mhs_kelas.id_kelas=kelas.id_kelas')->join('dosen', 'kelas.nid=dosen.nid')->join('makul', 'kelas.kode_matkul=makul.kode_matkul')->where('mhs_kelas.nim='.session('nim'));
+        if(empty(session('nim'))){
+            return redirect()->to(base_url('auth'));
+        }
+        
+        $dos=$this->db->table('mhs_kelas')->join('kelas', 'mhs_kelas.id_kelas=kelas.id_kelas')->join('dosen', 'kelas.nid=dosen.nid')->join('makul', 'kelas.kode_matkul=makul.kode_matkul')->join('thn_akademik', 'kelas.thn_akademik=thn_akademik.thn_akademik', 'inner')->where('thn_akademik.aktif=1')->where('mhs_kelas.nim='.session('nim'));
         $data['dosen']=$dos->get()->getResultObject();
 //        var_dump($data['dosen']);
         $data['nama']=session('nama');
+        $data['thn_akademik']=$this->db->table('thn_akademik')->where('aktif=1')->get()->getRow()->thn_akademik;
         echo view('front/template/header');
         echo view('front/home',$data);
     }
@@ -28,7 +33,7 @@ class Home extends BaseController
             return redirect()->to(base_url('auth'));
         }
         $data['nid']=$dosen;
-        $data['dosen']=$this->db->table('dosen')->join('kelas', 'dosen.nid=kelas.nid', 'inner')->join('makul', 'kelas.kode_matkul=makul.kode_matkul', 'inner')->where('dosen.nid', $dosen)->get()->getRow();
+        $data['dosen']=$this->db->table('dosen')->join('kelas', 'dosen.nid=kelas.nid', 'inner')->join('makul', 'kelas.kode_matkul=makul.kode_matkul', 'inner')->join('thn_akademik', 'kelas.thn_akademik=thn_akademik.thn_akademik', 'inner')->where('thn_akademik.aktif=1')->where('dosen.nid', $dosen)->get()->getRow();
         $jp=$this->db->table('jenis_pertanyaan')->get()->getResult();
         $data['jenispertanyaan']=$jp;
         foreach ($jp as $jitem) {
@@ -52,12 +57,8 @@ class Home extends BaseController
 
             $thakademik = $this->request->getPost('thaka');
             $idkelas = $this->request->getPost('idkelas');
-            $penilaian = $this->db->table('mhs_kelas');
-            $penilaian->set('dinilai', 1);
-            $penilaian->where('id_kelas', $idkelas);
-            $penilaian->where( 'nim', session('nim'));
-//            $d=['dinilai'=>1];
-                $penilaian->update();
+            $this->db->table('mhs_kelas')->where(['id_kelas'=> $idkelas,'nim'=>session('nim')])->update(['dinilai'=>1]);
+     
 //                echo $idkelas;
             $pertanyaan = $this->db->table('pertanyaan')->get()->getResult();
             foreach ($pertanyaan as $pitem) {

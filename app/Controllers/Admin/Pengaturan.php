@@ -10,6 +10,9 @@ class Pengaturan extends AdminController
         if (session('logged_in')==false){
             header('location:'.base_url('/admin/auth'));
         }
+        if (session('logged_as')!='admin'){ 
+            header('location:'.base_url('/admin/auth'));
+        }
     }
 
     function index(){
@@ -44,6 +47,8 @@ class Pengaturan extends AdminController
         if (!empty($thn)){
             $setedit->update(['aktif'=>0],['aktif'=>1]);
             $setedit->update(['aktif'=>1], ['thn_akademik'=> $thn]);
+
+            $_SESSION['thn_akademik']=$thn;
             $res['success']=1;
         }else{
             $res['error']=1;

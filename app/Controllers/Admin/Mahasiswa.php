@@ -10,6 +10,12 @@ class Mahasiswa extends AdminController
 {
     public function __construct(){
         $this->mhs = new MhsModel();
+        if (session('logged_in')==false){
+            header('location:'.base_url('/admin/auth'));
+        }
+        if (session('logged_as')!='admin'){ 
+            header('location:'.base_url('/admin/auth'));
+        }
     }
     function index(){
         $data['mahasiswa']=$this->db->table('mhs')->join('prodi', 'mhs.idprodi=prodi.idprodi', 'inenr')->get()->getResultObject();

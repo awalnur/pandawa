@@ -12,6 +12,9 @@ class Matkul extends AdminController
         if (session('logged_in')==false){
             header('location:'.base_url('/admin/auth'));
         }
+        if (session('logged_as')!='admin'){ 
+            header('location:'.base_url('/admin/auth'));
+        }
     }
 
     function index(){

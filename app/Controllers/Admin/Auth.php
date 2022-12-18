@@ -28,12 +28,14 @@ class Auth extends AdminController
             $s=$a->get()->getRow();
             if (!empty($s)) {
                 if (password_verify($password, $s->password)) {
-
+                    $thnaka=$this->db->table('thn_akademik')->where('aktif', 1)->get()->getRow()->thn_akademik;
                     $newdata = [
                         'id_user'  => $s->id_user,
                         'username'     => $s->username,
                         'nama'     => $s->nama,
                         'logged_in' => true,
+                        'thn_akademik' =>$thnaka,
+                        'logged_as' =>'admin',
                     ];
                     session()->set($newdata);
                     return redirect()->to(base_url('admin/home'));

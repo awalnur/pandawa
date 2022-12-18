@@ -8,6 +8,10 @@ class Home extends AdminController
         if (session('logged_in')==false){
             return redirect()->to(base_url('/admin/auth'));
         }
+        if (session('logged_as')!='admin'){
+            return redirect()->to(base_url('/admin/auth'));
+        }
+        
         $mahasiswa=$this->db->table('mhs')->countAll();
         $dos=$this->db->table('dosen')->countAll();
         $makul=$this->db->table('makul')->countAll();
