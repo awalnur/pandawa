@@ -210,8 +210,7 @@
                 showPreviousButton: true, // show/hide a Previous button
                 extraHtml: '<button id="finish-btn" type="submit" class="btn btn btn-success" hidden>Simpan</button>' // Extra html to show on toolbar
             },
-        },
-        )
+        });
         let stepInfo = $('#smartwizard').smartWizard("getStepInfo");
         console.log(stepInfo.totalSteps);
 
@@ -228,13 +227,13 @@
         $(document).on('submit', '#fpert', function (e) {
             e.preventDefault();
             $.ajax({
-                url: '<?= base_url("/home/saveNilai/".$nid)?>',
+                url: '<?= base_url("/home/saveNilai/".$nid) ?>',
                 type: 'POST',
                 data: $(this).serialize(),
                 dataType:'json',
                 success:function (s){
                     if  (s.success==1){
-                        window.location.href='<?= base_url("home")?>';
+                        window.location.href='<?= base_url("home") ?>';
                     }else{
                         alert("Gagal Menyimpan, pastikan semua data telah terisi, atau data tidak akan tersimpan")
                     }
