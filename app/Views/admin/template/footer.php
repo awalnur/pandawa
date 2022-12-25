@@ -170,14 +170,17 @@
             alert($('.selectmhs').val());
         })
         $('#example1').DataTable();
-        $('#tablekelas').DataTable(
+        let ta=$("#filter_thnakademik").val();
+        let fp=$("#filter_prodi").val();
+        let fm=$("#filter_matkul").val();
+        var tkelas= $('#tablekelas').DataTable(
             {
                         responsive: true,
                         'fnDrawCallback': function(oSettings) {
                             $('#tablekelas_paginate ul').addClass('pagination-active-success');
                         },
                         'ajax': {
-                            "url": "/admin/kelas/getkelas",
+                            "url": "/admin/kelas/getkelas/"+ta+"/"+fp+"/"+fm,
                             "type": "POST"
                         },
                         'columns': [{
@@ -210,6 +213,32 @@
                         ],
                     }
         );
+        $("#filter_matkul").select2();
+        $('#filter_matkul').on('select2:select', function (e) {
+            var data = e.params.data;
+            console.log(data);
+            tkelas.ajax.reload();
+
+            let tas=$("#filter_thnakademik").val();
+            let fps=$("#filter_prodi").val();
+            let fms=data['id'];
+                tkelas.ajax.url( "/admin/kelas/getkelas/"+tas+"/"+fps+"/"+fms ).load();
+            
+        });
+        $("#filter_thnakademik").on('change', function (e){
+            
+        let tas=$(this).val();
+        let fps=$("#filter_prodi").val();
+        let fms=$("#filter_matkul").val();
+            tkelas.ajax.url( "/admin/kelas/getkelas/"+tas+"/"+fps+"/"+fms ).load();
+        })
+        $("#filter_prodi").on('change', function (e){
+            
+            let tas=$("#filter_thnakademik").val();
+            let fps=$(this).val();
+            let fms=$("#filter_matkul").val();
+                tkelas.ajax.url( "/admin/kelas/getkelas/"+tas+"/"+fps+"/"+fms ).load();
+            })
         $('#example2').DataTable({
             'paging'      : true,
             'lengthChange': false,
@@ -357,7 +386,8 @@
                     success:function (e){
                         if (e.success==1){
                             alert('Kelas Berhasil Dihapus');
-                            window.location.reload();
+                            tkelas.ajax.reload();
+                            // window.location.reload();
                         }else{
                             alert('Kelas Gagal Dihapus');
 

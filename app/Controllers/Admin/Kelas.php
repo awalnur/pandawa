@@ -5,6 +5,7 @@ namespace App\Controllers\Admin;
 use App\Models\MhsPrd;
 use App\Models\MKelas;
 use Config\Services;
+use PhpOffice\PhpSpreadsheet\Reader\Xlsx;
 
 class Kelas extends AdminController
 {
@@ -25,15 +26,17 @@ class Kelas extends AdminController
         if (session('logged_as')!='admin'){
             return redirect()->to(base_url('/admin/auth'));
         }   
-        $data['kelas']=$this->db->table('kelas')->select('*, kelas.id_kelas as idkelas')->join('makul', 'kelas.kode_matkul=makul.kode_matkul', 'inner')->join('dosen', 'kelas.nid=dosen.nid','inner')->join('prodi', 'kelas.idprodi=prodi.idprodi', 'inner')->join("(SELECT count(nim) as totalmhs, id_kelas FROM mhs_kelas GROUP BY id_kelas) as c", 'c.id_kelas=kelas.id_kelas', 'left' )->get()->getResultObject();
+        $data['thnakademik']=$this->db->table('thn_akademik')->orderBy('thn_akademik', 'DESC')->get()->getResult();
+        $data['prodi']=$this->db->table('prodi')->get()->getResult();
+        $data['matakuliah']=$this->db->table('makul')->get()->getResult();
         echo view('admin/template/header');
         echo view('admin/kelas', $data);
         echo view('admin/template/footer');
     }
-    function getKelas($ta = 0, $prodi = 0){
+    function getKelas($ta = 0, $prodi = 0, $matkul =0){
            
         $request = Services::request();
-        $m_icd = new MKelas($request, $ta, $prodi);
+        $m_icd = new MKelas($request, $ta, $prodi, $matkul);
         if ($request->getMethod(true) == 'POST') {
             $lists = $m_icd->get_datatables();
             $data = [];
@@ -50,7 +53,7 @@ class Kelas extends AdminController
                 $row[] = $list->nama_dosen.$list->gelar;
                 $row[] = $list->thn_akademik;
                 $row[] = $list->totalmhs;
-                $row[] = '<a href="'.base_url('/admin/kelas/viewkelas/'.$list->id_kelas).'" class="btn bg-navy btn-sm"><i class="fa fa-eye"></i></a> <button class="btn btn-danger btn-sm"  id="hapuskelas" data-val="'.$list->id_kelas.'"><i class="fa fa-trash"></i></button>';
+                $row[] = '<a href="'.base_url('/admin/kelas/viewkelas/'.$list->idkelas).'" class="btn bg-navy btn-sm"><i class="fa fa-eye"></i></a> <button class="btn btn-danger btn-sm"  id="hapuskelas" data-val="'.$list->idkelas.'"><i class="fa fa-trash"></i></button>';
                 $data[] = $row;
             }
             $output = [
@@ -210,6 +213,48 @@ class Kelas extends AdminController
 
             }
     }
+    function importing(){
+        $file = $this->request->getFile('importkelas');
+        if($file){
+            $fileLocation = $file->getTempName();
+            //baca file
+
+            $reader 	= new Xlsx();
+            $spreadsheet 	= $reader->load($fileLocation);
+
+            $sheet	= $spreadsheet->getActiveSheet()->toArray();
+            //looping untuk mengambil data
+            $berhasil=0;
+            foreach ($sheet as $idx => $data) {
+                //skip eeindex 1 karena title excel
+                if($idx==0){
+                    continue;
+                }
+                if($data[1]==0){
+                    continue;
+                }
+                $kode_matkul = $data[1];
+                $nid = $data[2];
+                $kelas = $data[3];
+                $thn_akademik = $data[4];
+                $idprodi = $data[5];
+//                // insert data
+                $ins=$this->db->query(
+                    "INSERT INTO kelas (`kode_matkul`, `nid`, `kelas`, `thn_akademik`, `idprodi` ) VALUES 
+                    ('".htmlentities($kode_matkul)."', '".htmlentities($nid)."', '".htmlentities($kelas)."','".htmlentities($thn_akademik)."', '".htmlentities($idprodi)."');");
+                if ($ins){
+                    $resp[$idx]='berhasil';
+                    $berhasil++;
+                }else{
+                    $resp[$idx]='Gagal';
+                }
+            }
+            return redirect()->back()->with('success','Import Berhasil, ('.$berhasil.'/'.sizeof($resp).')');
+        }else{
+            return redirect()->back()->with('gagalss','Terjadi kesalahan saat Import data');
+        }
+
+    }
     function viewkelas($id=null){
         if (session('logged_in')==false){
             return redirect()->to(base_url('/admin/auth'));
@@ -234,7 +279,8 @@ class Kelas extends AdminController
             $kelas=$this->request->getPost('id');
             $nim=$this->request->getPost('nim');
             $res=$this->db->table('mhs_kelas')->delete(['id_kelas'=>$kelas,'nim'=>$nim]);
-//            $res=$this->db->table('kelas')->delete(['id_kelas'=>$kelas]);
+           
+            // $res=$this->db->table('kelas')->delete(['id_kelas'=>$kelas]);
 
             if ($res){
                 $ret['success']=1;
@@ -256,6 +302,9 @@ class Kelas extends AdminController
                     $ret['success']=0;
                 }
             }else{
+
+                $res=$this->db->table('kelas')->delete(['id_kelas'=>$kelas]);
+
                 $ret['success']=0;
 
             }

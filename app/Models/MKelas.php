@@ -13,16 +13,26 @@ class MKelas extends \CodeIgniter\Model
     protected $db;
     protected $dt;
     protected $prodi=0;
-    protected $angkatan=0;
-    function __construct(RequestInterface $request, $prodi, $angkatan){
+    protected $ta=0;
+    protected $mk=0;
+    function __construct(RequestInterface $request, $ta, $prodi, $mk){
         parent::__construct();
         
             
         error_reporting(0);
         $this->db = db_connect();
         $this->request = $request;
-        $this->dt = $this->db->table($this->table);
+        $this->dt = $this->db->table($this->table)->select("*, kelas.id_kelas as idkelas");
         $this->dt->join('makul', 'kelas.kode_matkul=makul.kode_matkul', 'inner')->join('dosen', 'kelas.nid=dosen.nid','inner')->join('prodi', 'kelas.idprodi=prodi.idprodi', 'inner')->join("(SELECT count(nim) as totalmhs, id_kelas FROM mhs_kelas GROUP BY id_kelas) as c", 'c.id_kelas=kelas.id_kelas', 'left' );
+        if($prodi != 0){
+            $this->dt->where('kelas.idprodi', $prodi);   
+        }
+        if($ta != 0){
+            $this->dt->where('kelas.thn_akademik', $ta);   
+        }
+        if($mk != 0){
+            $this->dt->where('kelas.kode_matkul', $mk);   
+        }
     }
     private function _get_datatables_query(){
         $i = 0;
