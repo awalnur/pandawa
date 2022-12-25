@@ -7,29 +7,38 @@ use PhpOffice\PhpSpreadsheet\Reader\Xlsx;
 class Matkul extends AdminController
 {
 
-    function __construct()
-    {
-        if (session('logged_in')==false){
-            header('location:'.base_url('/admin/auth'));
-        }
-        if (session('logged_as')!='admin'){ 
-            header('location:'.base_url('/admin/auth'));
-        }
-    }
 
     function index(){
+        if (session('logged_in')==false){
+            return redirect()->to(base_url('/admin/auth'));
+        }
+        if (session('logged_as')!='admin'){
+            return redirect()->to(base_url('/admin/auth'));
+        }
         $data['matkul']=$this->db->table('makul')->get()->getResultObject();
         echo view('admin/template/header');
         echo view('admin/matakuliah',$data);
         echo view('admin/template/footer');
     }
     function tambah(){
+        if (session('logged_in')==false){
+            return redirect()->to(base_url('/admin/auth'));
+        }
+        if (session('logged_as')!='admin'){
+            return redirect()->to(base_url('/admin/auth'));
+        }
         echo view('admin/template/header');
         echo view('admin/tambahmatkul');
         echo view('admin/template/footer');
     }
 
     function edit($kodematkul=null){
+        if (session('logged_in')==false){
+            return redirect()->to(base_url('/admin/auth'));
+        }
+        if (session('logged_as')!='admin'){
+            return redirect()->to(base_url('/admin/auth'));
+        }
         if($kodematkul==null){
             return redirect()->back()->with('error', 'kode matakuliah tidak ditemukan');
         }

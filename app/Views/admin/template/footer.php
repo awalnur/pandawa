@@ -464,10 +464,11 @@
             let url='<?= base_url("admin/penilaian/getnilai/")?>/'+thnsaktif+'/'+$(this).val();
             tbpenilaian.api().ajax.url(url).load();
         })
+        var idprodii =$("#pilprodi").val();
         var tmhs=$("#tablekelasmhs").dataTable({
             searchable: false,
             "ajax":{
-                "url": "<?= base_url('admin/kelas/getsmsh') ?>",
+                "url": "<?= base_url('admin/kelas/getsmsh') ?>/"+idprodii,
                 "type": "POST"
             },
             columnDefs: [{

@@ -10,20 +10,26 @@ class Mahasiswa extends AdminController
 {
     public function __construct(){
         $this->mhs = new MhsModel();
-        if (session('logged_in')==false){
-            header('location:'.base_url('/admin/auth'));
-        }
-        if (session('logged_as')!='admin'){ 
-            header('location:'.base_url('/admin/auth'));
-        }
     }
     function index(){
+        if (session('logged_in')==false){
+            return redirect()->to(base_url('/admin/auth'));
+        }
+        if (session('logged_as')!='admin'){
+            return redirect()->to(base_url('/admin/auth'));
+        }
         $data['mahasiswa']=$this->db->table('mhs')->join('prodi', 'mhs.idprodi=prodi.idprodi', 'inenr')->get()->getResultObject();
         echo view('admin/template/header');
         echo view('admin/mahasiswa', $data);
         echo view('admin/template/footer');
     }
     function tambahmhs(){
+        if (session('logged_in')==false){
+            return redirect()->to(base_url('/admin/auth'));
+        }
+        if (session('logged_as')!='admin'){
+            return redirect()->to(base_url('/admin/auth'));
+        }
         $data['prodi']=$this->db->table('prodi')->get()->getResultObject();
         echo view('admin/template/header');
         echo view('admin/tambahmhs', $data);

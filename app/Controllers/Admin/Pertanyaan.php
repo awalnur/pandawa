@@ -5,20 +5,17 @@ namespace App\Controllers\Admin;
 class Pertanyaan extends AdminController
 {
 
-    function __construct()
-    {
-        if (session('logged_in')==false){
-            header('location:'.base_url('/admin/auth'));
-        }
-        if (session('logged_as')!='admin'){ 
-            header('location:'.base_url('/admin/auth'));
-        }
-    }
 
     function index(){
         return $this->pertanyaan();
     }
     function tambah($j=null){
+        if (session('logged_in')==false){
+            return redirect()->to(base_url('/admin/auth'));
+        }
+        if (session('logged_as')!='admin'){
+            return redirect()->to(base_url('/admin/auth'));
+        }
         if (empty($j)){
             $data['jenis']=$this->db->table('jenis_pertanyaan')->get()->getResultObject();
             echo view('admin/template/header');
@@ -31,6 +28,12 @@ class Pertanyaan extends AdminController
         }
     }
     function jenis(){
+        if (session('logged_in')==false){
+            return redirect()->to(base_url('/admin/auth'));
+        }
+        if (session('logged_as')!='admin'){
+            return redirect()->to(base_url('/admin/auth'));
+        }
         $data['jenis']=$this->db->table('jenis_pertanyaan')->get()->getResultObject();
         echo view('admin/template/header');
         echo view('admin/jenispertanyaan', $data);
@@ -79,6 +82,12 @@ class Pertanyaan extends AdminController
         return json_encode($ret);
     }
     function pertanyaan($id=null){
+        if (session('logged_in')==false){
+            return redirect()->to(base_url('/admin/auth'));
+        }
+        if (session('logged_as')!='admin'){
+            return redirect()->to(base_url('/admin/auth'));
+        }
         if (!empty($id)){
             $data['pertanyaan']=$this->db->table('pertanyaan')->join('jenis_pertanyaan', 'pertanyaan.idjenis_pertanyaan=jenis_pertanyaan.idjenis_pertanyaan')->where('pertanyaan.idjenis_pertanyaan', $id)->get()->getResultObject();
         }else{

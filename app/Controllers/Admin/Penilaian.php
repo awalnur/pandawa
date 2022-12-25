@@ -8,18 +8,15 @@ use Mpdf\Mpdf;
 class Penilaian extends AdminController
 {
 
-    function __construct()
-    {
-        if (session('logged_in')==false){
-            header('location:'.base_url('/admin/auth'));
-        }
-        if (session('logged_as')!='admin'){ 
-            header('location:'.base_url('/admin/auth'));
-        }
-    }
 
     function index()
     {
+        if (session('logged_in')==false){
+            return redirect()->to(base_url('/admin/auth'));
+        }
+        if (session('logged_as')!='admin'){
+            return redirect()->to(base_url('/admin/auth'));
+        }
         $data['thnaka']=$this->db->table('thn_akademik')->get()->getResult();
         echo view('admin/template/header');
         echo view('admin/penilaian',$data);
@@ -56,6 +53,12 @@ class Penilaian extends AdminController
     }
     function detail($nid = null)
     {
+        if (session('logged_in')==false){
+            return redirect()->to(base_url('/admin/auth'));
+        }
+        if (session('logged_as')!='admin'){
+            return redirect()->to(base_url('/admin/auth'));
+        }
         if ($nid == null) {
 
         } else {
@@ -81,11 +84,23 @@ class Penilaian extends AdminController
 
     function preview()
     {
+        if (session('logged_in')==false){
+            return redirect()->to(base_url('/admin/auth'));
+        }
+        if (session('logged_as')!='admin'){
+            return redirect()->to(base_url('/admin/auth'));
+        }
         echo view('cetaks');
     }
 
     function report($idprodi = 1, $thaka = 20221)
     {
+        if (session('logged_in')==false){
+            return redirect()->to(base_url('/admin/auth'));
+        }
+        if (session('logged_as')!='admin'){
+            return redirect()->to(base_url('/admin/auth'));
+        }
         $prodi = $this->db->table('prodi')->where('idprodi', $idprodi)->get()->getRow();
 
 //        header("Content-type:application/pdf");

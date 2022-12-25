@@ -8,17 +8,15 @@ class Dosen extends AdminController
 {
     function __construct()
     {
-        if (session('logged_in')==false){
-            header('location:'.base_url('/admin/auth'));
-        }
-        if (session('logged_as')!='admin'){ 
-            header('location:'.base_url('/admin/auth'));
-        }
+ 
     }
 
     function index(){
 
         if (session('logged_in')==false){
+            return redirect()->to(base_url('/admin/auth'));
+        }
+        if (session('logged_as')!='admin'){
             return redirect()->to(base_url('/admin/auth'));
         }
         $data['dosen']=$this->db->table('dosen')->get()->getResultObject();
@@ -27,13 +25,24 @@ class Dosen extends AdminController
         echo view('admin/template/footer');
     }
     function tambah(){
-
+        if (session('logged_in')==false){
+            return redirect()->to(base_url('/admin/auth'));
+        }
+        if (session('logged_as')!='admin'){
+            return redirect()->to(base_url('/admin/auth'));
+        }
         echo view('admin/template/header');
         echo view('admin/tambahdosen');
         echo view('admin/template/footer');
     }
 
     function edit($id=null){
+        if (session('logged_in')==false){
+            return redirect()->to(base_url('/admin/auth'));
+        }
+        if (session('logged_as')!='admin'){
+            return redirect()->to(base_url('/admin/auth'));
+        }
         if($id==null){
             return redirect()->back()->with('error', 'NID tidak ditemukan');
         }else{
@@ -98,7 +107,7 @@ class Dosen extends AdminController
                 $gelar = $data[3];
 //                // insert data
                 $ins=$this->db->query(
-                    "INSERT INTO `pandawa`.dosen (`nid`, `nama_dosen`, `gelar`) VALUES 
+                    "INSERT INTO dosen (`nid`, `nama_dosen`, `gelar`) VALUES 
                     ('$nid', '".htmlentities($nama)."','".htmlentities($gelar)."');");
                 echo $ins;
                 if ($ins){

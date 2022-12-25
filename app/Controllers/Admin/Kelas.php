@@ -8,17 +8,30 @@ use Config\Services;
 
 class Kelas extends AdminController
 {
-
-    function __construct()
+    
+    public function __construct()
     {
         if (session('logged_in')==false){
-            header('location:'.base_url('/admin/auth'));
+            return redirect()->to(base_url('/admin/auth'));
         }
-        if (session('logged_as')!='admin'){ 
-            header('location:'.base_url('/admin/auth'));
+        if (session('logged_as')!='admin'){
+            return redirect()->to(base_url('/admin/auth'));
         }
     }
+    function index(){
+        if (session('logged_in')==false){
+            return redirect()->to(base_url('/admin/auth'));
+        }
+        if (session('logged_as')!='admin'){
+            return redirect()->to(base_url('/admin/auth'));
+        }   
+        $data['kelas']=$this->db->table('kelas')->select('*, kelas.id_kelas as idkelas')->join('makul', 'kelas.kode_matkul=makul.kode_matkul', 'inner')->join('dosen', 'kelas.nid=dosen.nid','inner')->join('prodi', 'kelas.idprodi=prodi.idprodi', 'inner')->join("(SELECT count(nim) as totalmhs, id_kelas FROM mhs_kelas GROUP BY id_kelas) as c", 'c.id_kelas=kelas.id_kelas', 'left' )->get()->getResultObject();
+        echo view('admin/template/header');
+        echo view('admin/kelas', $data);
+        echo view('admin/template/footer');
+    }
     function getKelas($ta = 0, $prodi = 0){
+           
         $request = Services::request();
         $m_icd = new MKelas($request, $ta, $prodi);
         if ($request->getMethod(true) == 'POST') {
@@ -49,16 +62,16 @@ class Kelas extends AdminController
             echo json_encode($output);
         }
     }
-        function index(){
-        $data['kelas']=$this->db->table('kelas')->select('*, kelas.id_kelas as idkelas')->join('makul', 'kelas.kode_matkul=makul.kode_matkul', 'inner')->join('dosen', 'kelas.nid=dosen.nid','inner')->join('prodi', 'kelas.idprodi=prodi.idprodi', 'inner')->join("(SELECT count(nim) as totalmhs, id_kelas FROM mhs_kelas GROUP BY id_kelas) as c", 'c.id_kelas=kelas.id_kelas', 'left' )->get()->getResultObject();
-        echo view('admin/template/header');
-        echo view('admin/kelas', $data);
-        echo view('admin/template/footer');
-    }
+        
     function tambahkls(){
+        if (session('logged_in')==false){
+            return redirect()->to(base_url('/admin/auth'));
+        }
+        if (session('logged_as')!='admin'){
+            return redirect()->to(base_url('/admin/auth'));
+        }
         $data['angkatan']=$this->db->table('mhs')->select('angkatan')->groupBy('angkatan')->get()->getResult();
         $data['ta']=$this->db->table('thn_akademik')->get()->getResult();
-//        var_dump($data);
         echo view('admin/template/header');
         echo view('admin/tambahkelas',$data);
         echo view('admin/template/footer');
@@ -108,6 +121,12 @@ class Kelas extends AdminController
         echo json_encode($json);
     }
     function addmhs(){
+        if (session('logged_in')==false){
+        return redirect()->to(base_url('/admin/auth'));
+        }
+        if (session('logged_as')!='admin'){
+            return redirect()->to(base_url('/admin/auth'));
+        }
         $data['suc']=0;
         $data['all']=0;
         $data['succees']=1;
@@ -183,18 +202,23 @@ class Kelas extends AdminController
                         }
                     }
                 }
-                return redirect()->to(base_url('/admin/kelas'))->with('success', 'Kelas dan siswa berhasil ditambahkan');
+                echo "s";
+                return redirect()->to(base_url('/admin/kelas/tambahkls'))->with('sukses', 'Tambah Kelas berhasil');
+                exit();
             }else{
-                return redirect()->to(base_url('/admin/kelas'))->with('gagal', 'Kelas dengan dosen yang sama sudah tersedia');
+                return redirect()->to(base_url('/admin/kelas/tambahkls'))->with('gagal', 'Kelas dengan dosen yang sama sudah tersedia');
 
             }
     }
-    function editkelas(){
-
-    }
     function viewkelas($id=null){
+        if (session('logged_in')==false){
+            return redirect()->to(base_url('/admin/auth'));
+        }
+        if (session('logged_as')!='admin'){
+            return redirect()->to(base_url('/admin/auth'));
+        }
         if ($id==null){
-            redirect()->back();
+            return redirect()->back();
         }
         $data['angkatan']=$this->db->table('mhs')->select('angkatan')->groupBy('angkatan')->get()->getResult();
         $data['ta']=$this->db->table('thn_akademik')->get()->getResult();
@@ -222,12 +246,18 @@ class Kelas extends AdminController
 
             $kelas=$this->request->getPost('id');
             $d2=$this->db->table('mhs_kelas')->delete(['id_kelas'=>$kelas]);
-            $res=$this->db->table('kelas')->delete(['id_kelas'=>$kelas]);
+            if($d2){
 
-            if ($res){
-                $ret['success']=1;
+                $res=$this->db->table('kelas')->delete(['id_kelas'=>$kelas]);
+
+                if ($res){
+                    $ret['success']=1;
+                }else{
+                    $ret['success']=0;
+                }
             }else{
                 $ret['success']=0;
+
             }
             echo json_encode($ret);
         }
