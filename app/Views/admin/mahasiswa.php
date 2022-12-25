@@ -60,7 +60,7 @@
                                 <!-- /.modal-dialog -->
                             </div>
                             <!--                                <butto class="btn btn-primary"><i class="fa fa-plus-circle"></i> Tambah Dosen</butto>-->
-                            <button class="btn btn-info" data-toggle="modal" data-target="#modal-c-sync"><i class="fa fa-refresh"></i> Singkronasi Ebfis.feb-unsiq.ac.id</button>
+                            <button class="btn btn-info" data-toggle="modal" data-target="#modal-c-sync"><i class="fa fa-refresh"></i> Singkronisasi Ebfis.feb-unsiq.ac.id</button>
 <!--                            <a href="" class="btn link-info"><i class="fa fa-download"> </i>Download Template import</a>-->
 
 
@@ -72,7 +72,7 @@
                                     <div class="modal-header">
                                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                             <span aria-hidden="true">&times;</span></button>
-                                        <h4 class="modal-title">Lakukkan Singkronasi</h4>
+                                        <h4 class="modal-title">Lakukkan singkronisasi</h4>
                                     </div>
                                     <form action="#" id="sync">
 
@@ -80,7 +80,7 @@
 
                                             <div class="form-group">
                                                 <p>
-                                                    Melakukan singkronasi mungkin akan menghapus data yang tidak sesuai dengan EBFIS
+                                                    Melakukan singkronisasi mungkin akan menghapus data yang tidak sesuai dengan EBFIS
                                                 </p>
                                             </div>
                                             <div class="form-group">

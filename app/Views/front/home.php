@@ -10,12 +10,12 @@
                                 <div class="d-flex align-items-end row">
                                     <div class="col-lg-9 col-sm-7">
                                         <div class="card-body">
-                                            <h5 class="card-title text-primary">Selamat Datang di <b>Pandawa</b>,<?= $nama?>!</h5>
+                                            <h5 class="card-title text-primary">Selamat Datang di <b>Pedoma</b>,<?= $nama?>!</h5>
                                             <p class="mb-4">
-                                                Penilaian Dosen Oleh Mahasiwa (PANDAWA) tahun akademik <?= $thn_akademik; ?>, instrumen untuk menilai kinerja dosen dalam proses pembelajaran di akhir semester.
+                                                Penilaian Dosen Oleh Mahasiwa (PEDOMA) tahun akademik <?= $thn_akademik; ?>, instrumen untuk menilai kinerja dosen dalam proses pembelajaran di akhir semester.
                                                 <br>
-                                                Wajibkah Mahasiswa Mengisi PANDAWA?
-                                                <span class="fw-bold">Mahasiswa wajib mengisi PANDAWA.</span>
+                                                Wajibkah Mahasiswa Mengisi PEDOMA?
+                                                <span class="fw-bold">Mahasiswa wajib mengisi PEDOMA.</span>
                                                 
                                             </p>
                                         </div>

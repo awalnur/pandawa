@@ -3,6 +3,7 @@
 namespace App\Controllers\Admin;
 
 use App\Models\MhsPrd;
+use App\Models\MKelas;
 use Config\Services;
 
 class Kelas extends AdminController
@@ -17,9 +18,39 @@ class Kelas extends AdminController
             header('location:'.base_url('/admin/auth'));
         }
     }
+    function getKelas($ta = 0, $prodi = 0){
+        $request = Services::request();
+        $m_icd = new MKelas($request, $ta, $prodi);
+        if ($request->getMethod(true) == 'POST') {
+            $lists = $m_icd->get_datatables();
+            $data = [];
+            $no = $request->getPost("start");
+            //            $WhereAll
+            foreach ($lists as $list) {
 
-    function index(){
-        $data['kelas']=$this->db->table('kelas')->select('*, kelas.id_kelas as idkelas')->join('makul', 'kelas.kode_matkul=makul.kode_matkul', 'inner')->join('dosen', 'kelas.nid=dosen.nid','inner')->join("(SELECT count(nim) as totalmhs, id_kelas FROM mhs_kelas GROUP BY id_kelas) as c", 'c.id_kelas=kelas.id_kelas', 'left' )->get()->getResultObject();
+                $no++;
+                $row = [];
+                $row[] = $no;
+                $row[] = $list->nama_prodi;
+                $row[] = $list->matkul;
+                $row[] = $list->kelas;
+                $row[] = $list->nama_dosen.$list->gelar;
+                $row[] = $list->thn_akademik;
+                $row[] = $list->totalmhs;
+                $row[] = '<a href="'.base_url('/admin/kelas/viewkelas/'.$list->id_kelas).'" class="btn bg-navy btn-sm"><i class="fa fa-eye"></i></a> <button class="btn btn-danger btn-sm"  id="hapuskelas" data-val="'.$list->id_kelas.'"><i class="fa fa-trash"></i></button>';
+                $data[] = $row;
+            }
+            $output = [
+                "draw" => $request->getPost('draw'),
+                "recordsTotal" => $m_icd->count_all(),
+                "recordsFiltered" => $m_icd->count_filtered(),
+                "data" => $data
+            ];
+            echo json_encode($output);
+        }
+    }
+        function index(){
+        $data['kelas']=$this->db->table('kelas')->select('*, kelas.id_kelas as idkelas')->join('makul', 'kelas.kode_matkul=makul.kode_matkul', 'inner')->join('dosen', 'kelas.nid=dosen.nid','inner')->join('prodi', 'kelas.idprodi=prodi.idprodi', 'inner')->join("(SELECT count(nim) as totalmhs, id_kelas FROM mhs_kelas GROUP BY id_kelas) as c", 'c.id_kelas=kelas.id_kelas', 'left' )->get()->getResultObject();
         echo view('admin/template/header');
         echo view('admin/kelas', $data);
         echo view('admin/template/footer');
@@ -77,21 +108,20 @@ class Kelas extends AdminController
         echo json_encode($json);
     }
     function addmhs(){
-//        var_dump($this->request->getPost());
         $data['suc']=0;
         $data['all']=0;
         $data['succees']=1;
         $mhs=$this->request->getPost('msh');
         $idkelas=$this->request->getPost('idkelas');
-        foreach ($mhs as $item) {
-            $cek=$this->db->table('mhs_kelas')->where(['id_kelas'=>$idkelas, 'nim'=>$item])->countAllResults();
-            $data['all']++;
+        if($mhs!=null){
+            foreach ($mhs as $item) {
+                $cek=$this->db->table('mhs_kelas')->where(['id_kelas'=>$idkelas, 'nim'=>$item])->countAllResults();
+                $data['all']++;
 
-            //            echo $cek;
-            if($cek==0){
-//                echo $item;
-                $inst=$this->db->table('mhs_kelas')->insert(['nim'=>$item,'id_kelas'=>$idkelas]);
-                $data['suc']++;
+                if($cek==0){
+                    $inst=$this->db->table('mhs_kelas')->insert(['nim'=>$item,'id_kelas'=>$idkelas]);
+                    $data['suc']++;
+                }
             }
         }
         return json_encode($data);
@@ -147,8 +177,10 @@ class Kelas extends AdminController
                 $iid = $this->db->insertID();
                 if (!empty($this->db->insertID())) {
                     $kmhs = $this->request->getPost('msh');
-                    for ($i = 0; $i < sizeOf($kmhs); $i++) {
-                        $ins = $this->db->table('mhs_kelas')->insert(['nim' => $kmhs[$i], 'id_kelas' => $iid]);
+                    if(!empty($kmhs)){
+                        for ($i = 0; $i < sizeOf($kmhs); $i++) {
+                            $ins = $this->db->table('mhs_kelas')->insert(['nim' => $kmhs[$i], 'id_kelas' => $iid]);
+                        }
                     }
                 }
                 return redirect()->to(base_url('/admin/kelas'))->with('success', 'Kelas dan siswa berhasil ditambahkan');

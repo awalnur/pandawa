@@ -30,10 +30,11 @@
                             <!--                                <butto class="btn btn-primary"><i class="fa fa-plus-circle"></i> Tambah Dosen</butto>-->
                         </dvi>
                         <hr>
-                        <table id="example1" class="table table-bordered table-striped">
+                        <table id="tablekelas" class="table table-bordered table-striped">
                             <thead>
                             <tr>
                                 <th>No</th>
+                                <th>Prodi</th>
                                 <th>Mata Kuliah</th>
                                 <th>Kelas</th>
                                 <th>Dosen</th>
@@ -42,27 +43,7 @@
                                 <th>Aksi</th>
                             </tr>
                             </thead>
-                            <tbody>
-                            <?php
-                            $n=0;
-                            foreach ($kelas as $ditem) {
-                                $n++;
-                                ?>
-                                <tr>
-                                    <td><?=$n;?></td>
-                                    <td><?=$ditem->matkul;?>
-                                    </td>
-                                    <td><?=$ditem->kelas;?></td>
-                                    <td><?= $ditem->nama_dosen;?>, <?= $ditem->gelar;?></td>
-                                    <td><?= $ditem->thn_akademik;?></td>
-                                    <td><?= $ditem->totalmhs;?></td>
-                                    <td width="150" class="text-center">
-                                        <a href="<?= base_url('/admin/kelas/viewkelas/'.$ditem->idkelas)?>" class="btn bg-navy btn-sm"><i class="fa fa-eye"></i></a>
-<!--                                        <button class="btn bg-orange btn-sm"><i class="fa fa-edit"></i></button>-->
-                                        <button class="btn btn-danger btn-sm"  id="hapuskelas" data-val="<?=$ditem->idkelas?>"><i class="fa fa-trash"></i></button></td>
-                                </tr>
-                            <?php } ?>
-                            </tbody>
+                            
                             <tfoot>
                             <tr>
                                 <th>No</th>

@@ -131,7 +131,7 @@ class Mahasiswa extends AdminController
                 $all++;
                 $nim = $datum['nim'];
                 $nama = $datum['nama'];
-                $angkatan = substr($datum['nim'], 0, 4);
+                $angkatan = $datum['tahun_masuk'];
                 $idprodi = $jurusan[$datum['prodi']];
                 $password = password_hash($nim, PASSWORD_DEFAULT);
                 $datains = ['nim' => $nim, 'nama_mhs' => $nama, 'angkatan' => $angkatan, 'idprodi' => $idprodi, 'password' => $password];
