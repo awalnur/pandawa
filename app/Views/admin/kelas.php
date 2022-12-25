@@ -29,7 +29,7 @@
                             <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#modal-importkelas">
                                     <i class="fa fa-cloud-upload"></i> Import Data Kelas
                                 </button>
-                                <a href="<?= base_url('/template/template_dosen.xlsx')?>" download class="btn link-info"><i class="fa fa-download"> </i>Download Template import</a>
+                                <a href="<?= base_url('/template/template_kelas.xlsx')?>" download class="btn link-info"><i class="fa fa-download"> </i>Download Template import</a>
                                  <div class="modal fade" id="modal-importkelas">
                                     <div class="modal-dialog modal-sm">
                                         <div class="modal-content">
