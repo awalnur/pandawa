@@ -127,7 +127,7 @@ class Mahasiswa extends AdminController
             curl_close($curl);
 
             $responses = (object)json_decode($response, true); //because of true, it's in an array
-            $dt = $responses->data["data"];
+            $dt = $responses->data;
             $jurusan = ['akuntansi' => 1, 'manajemen' => 2, 'perbankan syariah' => 3];
             $suc = 0;
             $er = 0;
