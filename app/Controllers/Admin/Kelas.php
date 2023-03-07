@@ -218,6 +218,7 @@ class Kelas extends AdminController
         if($file){
             $fileLocation = $file->getTempName();
             //baca file
+            $resp= [];
 
             $reader 	= new Xlsx();
             $spreadsheet 	= $reader->load($fileLocation);
@@ -247,6 +248,10 @@ class Kelas extends AdminController
                     $berhasil++;
                 }else{
                     $resp[$idx]='Gagal';
+                }
+
+                if($kode_matkul==''){
+                    break;
                 }
             }
             return redirect()->back()->with('success','Import Berhasil, ('.$berhasil.'/'.sizeof($resp).')');
