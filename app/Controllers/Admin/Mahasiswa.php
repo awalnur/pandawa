@@ -51,19 +51,24 @@ class Mahasiswa extends AdminController
                 if($idx==0){
                     continue;
                 }
-                $nim = $data[1];
-                $nama = $data[2];
-                $prodi = (int)$data[3];
+                $nim = $data[0];
+                $nama = str_replace("'", "\'", $data[1]);
+                $prodi = (int)$data[2];
+                $thnmasuk = $data[4];
 //                // insert data
                 $ins=$this->mhs->query(
                     "INSERT INTO `mhs` (`nim`, `nama_mhs`, `angkatan`, `idprodi`, `password`) VALUES 
-                    ('$nim', '".htmlentities($nama)."', '".substr($nim, 0, 4)."','".str_replace(' ', '', $prodi)."', '".password_hash($nim,PASSWORD_DEFAULT)."');");
+                    ('$nim', '".$nama."', '$thnmasuk','".str_replace(' ', '', $prodi)."', '".password_hash($nim,PASSWORD_DEFAULT)."') ON DUPLICATE KEY update nama_mhs='$nama';");
                 echo $ins;
                 if ($ins){
                     $resp[$idx]='berhasil';
                     $berhasil++;
                 }else{
                     $resp[$idx]='Gagal';
+                }
+
+                if($nim==''){
+                    break;
                 }
             }
             return redirect()->to(base_url('/admin/mahasiswa'))->with('success','Import Berhasil, ('.$berhasil.'/'.sizeof($resp).')');

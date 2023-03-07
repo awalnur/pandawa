@@ -118,13 +118,34 @@
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span></button>
-                <h4 class="modal-title">Jenis Pertanyaan</h4>
+                <h4 class="modal-title">Tambah Mahasiswa</h4>
             </div>
             <form action="#" id="tambahmhs_kelas">
                 <div class="modal-body">
 
                         <div class="row">
+                            <div class="col-md-12">
+                                <table class="table text-sm">
+                                    <tr>
+                                        <td width="240px">Prodi</td>
+                                        <td>: <strong><?= $kelas->nama_prodi?></strong></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Mata Kuliah</td>
+                                        <td>: <strong><?= $kelas->matkul?></strong></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Kelas</td>
+                                        <td>: <strong><?= $kelas->kelas?></strong></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Dosen Pengampu</td>
+                                        <td>: <strong><?= $kelas->nama_dosen;?>, <?= $kelas->gelar;?></strong></td>
+                                    </tr>
 
+                                </table>
+                                <hr>
+                            </div>
                             <div class="col-md-6 sm-12">
                                 <div class="form-group">
                                     <label>Angkatan</label>
@@ -137,7 +158,7 @@
                             </div>
                         </div>
                     <input type="hidden" value="<?= $kelas->idprodi?>" id="idprodis"/>
-                    <input type="hidden" value="<?= $kelas->id_kelas?>" name="idkelas"/>
+                    <input type="hidden" value="<?= $idkelas?>" name="idkelas"/>
                         <table class="table table-bordered table-responsive col-12" style="width: 100%!important;" id="tablekelasmhs2">
                             <thead >
                                 <tr>

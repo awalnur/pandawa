@@ -62,7 +62,9 @@
                             <!--                                <butto class="btn btn-primary"><i class="fa fa-plus-circle"></i> Tambah Dosen</butto>-->
                             <button class="btn btn-info" data-toggle="modal" data-target="#modal-c-sync"><i class="fa fa-refresh"></i> Singkronisasi Ebfis.feb-unsiq.ac.id</button>
 <!--                            <a href="" class="btn link-info"><i class="fa fa-download"> </i>Download Template import</a>-->
-
+                            <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#modal-importmhs">
+                                <i class="fa fa-cloud-upload"></i> Import Data Mahasiswa
+                            </button>
 
                         </dvi>
 
