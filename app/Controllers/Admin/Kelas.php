@@ -2,9 +2,11 @@
 
 namespace App\Controllers\Admin;
 
-use App\Models\MhsPrd;
 use App\Models\MKelas;
 use Config\Services;
+
+use PhpOffice\PhpSpreadsheet\Spreadsheet;
+use PhpOffice\PhpSpreadsheet\Reader\Xls;
 use PhpOffice\PhpSpreadsheet\Reader\Xlsx;
 
 class Kelas extends AdminController
@@ -220,7 +222,7 @@ class Kelas extends AdminController
             //baca file
             $resp= [];
 
-            $reader 	= new Xlsx();
+            $reader = new Xlsx();
             $spreadsheet 	= $reader->load($fileLocation);
 
             $sheet	= $spreadsheet->getActiveSheet()->toArray();
