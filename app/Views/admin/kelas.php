@@ -148,6 +148,7 @@
                             <tfoot>
                             <tr>
                                 <th>No</th>
+                                <th>Prodi</th>
                                 <th>Mata Kuliah</th>
                                 <th>Kelas</th>
                                 <th>Dosen</th>
