@@ -29,7 +29,8 @@
                             <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#modal-importkelas">
                                     <i class="fa fa-cloud-upload"></i> Import Data Kelas
                                 </button>
-                                <a href="<?= base_url('/template/template_kelas.xlsx')?>" download class="btn link-info"><i class="fa fa-download"> </i>Download Template import</a>
+                            <a href="<?= base_url('/template/template_kelas.xlsx')?>" download class="btn link-info"><i class="fa fa-download"> </i> Download Template import</a>
+                            <a href="<?= base_url('/template/TEMPLATE_IMPORT_KELAS_dan_SISWA.xlsx')?>" download class="btn link-info"> <i class="fa fa-download"> </i> Download Template import Kelas + Mahasiswa</a>
                                  <div class="modal fade" id="modal-importkelas">
                                     <div class="modal-dialog modal-sm">
                                         <div class="modal-content">
@@ -62,7 +63,7 @@
                             <?php if (!empty(session('success'))){
                             ?>
                             <br>
-                            <div class="alert alert-success alert-dismissible">
+                            <div class="alert alert-success alert-dismissible mt-3">
                                 <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
                                 <?= session('success')?>
                             </div>
@@ -70,8 +71,8 @@
                         }else if (!empty(session('gagalss'))){
                             ?>
 
-<br>
-                            <div class="alert alert-danger alert-dismissible">
+                                <br>
+                            <div class="alert alert-danger  mt-3 alert-dismissible">
                                 <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
                                 <?= session('gagalss')?>
                             </div>
