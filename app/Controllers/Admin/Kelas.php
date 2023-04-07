@@ -229,8 +229,6 @@ class Kelas extends AdminController
             //looping untuk mengambil data
             $berhasil=0;
             echo $sheet[0][0];
-            var_dump($sheet);
-            error_reporting(0);
             if ($sheet[0][0]==null){
                 $kelas=$sheet[0][3];
                 $kode_matkul=trim($sheet[1][3]);
@@ -271,30 +269,23 @@ class Kelas extends AdminController
                 }
 
             }else{
+                $sc=$spreadsheet->getActiveSheet()->toArray();
                 foreach ($sheet as $idx => $data) {
-                    //skip eeindex 1 karena title excel
-//                echo $idx;
                     if($idx==0){
                         continue;
                     }
-
-                    if($data[1]==0){
+                    if($data[1]==null){
                         continue;
                     }
-                    echo $data[0]."<br>";
                     $kode_matkul = trim(htmlentities($data[1]));
-
                     $nid =  trim(htmlentities($data[2]));
                     $kelas =  htmlentities($data[3]);
                     $thn_akademik =  trim(htmlentities($data[4]));
                     $idprodi =  trim(htmlentities($data[5]));
-//                // insert data
-
                     $ins=$this->db->query("INSERT INTO kelas (`kode_matkul`, `nid`, `kelas`, `thn_akademik`, `idprodi` ) VALUES ('$kode_matkul', '$nid', '$kelas','$thn_akademik', '$idprodi');");
-//                echo $ins;
+
                     if ($ins){
                         $resp[$idx]='berhasil';
-//                    echo "berjaso;";
                         $berhasil++;
                     }else{
                         $resp[$idx]='Gagal';
