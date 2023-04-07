@@ -74,11 +74,17 @@ class Dosen extends AdminController
             }else{
                 $d=$data;
             }
-            var_dump($d);
+//            var_dump($d);
             $this->db->table('dosen')->update($d, ['nid'=>$id]);
 //            return redirect()->to()->with('success', 1);
-            return redirect()->to('/admin/dosen/edit/'.$id)->with('success', 1);
 
+
+                if (empty($nid)) {
+                    return redirect()->to('/admin/dosen/edit/' . $id)->with('success', 1);
+                }else{
+                    return redirect()->to('/admin/dosen/edit/' . $nid)->with('success', 1);
+
+                }
         }else{
             $this->db->table('dosen')->insert($data);
             return redirect()->to('/admin/dosen/tambah')->with('success', 1);

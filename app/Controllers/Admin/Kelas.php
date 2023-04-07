@@ -230,12 +230,13 @@ class Kelas extends AdminController
             $berhasil=0;
             echo $sheet[0][0];
             var_dump($sheet);
+            error_reporting(0);
             if ($sheet[0][0]==null){
                 $kelas=$sheet[0][3];
-                $kode_matkul=$sheet[1][3];
-                $nid=$sheet[2][3];
-                $thn_akademik=$sheet[3][3];
-                $idprodi=$sheet[4][3];
+                $kode_matkul=trim($sheet[1][3]);
+                $nid=trim($sheet[2][3]);
+                $thn_akademik=trim($sheet[3][3]);
+                $idprodi=trim($sheet[4][3]);
                 $cek=$this->db->table('kelas')->getWhere(['kode_matkul'=>$kode_matkul, 'nid'=>$nid, 'kelas'=>$kelas, 'thn_akademik'=>$thn_akademik, 'idprodi'=>$idprodi])->getRow();
 //                echo $cek->id_kelas;
                 if (@$cek->id_kelas!=null){
@@ -256,7 +257,7 @@ class Kelas extends AdminController
                         $angkatan=$data[3];
                         $ceksis=$this->db->table('mhs')->getWhere(['nim'=>$nim, 'nama_mhs'=>$nama, 'angkatan'=>$angkatan, 'idprodi'=>$idprodi])->getRow();
                         if (@$ceksis==null){
-                            $this->db->query("INSERT INTO `mhs` (`nim`, `nama_mhs`, `angkatan`, `idprodi`, `password`) VALUES ('$nim', '".$nama."', '$angkatan','".str_replace(' ', '', $idprodi)."', '".password_hash($nim,PASSWORD_DEFAULT)."') ON DUPLICATE KEY update nama_mhs='$nama';");
+                            $this->db->query("INSERT INTO `mhs` (`nim`, `nama_mhs`, `angkatan`, `idprodi`, `password`) VALUES ('$nim', '".$nama."', '$angkatan','".trim($idprodi)."', '".password_hash($nim,PASSWORD_DEFAULT)."') ON DUPLICATE KEY update nama_mhs='$nama';");
                         }
 
                         $inst=$this->db->query("insert INTO `mhs_kelas` (`nim`, `id_kelas`) VALUES ('$nim', '$insertId')");
@@ -281,11 +282,12 @@ class Kelas extends AdminController
                         continue;
                     }
                     echo $data[0]."<br>";
-                    $kode_matkul = htmlentities($data[1]);
-                    $nid =  htmlentities($data[2]);
+                    $kode_matkul = trim(htmlentities($data[1]));
+
+                    $nid =  trim(htmlentities($data[2]));
                     $kelas =  htmlentities($data[3]);
-                    $thn_akademik =  htmlentities($data[4]);
-                    $idprodi =  htmlentities($data[5]);
+                    $thn_akademik =  trim(htmlentities($data[4]));
+                    $idprodi =  trim(htmlentities($data[5]));
 //                // insert data
 
                     $ins=$this->db->query("INSERT INTO kelas (`kode_matkul`, `nid`, `kelas`, `thn_akademik`, `idprodi` ) VALUES ('$kode_matkul', '$nid', '$kelas','$thn_akademik', '$idprodi');");
