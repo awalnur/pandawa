@@ -27,9 +27,13 @@
                     <!-- form start -->
                     <form role="form" action="<?= base_url('admin/kelas/savekelas')?>" method="post">
                         <div class="box-body">
-                            <?php if (!empty(session('success'))){
+                            <?php if (!empty(session('sukses'))){
                                 ?>
-                                <div class="alert alert-success">Data Berhasil Ditambahkan</div>
+                                <div class="alert alert-success"><?= session('sukses');?></div>
+                            <?php } ?>
+                            <?php if (!empty(session('gagal'))){
+                                ?>
+                                <div class="alert alert-danger"><?= session('gagal');?></div>
                             <?php } ?>
                             <div class="form-group">
                                 <label>Prodi</label>
