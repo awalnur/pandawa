@@ -184,7 +184,6 @@ class Kelas extends AdminController
             }
 
     function savekelas(){
-//        var_dump($this->request->getPost());
         $mk=$this->request->getPost('mkk');
         $idd=$this->request->getPost('dosen');
         $kl=$this->request->getPost('kelas');
@@ -207,12 +206,10 @@ class Kelas extends AdminController
                         }
                     }
                 }
-                echo "s";
                 return redirect()->to(base_url('/admin/kelas/tambahkls'))->with('sukses', 'Tambah Kelas berhasil');
                 exit();
             }else{
                 return redirect()->to(base_url('/admin/kelas/tambahkls'))->with('gagal', 'Kelas dengan dosen yang sama sudah tersedia');
-
             }
     }
     function importing(){
